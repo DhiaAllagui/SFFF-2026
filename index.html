@@ -1,0 +1,3582 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFFF 2026 — Street & Fast Food Fest | Tunis Lac II</title>
+  <meta name="description"
+    content="SFFF 2026 - Street & Fast Food Fest à Tunis Lac II. 29 août au 12 septembre 2026. Voyagez à travers 5 continents sur 1,8 km de corniche immersive.">
+  <meta property="og:title" content="SFFF 2026 — Street & Fast Food Fest | Tunis">
+  <meta property="og:description"
+    content="15 Nuits, 42 Pavillons Nationaux, 310+ Exposants sur 1,8 km de corniche à Tunis Lac II.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/webp" href="assets/logo.webp">
+
+  <!-- Fonts & Tailwind CSS (production build via Tailwind CLI, purged to only the classes this page uses) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/tailwind.build.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "SFFF 2026 — Street & Fast Food Fest",
+  "startDate": "2026-08-29T17:00:00+01:00",
+  "endDate": "2026-09-13T02:00:00+01:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Tunis Lac II",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tunis",
+      "addressCountry": "TN"
+    }
+  },
+  "description": "Le plus grand festival gastronomique et culturel de l'été tunisien."
+}
+</script>
+
+  <style>
+    :root {
+      --bg: #070708;
+      --panel: #141416;
+      --panel-hover: #1f1f23;
+      --gold: #D4AF37;
+      --gold-hi: #F3E5AB;
+      --gold-accent: #E5C158;
+      --text: #FFFFFF;
+      --muted: #9CA3AF;
+      --border: rgba(212, 175, 55, 0.3);
+      --border-dark: #27272a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    [dir="rtl"] body {
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    [dir="rtl"] .font-display {
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    /* Utility CSS Fallbacks for guaranteed styling offline or local file loading */
+    .hidden {
+      display: none !important;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .flex-row {
+      flex-direction: row;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .items-end {
+      align-items: flex-end;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-1 {
+      gap: 0.25rem;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .gap-3 {
+      gap: 0.75rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-5 {
+      gap: 1.25rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-7 {
+      gap: 1.75rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .gap-10 {
+      gap: 2.5rem;
+    }
+
+    .gap-12 {
+      gap: 3rem;
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .inset-x-0 {
+      left: 0;
+      right: 0;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .z-40 {
+      z-index: 40;
+    }
+
+    .max-w-6xl {
+      max-width: 72rem;
+    }
+
+    .max-w-7xl {
+      max-width: 80rem;
+    }
+
+    .max-w-4xl {
+      max-width: 56rem;
+    }
+
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+
+    .max-w-md {
+      max-width: 28rem;
+    }
+
+    .max-w-lg {
+      max-width: 32rem;
+    }
+
+    .max-w-sm {
+      max-width: 24rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-start {
+      text-align: start;
+    }
+
+    .text-end {
+      text-align: end;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .p-5 {
+      padding: 1.25rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-5 {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .whitespace-nowrap {
+      white-space: nowrap !important;
+    }
+
+    .shrink-0 {
+      flex-shrink: 0 !important;
+    }
+
+    .sticky-mobile-cta {
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 40 !important;
+    }
+
+    @media (min-width: 640px) {
+      .sm\:flex-row {
+        flex-direction: row;
+      }
+
+      .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sm\:w-auto {
+        width: auto;
+      }
+
+      .sm\:col-span-1 {
+        grid-column: span 1 / span 1;
+      }
+
+      .sm\:col-span-2 {
+        grid-column: span 2 / span 2;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .md\:text-7xl {
+        font-size: 4.5rem;
+        line-height: 1;
+      }
+
+      .md\:p-10 {
+        padding: 2.5rem;
+      }
+
+      .md\:p-8 {
+        padding: 2rem;
+      }
+
+      .md\:px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:flex {
+        display: flex !important;
+      }
+
+      .lg\:hidden {
+        display: none !important;
+      }
+
+      #stickyCta {
+        display: none !important;
+      }
+
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .lg\:grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .lg\:grid-cols-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      .lg\:col-span-5 {
+        grid-column: span 5 / span 5;
+      }
+
+      .lg\:col-span-6 {
+        grid-column: span 6 / span 6;
+      }
+
+      .lg\:col-span-7 {
+        grid-column: span 7 / span 7;
+      }
+
+      /* See More buttons — mobile only, always hidden on desktop */
+      #nightsSeeMoreContainer,
+      #zonesSeeMoreContainer,
+      #countriesSeeMoreContainer,
+      #sensesSeeMoreContainer,
+      #awardsSeeMoreContainer,
+      #ticketsSeeMoreContainer,
+      #labSeeMoreContainer {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .xl\:flex {
+        display: flex !important;
+      }
+    }
+
+    /* ===== EXTRA-SMALL SCREENS (≤375px) ===== */
+    @media (max-width: 375px) {
+      h1.font-display {
+        font-size: 1.9rem !important;
+      }
+
+      #heroBadge {
+        font-size: 0.65rem !important;
+        letter-spacing: 0.03em !important;
+      }
+
+      .cd-num {
+        font-size: 1.35rem !important;
+      }
+
+      #stickyCta {
+        font-size: 0.78rem !important;
+      }
+
+      #ticketsGrid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* ===== LANDSCAPE MOBILE ===== */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #accueil {
+        min-height: auto !important;
+        padding-top: 5rem !important;
+      }
+
+      .map-iframe-wrap {
+        height: 56vw !important;
+        min-height: 260px !important;
+      }
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-dark);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold);
+    }
+
+    .text-gold {
+      color: var(--gold);
+    }
+
+    .bg-gold {
+      background: var(--gold);
+    }
+
+    .border-gold {
+      border-color: var(--border);
+    }
+
+    /* Shimmering Metallic Gold Text */
+    @keyframes goldShimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .gold-grad-text {
+      background: linear-gradient(90deg, #F3E5AB 0%, #D4AF37 25%, #FFF099 50%, #D4AF37 75%, #F3E5AB 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: goldShimmer 7s linear infinite;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold) 100%);
+      color: #0A0A0A;
+      font-weight: 700;
+      transition: box-shadow .3s ease, border-color .3s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-primary:hover,
+    .btn-primary.is-hovered {
+      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .btn-outline:hover,
+    .btn-outline.is-hovered {
+      border-color: var(--gold);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Magnetic Button System Styles */
+    .magnetic-btn-wrap {
+      position: relative !important;
+      overflow: hidden !important;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .magnetic-btn-wrap>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .magnetic-sweep {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: scale(0);
+      transform-origin: center center;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .btn-primary .magnetic-sweep {
+      background: linear-gradient(135deg, #FFF099 0%, #F3E5AB 100%);
+    }
+
+    .btn-outline .magnetic-sweep {
+      background: rgba(212, 175, 55, 0.22);
+    }
+
+    /* 3D Glassmorphic Panels with Light Sweep */
+    .panel {
+      background: linear-gradient(145deg, rgba(20, 20, 24, 0.85) 0%, rgba(10, 10, 12, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.12) 50%, transparent 60%);
+      transform: rotate(30deg) translateY(-100%);
+      transition: transform 0.8s ease;
+      pointer-events: none;
+    }
+
+    .panel:hover::after {
+      transform: rotate(30deg) translateY(100%);
+    }
+
+    .panel:hover {
+      border-color: rgba(212, 175, 55, 0.65);
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Tonight's night card: stands out from the rest of the grid, no hover needed */
+    .panel.night-tonight {
+      border-color: rgba(243, 229, 171, 0.9) !important;
+      transform: translateY(-6px) scale(1.04) !important;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85), 0 0 40px rgba(212, 175, 55, 0.5) !important;
+      animation: pulseGlow 2.2s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    .panel.night-tonight:hover {
+      transform: translateY(-9px) scale(1.06) !important;
+    }
+
+    .ticket-card {
+      overflow: visible !important;
+    }
+
+    .glass-nav {
+      background: rgba(7, 7, 8, 0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .modal-backdrop {
+      background: rgba(0, 0, 0, 0.85) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    /* Mobile Drawer Smooth Slide Animation */
+    #mobileDrawerBackdrop {
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    #mobileDrawerContent {
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [dir="rtl"] #mobileDrawerContent {
+      transform: translateX(-100%);
+    }
+
+    #mobileDrawer.active #mobileDrawerBackdrop {
+      opacity: 1;
+    }
+
+    #mobileDrawer.active #mobileDrawerContent {
+      transform: translateX(0) !important;
+    }
+
+    .divider-gold {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .grain {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .vip-border {
+      position: relative;
+      background: var(--panel);
+      border-radius: 1rem;
+    }
+
+    .vip-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--gold), var(--gold-hi), var(--gold-accent));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* ===== COUNTDOWN TIMER ===== */
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cd-digit-wrap {
+      overflow: hidden;
+      height: 1.1em;
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.8ch;
+    }
+
+    .cd-digit {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: inherit;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-align: center;
+      min-width: 2.8ch;
+    }
+
+    /* Single keyframe: slides up & out, then enters from below */
+    @keyframes cd-flip {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      38% {
+        transform: translateY(-115%);
+        opacity: 0;
+      }
+
+      62% {
+        transform: translateY(115%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .cd-digit.is-changing {
+      animation: cd-flip 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .cd-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .cd-sep {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: rgba(212, 175, 55, 0.6);
+      line-height: 1;
+      align-self: flex-start;
+      padding-top: 0.02em;
+      animation: cd-colon-pulse 1s step-start infinite;
+    }
+
+    /* ===== 3D flip-clock digits (seconds only) — ported from the Text3DFlip component ===== */
+    .cd-digit-wrap-3d {
+      display: flex;
+      justify-content: center;
+      gap: 0.01em;
+    }
+
+    .flip3d-scene {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.1em;
+      width: 0.62em;
+      flex: none;
+      font-size: clamp(3rem, 9vw, 6rem);
+      perspective: 6em;
+    }
+
+    .flip3d-card {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: translateZ(-0.55em) rotateX(0deg);
+      transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .flip3d-card.is-flipping {
+      transform: translateZ(-0.55em) rotateX(90deg);
+    }
+
+    .flip3d-card.is-resetting {
+      transition: none;
+    }
+
+    .flip3d-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: inherit;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+    }
+
+    .flip3d-face.front {
+      transform: translateZ(0.55em);
+    }
+
+    .flip3d-face.back {
+      transform: rotateX(-90deg) translateZ(0.55em);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flip3d-card {
+        transition: none;
+      }
+    }
+
+    @keyframes cd-colon-pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-up.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--muted);
+      transition: color .25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active-nav {
+      color: #fff;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width .25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active-nav::after {
+      width: 100%;
+    }
+
+    [dir="rtl"] .nav-link::after {
+      left: auto;
+      right: 0;
+    }
+
+    .tab-btn.active {
+      color: var(--bg);
+      background: var(--gold);
+      font-weight: 700;
+      border-color: var(--gold);
+    }
+
+    .tab-btn {
+      color: var(--muted);
+    }
+
+    .modal-backdrop {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    textarea,
+    select {
+      background: #0d0d0f;
+      border: 1px solid var(--border-dark);
+      color: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+    }
+
+    .stamp-badge {
+      animation: stampPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes stampPop {
+      0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+      }
+
+      80% {
+        transform: scale(1.15) rotate(5deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+      }
+    }
+
+    .glow-pulse {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    /* Rising steam wisps — warm gold-lit smoke drifting off hot food, echoes the site's gold glow language */
+    .steam-rig {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .steam-wisp {
+      position: absolute;
+      bottom: 0;
+      width: 26px;
+      height: 70px;
+      margin-left: -13px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(243, 229, 171, 0.5) 0%, rgba(212, 175, 55, 0.22) 45%, rgba(212, 175, 55, 0) 75%);
+      filter: blur(6px);
+      opacity: 0;
+      transform: translateY(0) scale(0.8);
+      animation: steamRise 4.8s ease-in infinite;
+    }
+
+    @keyframes steamRise {
+      0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) scale(0.7);
+      }
+
+      15% {
+        opacity: 0.55;
+      }
+
+      60% {
+        opacity: 0.35;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-115px) translateX(10px) scale(1.6);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .steam-wisp {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
+    /* Equalizer Sound Bars */
+    .vibe-eq-bar {
+      display: inline-block;
+      width: 2.5px;
+      height: 12px;
+      background: var(--gold);
+      border-radius: 2px;
+      animation: vibeEq 0.8s ease-in-out infinite alternate;
+    }
+
+    .vibe-eq-bar:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .vibe-eq-bar:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .vibe-eq-bar:nth-child(4) {
+      animation-delay: 0.1s;
+    }
+
+    @keyframes vibeEq {
+      0% {
+        height: 4px;
+      }
+
+      100% {
+        height: 14px;
+      }
+    }
+
+    /* Ken Burns Slow Cinematic Background Movement */
+    @keyframes kenburns {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.08) translate(-1%, -1%);
+      }
+
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+    }
+
+    .animate-kenburns {
+      animation: kenburns 35s ease-in-out infinite alternate;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="grain">
+
+  <!-- Animated Gold Dust & Lake Reflections — sits above background image, below content -->
+  <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none opacity-50" style="z-index:2;"></canvas>
+
+  <!-- ================= HEADER ================= -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        <a href="#accueil" class="flex items-center gap-3 shrink-0 group whitespace-nowrap">
+          <img src="assets/logo.webp" alt="SFFF 2026 Logo"
+            class="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+          <div class="flex flex-col leading-tight">
+            <span class="font-display font-extrabold text-lg md:text-xl tracking-tight">SFFF <span
+                class="text-gold group-hover:text-amber-300 transition-colors">2026</span></span>
+            <span class="text-[10px] md:text-xs tracking-[0.2em] text-neutral-400 uppercase"
+              data-i18n="nav.brandSub">Tunis Global Village</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-6 font-medium text-xs xl:text-sm whitespace-nowrap">
+          <a href="#accueil" class="nav-link active-nav whitespace-nowrap" data-i18n="nav.home">Accueil</a>
+          <a href="#concept" class="nav-link whitespace-nowrap" data-i18n="nav.concept">Concept</a>
+          <a href="#pavillons" class="nav-link whitespace-nowrap" data-i18n="nav.pavillons">Pavillons</a>
+          <a href="#future-food-lab" class="nav-link whitespace-nowrap" data-i18n="nav.lab">Future Food Lab</a>
+          <a href="#programmation" class="nav-link whitespace-nowrap" data-i18n="nav.programmation">Programmation</a>
+          <a href="#zones" class="nav-link whitespace-nowrap" data-i18n="nav.zones">8 Zones</a>
+          <a href="#tarifs" class="nav-link whitespace-nowrap" data-i18n="nav.tarifs">Tarifs</a>
+        </nav>
+
+        <!-- Action buttons & Language -->
+        <div class="hidden lg:flex items-center gap-2.5 shrink-0 whitespace-nowrap">
+          <a href="#espace-pro" class="btn-outline px-3.5 py-1.5 rounded-full text-xs font-semibold"
+            data-i18n="nav.espacePro">Espace Pro</a>
+          <a href="#espace-pro" id="headerAmbassadorBtn"
+            class="btn-outline px-3.5 py-1.5 rounded-full text-xs font-semibold"
+            data-i18n="nav.espaceAmbassade">Ambassades</a>
+          <a href="#tarifs" class="btn-primary px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap"
+            data-i18n="nav.reserver">Réserver mon Passeport</a>
+
+          <div class="relative">
+            <button id="langBtn"
+              class="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold border border-neutral-800 hover:border-gold text-neutral-300 hover:text-white transition-colors">
+              <span id="langBtnLabel">🇫🇷 FR</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div id="langMenu"
+              class="hidden absolute end-0 mt-2 w-44 rounded-xl overflow-hidden border border-neutral-800 shadow-2xl z-50"
+              style="background:#141416;">
+              <button
+                class="lang-opt w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2"
+                data-lang="fr">🇫🇷 <span>FR — Français</span></button>
+              <button
+                class="lang-opt w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2"
+                data-lang="en">🇬🇧 <span>EN — English</span></button>
+              <button
+                class="lang-opt w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2"
+                data-lang="ar">🇹🇳 <span>AR — العربية</span></button>
+            </div>
+          </div>
+        </div>
+
+        <button id="mobileMenuBtn" class="lg:hidden text-white p-2" aria-label="Toggle Navigation Menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer (Outside header to avoid backdrop-filter stacking context bugs) -->
+  <div id="mobileDrawer" class="hidden lg:hidden fixed inset-0 z-[100]">
+    <div id="mobileDrawerBackdrop" class="absolute inset-0"
+      style="background: rgba(0, 0, 0, 0.9) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    </div>
+    <div id="mobileDrawerContent"
+      class="absolute top-0 end-0 h-full w-[85%] max-w-sm p-6 flex flex-col gap-6 shadow-2xl border-s border-neutral-800"
+      style="background: #0A0A0C !important; background-color: #0A0A0C !important; opacity: 1 !important; z-index: 101;">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/logo.webp" alt="SFFF 2026 Logo" class="h-10 w-auto">
+          <span class="font-display font-extrabold text-lg text-white">SFFF <span class="text-gold">2026</span></span>
+        </div>
+        <button id="mobileMenuClose" class="p-2 text-neutral-400 hover:text-white" aria-label="Close menu"><svg
+            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 6l12 12M6 18L18 6" />
+          </svg></button>
+      </div>
+
+      <nav class="flex flex-col gap-4 text-base font-medium">
+        <a href="#accueil" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.home">Accueil</a>
+        <a href="#concept" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.concept">Concept</a>
+        <a href="#pavillons" class="mobile-nav-link text-neutral-300 hover:text-gold"
+          data-i18n="nav.pavillons">Pavillons</a>
+        <a href="#future-food-lab" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.lab">Future
+          Food Lab</a>
+        <a href="#programmation" class="mobile-nav-link text-neutral-300 hover:text-gold"
+          data-i18n="nav.programmation">Programmation</a>
+        <a href="#zones" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.zones">8 Zones</a>
+        <a href="#tarifs" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.tarifs">Tarifs</a>
+      </nav>
+
+      <div class="divider-gold"></div>
+
+      <div class="flex flex-col gap-2">
+        <span class="text-xs uppercase tracking-widest text-neutral-500" data-i18n="nav.language">Langue</span>
+        <div class="flex gap-2">
+          <button
+            class="lang-opt-mobile flex-1 py-2 rounded-lg border border-neutral-800 text-xs font-semibold bg-neutral-900 text-white"
+            data-lang="fr">🇫🇷 FR</button>
+          <button
+            class="lang-opt-mobile flex-1 py-2 rounded-lg border border-neutral-800 text-xs font-semibold bg-neutral-900 text-white"
+            data-lang="en">🇬🇧 EN</button>
+          <button
+            class="lang-opt-mobile flex-1 py-2 rounded-lg border border-neutral-800 text-xs font-semibold bg-neutral-900 text-white"
+            data-lang="ar">🇹🇳 AR</button>
+        </div>
+      </div>
+
+      <div class="mt-auto flex flex-col gap-3">
+        <a href="#espace-pro"
+          class="mobile-nav-link btn-outline px-5 py-3 rounded-full text-center font-semibold text-sm"
+          data-i18n="nav.espacePro">Espace Pro</a>
+        <a href="#tarifs" class="mobile-nav-link btn-primary px-5 py-3 rounded-full text-center font-bold text-sm"
+          data-i18n="nav.reserver">Réserver mon Passeport</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section id="accueil" class="relative pt-36 pb-20 px-5 md:px-8 overflow-hidden" style="min-height:100vh;">
+
+    <!-- ★ FULL-BLEED BACKGROUND IMAGE (Ken Burns slow zoom) — layer 0: deepest -->
+    <div class="absolute inset-0 overflow-hidden" style="z-index:0;">
+      <img src="assets/hero_full_bg.webp" alt="" aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover animate-kenburns" style="transform-origin: center center;">
+      <!-- Multi-layer cinematic overlays -->
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        style="background: linear-gradient(to bottom, rgba(7,7,8,0.75) 0%, rgba(7,7,8,0.55) 40%, rgba(7,7,8,0.85) 80%, rgba(7,7,8,0.98) 100%);">
+      </div>
+      <div class="absolute inset-0"
+        style="background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(212,175,55,0.06) 0%, transparent 70%);">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative text-center" style="z-index:3;">
+      <!-- Hashtags -->
+      <div
+        class="flex flex-wrap justify-center items-center gap-3 md:gap-6 mb-5 text-xs md:text-sm font-bold tracking-widest text-gold opacity-90 drop-shadow-md">
+        <span class="hover:text-white transition-colors cursor-default">#SFFF2K26</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-gold opacity-60"></span>
+        <span class="hover:text-white transition-colors cursor-default">#GLOBAL_VILLAGE_TUNISIA</span>
+      </div>
+
+      <div
+        class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-gold/40 text-xs md:text-sm font-semibold tracking-wide mb-8 glow-pulse"
+        style="background:rgba(212,175,55,0.08); max-width:100%;">
+        <span class="w-2 h-2 rounded-full bg-gold animate-ping flex-shrink-0"></span>
+        <span id="heroBadge" style="word-break:break-word; text-align:center;">29 AOÛT – 12 SEPTEMBRE 2026 • TUNIS LAKE
+          PEARLS</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-6">
+        <span id="heroTitleLine1" class="block text-white">Street & Fast Food Fest</span>
+        <span id="heroTitleLine2" class="block gold-grad-text">2026</span>
+      </h1>
+
+      <p id="heroSubhead"
+        class="max-w-2xl mx-auto text-neutral-300 text-base md:text-xl font-light leading-relaxed mb-10">
+        Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de
+        corniche immersive.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a href="#tarifs" id="heroPassportBtn"
+          class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm tracking-wide"
+          data-i18n="hero.ctaPrimary">Obtenir un Passeport</a>
+        <a href="#concept"
+          class="btn-outline w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm tracking-wide"
+          data-i18n="hero.ctaSecondary">Découvrir le Concept</a>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="mb-16 w-full max-w-xl mx-auto px-2">
+        <p id="countdownLabel"
+          class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] font-bold text-white/50 mb-6 sm:mb-8 text-center"
+          data-i18n="hero.countdownLabel">Le festival ouvre dans</p>
+
+        <div class="flex items-center justify-center gap-1 sm:gap-3 md:gap-4 w-full">
+
+          <!-- Days -->
+          <div class="cd-unit flex-1 max-w-[70px] sm:max-w-[90px]">
+            <div class="cd-digit-wrap">
+              <span id="cd-days" class="cd-digit">--</span>
+            </div>
+            <span class="cd-label" data-i18n="hero.days">Jours</span>
+          </div>
+
+          <span class="cd-sep text-amber-500/80 font-bold text-lg sm:text-2xl select-none" aria-hidden="true">:</span>
+
+          <!-- Hours -->
+          <div class="cd-unit flex-1 max-w-[70px] sm:max-w-[90px]">
+            <div class="cd-digit-wrap">
+              <span id="cd-hours" class="cd-digit">00</span>
+            </div>
+            <span class="cd-label" data-i18n="hero.hours">Heures</span>
+          </div>
+
+          <span class="cd-sep text-amber-500/80 font-bold text-lg sm:text-2xl select-none" aria-hidden="true">:</span>
+
+          <!-- Minutes -->
+          <div class="cd-unit flex-1 max-w-[70px] sm:max-w-[90px]">
+            <div class="cd-digit-wrap">
+              <span id="cd-min" class="cd-digit">00</span>
+            </div>
+            <span class="cd-label" data-i18n="hero.minutes">Min</span>
+          </div>
+
+          <span class="cd-sep text-amber-500/80 font-bold text-lg sm:text-2xl select-none" aria-hidden="true">:</span>
+
+          <!-- Seconds (3D flip-clock effect) -->
+          <div class="cd-unit flex-1 max-w-[70px] sm:max-w-[90px]">
+            <div class="cd-digit-wrap cd-digit-wrap-3d">
+              <span class="flip3d-scene">
+                <span class="flip3d-card" id="cd-sec-tens">
+                  <span class="flip3d-face front">0</span>
+                  <span class="flip3d-face back">0</span>
+                </span>
+              </span>
+              <span class="flip3d-scene">
+                <span class="flip3d-card" id="cd-sec-units">
+                  <span class="flip3d-face front">0</span>
+                  <span class="flip3d-face back">0</span>
+                </span>
+              </span>
+            </div>
+            <span class="cd-label" data-i18n="hero.seconds">Sec</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div id="metricsGrid" class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6"></div>
+    </div>
+
+    <!-- Hero Top Sponsors -->
+    <div class="max-w-6xl mx-auto mt-14 text-center relative" style="z-index:3;">
+      <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-6" data-i18n="sponsors.title">
+        Partenaires Officiels</p>
+      <div
+        class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <a href="https://www.albuhairainvest.com" target="_blank" rel="noopener"
+          class="hover:scale-105 transition-transform block">
+          <img src="assets/logo_albuhaira.png" alt="Sponsor Albuhaira" class="h-10 md:h-12 object-contain">
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Visual Banner Showcase -->
+    <div
+      class="max-w-6xl mx-auto mt-16 rounded-3xl overflow-hidden border border-amber-500/30 relative group shadow-2xl"
+      style="z-index:3;">
+      <img src="assets/hero_bg.webp" alt="SFFF 2026 Night Festival at Tunis Lac II"
+        class="w-full h-[320px] md:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-[#070708] via-black/40 to-transparent flex items-end p-6 md:p-10">
+        <div class="text-start max-w-xl">
+          <span
+            class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-gold/90 text-black mb-3">Corniche
+            1.8 KM</span>
+          <h3 class="font-display font-bold text-xl md:text-3xl text-white mb-2">Tunis Lac II Waterfront</h3>
+          <p class="text-sm md:text-base text-neutral-300 leading-relaxed">Une transformation féerique au bord du lac
+            avec mapping laser, scènes musicales, et pavillons gastronomiques d'exception.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="divider-gold"></div>
+  </div>
+
+  <!-- ================= CONCEPT ================= -->
+  <section id="concept" class="py-24 px-5 md:px-8 relative overflow-hidden">
+    <!-- Dynamic 5-Continents Map Background -->
+    <style>
+      @keyframes dashTravel {
+        from {
+          stroke-dashoffset: 40;
+        }
+
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes dotPulse {
+
+        0%,
+        100% {
+          transform: scale(0.6);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(1.4);
+          opacity: 1;
+        }
+      }
+
+      .map-path {
+        animation: dashTravel 1.5s linear infinite;
+        stroke: rgba(212, 175, 55, 0.6);
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-dasharray: 8 12;
+      }
+
+      .map-dot {
+        transform-origin: center;
+        transform-box: fill-box;
+        animation: dotPulse 3s ease-in-out infinite;
+      }
+
+      .map-dest {
+        transform-origin: center;
+        transform-box: fill-box;
+        animation: dotPulse 1.5s ease-in-out infinite;
+      }
+    </style>
+    <div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center"
+      style="opacity: 0.25; mix-blend-mode: screen;">
+      <svg viewBox="0 0 950 620"
+        class="w-full h-full min-w-[800px] max-w-[1600px] object-cover md:object-contain opacity-80"
+        preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="mapGlow">
+            <feColorMatrix type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" />
+            <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.3" />
+          </filter>
+          <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFF099" stop-opacity="1" />
+            <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#D4AF37" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Base Map Image (Inverted to white/glow) -->
+        <image href="assets/world_map.svg" width="950" height="620" style="opacity: 0.15; filter: url(#mapGlow);" />
+
+        <!-- Flight Paths -->
+        <path class="map-path" d="M 180 160 Q 330 100 480 200" /> <!-- North America -->
+        <path class="map-path" d="M 280 370 Q 350 250 480 200" /> <!-- South America -->
+        <path class="map-path" d="M 470 120 Q 490 150 480 200" /> <!-- Europe -->
+        <path class="map-path" d="M 720 190 Q 600 150 480 200" /> <!-- Asia -->
+        <path class="map-path" d="M 820 460 Q 650 400 480 200" /> <!-- Oceania -->
+
+        <!-- Origin Dots -->
+        <g fill="url(#dotGlow)">
+          <circle cx="180" cy="160" r="15" class="map-dot" style="animation-delay: 0s;" />
+          <circle cx="280" cy="370" r="15" class="map-dot" style="animation-delay: 0.5s;" />
+          <circle cx="470" cy="120" r="15" class="map-dot" style="animation-delay: 1s;" />
+          <circle cx="720" cy="190" r="15" class="map-dot" style="animation-delay: 1.5s;" />
+          <circle cx="820" cy="460" r="15" class="map-dot" style="animation-delay: 2s;" />
+        </g>
+
+        <!-- Destination Dot (Tunisia) -->
+        <circle cx="480" cy="200" r="28" fill="url(#dotGlow)" class="map-dest" />
+        <circle cx="480" cy="200" r="4" fill="#ffffff" />
+      </svg>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="concept.eyebrow">Le Concept
+        </p>
+        <h2 id="conceptTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-6">L'Éveil des 5 Sens aux 5
+          Continents</h2>
+        <p id="conceptIntro" class="text-neutral-300 leading-relaxed text-base md:text-lg">Sur 1,8 km de corniche
+          transformée en village-monde, SFFF 2026 réinvente la promenade tunisoise en un parcours immersif et 100%
+          cashless grâce à l'écosystème RFID. Chaque sens est sollicité, chaque pas raconte un continent.</p>
+      </div>
+      <div id="sensesGrid" class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5"></div>
+      <!-- sensesSeeMoreContainer removed: Le Concept shows all items always -->
+    </div>
+  </section>
+
+  <!-- ================= PAVILLONS ================= -->
+  <section id="pavillons" class="py-24 px-5 md:px-8" style="background:#0b0b0d;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="pavillons.eyebrow">Espaces</p>
+        <h2 id="pavillonsTitle" class="font-display font-extrabold text-3xl md:text-5xl">Les Pavillons Nationaux</h2>
+      </div>
+      <div id="pavillonsGrid" class="grid md:grid-cols-3 gap-6"></div>
+
+      <!-- Featured Nations Showcase -->
+      <div class="mt-20 text-center max-w-2xl mx-auto mb-12 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="countries.eyebrow">Aperçu
+          Exclusif</p>
+        <h3 id="countriesTitle" class="font-display font-extrabold text-2xl md:text-4xl text-white mb-3"
+          data-i18n="countries.title">Pavillons &amp; Nations à l'Honneur</h3>
+        <p id="countriesSubtitle" class="text-neutral-400 text-sm md:text-base" data-i18n="countries.subtitle">Découvrez
+          une sélection des 42 nations représentées au SFFF 2026</p>
+      </div>
+      <div id="countriesGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      <div id="countriesSeeMoreContainer" class="mt-8 text-center hidden lg:hidden">
+        <button id="countriesSeeMoreBtn"
+          class="btn-outline px-6 py-2.5 rounded-full text-sm font-semibold transition-colors"
+          data-i18n="nav.seeMore">Voir plus</button>
+      </div>
+
+      <!-- Food Truck Showcase Banner -->
+      <div
+        class="mt-16 rounded-3xl overflow-hidden border border-amber-500/30 grid lg:grid-cols-12 gap-0 bg-neutral-900/60 shadow-2xl items-center group">
+        <div class="lg:col-span-6 p-8 md:p-12">
+          <span
+            class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-gold text-black mb-4">Street
+            Food Nomade</span>
+          <h3 class="font-display font-extrabold text-2xl md:text-4xl text-white mb-4">Food Trucks & Pop-up Cuisines
+          </h3>
+          <p class="text-neutral-300 text-sm md:text-base leading-relaxed mb-6">
+            Découvrez la plus grande concentration de Food Trucks créatifs et d'artisansnomades de la région. Une
+            immersion gourmande réunissant plus de 280 stands et camions-restaurants rétro sur la World Food Avenue.
+          </p>
+          <div class="flex flex-wrap gap-3 text-xs font-semibold text-gold">
+            <span
+              class="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center gap-1.5"><svg
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <rect x="1" y="3" width="15" height="13" rx="2" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg> 280+ Food Trucks & Stands</span>
+            <span
+              class="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center gap-1.5"><svg
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <path
+                  d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2M7 2v20M17 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z" />
+              </svg> 42 Pavillons Nationaux</span>
+            <span
+              class="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center gap-1.5"><svg
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg> 100% Cashless RFID</span>
+          </div>
+        </div>
+        <div class="lg:col-span-6 h-full min-h-[300px] overflow-hidden">
+          <img src="assets/truck.webp" alt="SFFF 2026 Gourmet Food Truck Experience"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FUTURE FOOD LAB ================= -->
+  <section id="future-food-lab" class="py-24 px-5 md:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-30"
+      style="background:radial-gradient(circle at 80% 20%, rgba(212,175,55,0.15), transparent 60%);"></div>
+    <div class="max-w-6xl mx-auto relative">
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+        <div class="lg:col-span-7 fade-up">
+          <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="lab.eyebrow">Innovation</p>
+          <h2 id="labTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-6">Future Food Lab</h2>
+          <p class="text-neutral-300 text-base leading-relaxed mb-6">
+            Découvrez la gastronomie de demain : impression 3D alimentaire, robots préparateurs, démonstrations
+            moléculaires en direct et battles culinaires retransmises dans le monde entier.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="steam-rig" aria-hidden="true">
+              <span class="steam-wisp" style="left:22%; animation-delay:0s; animation-duration:4.5s;"></span>
+              <span class="steam-wisp" style="left:48%; animation-delay:1.4s; animation-duration:5.2s;"></span>
+              <span class="steam-wisp" style="left:74%; animation-delay:2.7s; animation-duration:4.8s;"></span>
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-amber-500/30 shadow-xl group">
+              <img src="assets/food_lab.webp" alt="Future Food Lab Cooking Showcase"
+                class="w-full h-[260px] object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="labGrid" class="grid md:grid-cols-3 gap-6"></div>
+      <div id="labSeeMoreContainer" class="mt-8 text-center hidden">
+        <button id="labSeeMoreBtn" class="btn-outline px-6 py-2.5 rounded-full text-sm font-semibold transition-colors"
+          data-i18n="nav.seeMore">Voir plus</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GAMIFICATION & AWARDS ================= -->
+  <section class="py-24 px-5 md:px-8" style="background:#0b0b0d;">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="gami.eyebrow">Gamification</p>
+        <h2 id="gamiTitle" class="font-display font-extrabold text-3xl md:text-4xl mb-5">Le Passeport Collector & SFFF
+          Awards</h2>
+        <p id="gamiDesc" class="text-neutral-300 leading-relaxed mb-8">
+          Collectionnez les 42 tampons du Passeport Saveurs à travers les pavillons nationaux et tentez de remporter le
+          Grand Prix SFFF 2026, en édition physique ou digitale.
+        </p>
+
+        <!-- Stamp Collector Interactive Simulator -->
+        <div class="panel rounded-2xl p-6 border border-amber-500/30">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <p id="passportName" class="font-bold text-lg text-white">Le Passeport Collector</p>
+              <p id="passportDesc" class="text-xs text-neutral-400">Tampons collectés : <span id="stampCount"
+                  class="font-bold text-gold text-sm">0</span> / 42</p>
+            </div>
+            <div class="flex gap-2">
+              <button id="stampBtn"
+                class="btn-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-black">
+                  <path
+                    d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" />
+                  <path d="M13 5v14M9 9h.01M9 12h.01M9 15h.01" />
+                </svg>
+                <span data-i18n="gami.stampBtn">Tamponner !</span>
+              </button>
+              <button id="resetStampBtn"
+                class="btn-outline p-2 rounded-full text-xs text-neutral-400 hover:text-white flex items-center justify-center"
+                title="Reset">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                  <path d="M23 4v6h-6" />
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="w-full bg-neutral-900 h-2.5 rounded-full overflow-hidden border border-neutral-800 mb-4">
+            <div id="stampProgressBar"
+              class="bg-gradient-to-r from-amber-500 to-yellow-300 h-full transition-all duration-300"
+              style="width: 0%;"></div>
+          </div>
+
+          <div id="stampBadgesContainer"
+            class="flex flex-wrap gap-2 min-h-[48px] items-center p-2 rounded-xl bg-black/40 border border-neutral-800">
+            <span class="text-xs text-neutral-500 px-2 italic">Cliquez sur Tamponner pour commencer la collection des
+              pavillons...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="mb-6 rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl">
+          <img src="assets/passport.webp" alt="SFFF 2026 Passport Saveurs Collector Document"
+            class="w-full h-[240px] md:h-[280px] object-cover">
+        </div>
+        <div id="awardsGrid" class="grid sm:grid-cols-2 gap-4"></div>
+        <!-- awardsSeeMoreContainer removed: Gamification shows all items always -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMMATION / 14 NIGHTS ================= -->
+  <section id="programmation" class="py-24 px-5 md:px-8" style="background:#080809;">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" id="nightsEyebrow">Programmation</p>
+        <h2 id="nightsTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">15 Nuits · 15 Voyages</h2>
+        <p id="nightsTagline" class="text-neutral-400 text-sm md:text-base">Chaque soir une nouvelle destination —
+          showcases, spectacles et animations uniques.</p>
+      </div>
+
+      <!-- Venue Info Bar -->
+      <div class="panel rounded-2xl p-5 md:p-6 mb-12 fade-up"
+        style="background:linear-gradient(135deg,rgba(20,16,4,0.9) 0%,rgba(12,10,2,0.95) 100%); border-color:rgba(212,175,55,0.4);">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+              style="background:rgba(212,175,55,0.12); border:1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold mb-0.5"
+                id="nightsLabelDates">Dates</p>
+              <p class="text-sm font-bold text-white" id="nightsValDates">29 Août – 12 Sep 2026</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+              style="background:rgba(212,175,55,0.12); border:1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold mb-0.5"
+                id="nightsLabelHours">Horaires</p>
+              <p class="text-sm font-bold text-white" id="nightsValHours">17h00 – 02h00</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+              style="background:rgba(212,175,55,0.12); border:1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold mb-0.5"
+                id="nightsLabelVenue">Lieu</p>
+              <a id="nightsValLocation" href="https://maps.google.com/?q=R6C4+F2M,Tunis" target="_blank" rel="noopener"
+                class="text-sm font-bold text-gold hover:text-amber-300 transition-colors underline underline-offset-2">Lake
+                Pearls, Tunis</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+              style="background:rgba(212,175,55,0.12); border:1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold mb-0.5">Entrée</p>
+              <p class="text-sm font-bold" style="color:var(--gold);">GRATUITE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nights Grid -->
+      <div id="nightsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-5"></div>
+      <div id="nightsSeeMoreContainer" class="mt-8 text-center hidden lg:hidden">
+        <button id="nightsSeeMoreBtn"
+          class="btn-outline px-6 py-2.5 rounded-full text-sm font-semibold transition-colors"
+          data-i18n="nights.seeMore">Voir plus</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8 ZONES ================= -->
+  <section id="zones" class="py-24 px-5 md:px-8" style="background:#0b0b0d;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="zones.eyebrow">Le Parcours</p>
+        <h2 id="zonesTitle" class="font-display font-extrabold text-3xl md:text-5xl">Les 8 Zones de la Corniche (1,8 km)
+        </h2>
+      </div>
+
+      <!-- Timeline Indicator -->
+      <div
+        class="mb-10 p-3 md:p-4 rounded-2xl bg-neutral-900/80 border border-neutral-800 flex items-center justify-between gap-2 overflow-x-auto text-xs text-neutral-400 font-semibold">
+        <span class="text-gold flex items-center gap-1 md:gap-1.5 whitespace-nowrap flex-shrink-0"><svg width="13"
+            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="text-gold">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg> Départ 0.0 KM</span>
+        <div
+          class="h-1 flex-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 rounded-full mx-2 min-w-[20px]">
+        </div>
+        <span class="text-gold flex items-center gap-1 md:gap-1.5 whitespace-nowrap flex-shrink-0"><svg width="13"
+            height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="text-gold">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+            <line x1="4" y1="22" x2="4" y2="15" />
+          </svg> Arrivée 1.8 KM</span>
+      </div>
+
+      <div id="zonesGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+      <div id="zonesSeeMoreContainer" class="mt-8 text-center hidden lg:hidden">
+        <button id="zonesSeeMoreBtn"
+          class="btn-outline px-6 py-2.5 rounded-full text-sm font-semibold transition-colors"
+          data-i18n="nav.seeMore">Voir plus</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE MAP ================= -->
+  <section id="carte" class="py-24 px-5 md:px-8 border-t border-neutral-800/50" style="background:#070708;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="map.eyebrow">La Carte</p>
+        <h2 id="mapTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4" data-i18n="map.title">Carte
+          Interactive du Festival</h2>
+        <p id="mapIntro" class="text-neutral-400 text-sm md:text-base" data-i18n="map.intro">Explorez les 1,8 km de
+          corniche, découvrez les pavillons et planifiez votre parcours.</p>
+      </div>
+
+      <div
+        class="map-iframe-wrap rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl relative bg-black h-[75vh] min-h-[520px] md:h-[70vh] md:min-h-[620px]">
+        <iframe src="interactive-map.html" class="w-full h-full border-0" title="Interactive Festival Map SFFF 2026"
+          loading="lazy"></iframe>
+
+        <!-- Action Buttons (Reset & Fullscreen) -->
+        <div class="absolute bottom-3 right-3 md:bottom-6 md:right-6 flex items-center gap-2.5" style="z-index: 10;">
+          <button id="mapResetBtn" type="button"
+            class="btn-outline px-3 py-2 md:px-4 md:py-2 rounded-full font-bold text-xs shadow-xl flex items-center gap-1.5 hover:scale-105 transition-transform"
+            style="background: rgba(7, 7, 8, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" class="text-gold">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            <span class="text-gold">Réinitialiser</span>
+          </button>
+
+          <a href="interactive-map.html" target="_blank"
+            class="btn-primary px-3 py-2 md:px-4 md:py-2 rounded-full font-bold text-xs shadow-xl flex items-center gap-1.5 hover:scale-105 transition-transform">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" class="text-black">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+            </svg>
+            <span class="text-black">Plein Écran</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ESPACE PROFESSIONNELS ================= -->
+  <section id="espace-pro" class="py-24 px-5 md:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="pro.eyebrow">Professionnels
+        </p>
+        <h2 id="proTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">Espace Professionnels &
+          Partenaires</h2>
+        <p id="proIntro" class="text-neutral-300 text-base">Rejoignez SFFF 2026 en tant que partenaire. Sélectionnez
+          votre profil pour accéder au formulaire adapté.</p>
+      </div>
+
+      <div id="proTabs" class="flex flex-wrap justify-center gap-2 mb-8"></div>
+
+      <form id="proForm" class="panel rounded-2xl p-6 md:p-10 grid sm:grid-cols-2 gap-5 shadow-2xl relative">
+        <div class="sm:col-span-2 pb-2 border-b border-neutral-800 flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-gold" id="selectedProfileLabel">Profil :
+            Investisseur</span>
+          <span class="text-[11px] text-neutral-400">Édition 2026</span>
+        </div>
+
+        <div class="sm:col-span-1">
+          <label class="block text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2"
+            data-i18n="pro.form.name">Nom complet</label>
+          <input type="text" id="proName" required placeholder="ex: Med Dhia Allagui"
+            class="w-full rounded-lg px-4 py-3 text-sm">
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2"
+            data-i18n="pro.form.company">Organisation / Société</label>
+          <input type="text" id="proCompany" placeholder="ex: Global Ventures"
+            class="w-full rounded-lg px-4 py-3 text-sm">
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2"
+            data-i18n="pro.form.email">Adresse E-mail</label>
+          <input type="email" id="proEmail" required placeholder="contact@domaine.com"
+            class="w-full rounded-lg px-4 py-3 text-sm">
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2"
+            data-i18n="pro.form.phone">Numéro de Téléphone</label>
+          <input type="tel" id="proPhone" placeholder="+216 -- --- ---" class="w-full rounded-lg px-4 py-3 text-sm">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2"
+            data-i18n="pro.form.message">Votre projet ou message</label>
+          <textarea id="proMessage" rows="4" placeholder="Détaillez vos besoins ou objectifs de partenariat..."
+            class="w-full rounded-lg px-4 py-3 text-sm"></textarea>
+        </div>
+        <div class="sm:col-span-2 flex flex-col sm:flex-row gap-3">
+          <button type="submit" class="btn-primary flex-1 py-4 rounded-full font-bold text-sm tracking-wide"
+            data-i18n="pro.form.submit">Envoyer ma demande</button>
+          <button type="button" id="generatePdfBtn" onclick="generateProPDF()"
+            class="flex-1 py-4 rounded-full font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02]"
+            style="background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)); border: 1.5px solid rgba(212,175,55,0.5); color: #D4AF37;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            Générer PDF
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= TICKETING ================= -->
+  <section id="tarifs" class="py-24 px-5 md:px-8" style="background:#0b0b0d; padding-bottom: 8rem;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="tickets.eyebrow">Billetterie
+        </p>
+        <h2 id="ticketsTitle" class="font-display font-extrabold text-3xl md:text-5xl">Passeports &amp; Tarifs</h2>
+      </div>
+      <div id="ticketsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" style="padding-top: 1.25rem;"></div>
+      <!-- ticketsSeeMoreContainer removed: Tarifs shows all items always -->
+    </div>
+  </section>
+
+  <!-- Floating CTA (Mobile Only) -->
+  <a href="#tarifs" id="stickyCta" class="lg:hidden" data-i18n-target="nav.reserver" style="position:fixed; bottom:1rem; left:50%; transform:translateX(-50%); z-index:50;
+         display:flex; align-items:center; justify-content:center; gap:0.5rem;
+         background:linear-gradient(135deg,#E5C158,#D4AF37); color:#0A0A0A;
+         width:min(90vw,340px); padding:0.9rem 1.4rem; border-radius:9999px;
+         font-weight:700; font-size:0.85rem; white-space:nowrap;
+         box-shadow:0 10px 40px rgba(212,175,55,0.45); border:1px solid #fcd34d;
+         transition:transform 0.2s ease, box-shadow 0.2s ease;"
+    onmouseover="this.style.boxShadow='0 14px 50px rgba(212,175,55,0.65)'; this.style.transform='translateX(-50%) scale(1.04)';"
+    onmouseout="this.style.boxShadow='0 10px 40px rgba(212,175,55,0.45)'; this.style.transform='translateX(-50%)';">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+      <path
+        d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" />
+      <path d="M13 5v14M9 9h.01M9 12h.01M9 15h.01" />
+    </svg>
+    <span data-i18n="nav.reserver">Réserver mon Passeport</span>
+  </a>
+
+  <!-- Scroll to Top Floating Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top"
+    class="fixed end-5 bottom-20 md:bottom-8 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center text-gold bg-black/85 backdrop-blur-md border border-amber-500/40 shadow-2xl transition-all duration-300 opacity-0 pointer-events-none hover:bg-gold hover:text-black hover:scale-110 active:scale-95"
+    style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.25);">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- ================= PARTENAIRES OFFICIELS ================= -->
+  <section class="py-12 px-5 md:px-8 border-t border-neutral-800/50" style="background:#070708;">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-neutral-500 mb-8" data-i18n="sponsors.title">
+        Partenaires Officiels</p>
+      <div
+        class="flex flex-wrap items-center justify-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <a href="https://www.albuhairainvest.com" target="_blank" rel="noopener"
+          class="hover:scale-105 transition-transform flex flex-col items-center gap-2">
+          <img src="assets/logo_albuhaira.png" alt="Sponsor Albuhaira" class="h-12 md:h-16 object-contain">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Albuhaira</span>
+        </a>
+
+        <div class="hover:scale-105 transition-transform flex flex-col items-center gap-2">
+          <img src="assets/comcom.webp" alt="Sponsor Comcom" class="h-16 md:h-20 object-contain">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Comcom</span>
+        </div>
+
+        <a href="https://www.facebook.com/winkomofficielle/?locale=fr_FR" target="_blank" rel="noopener"
+        class="hover:scale-105 transition-transform flex flex-col items-center gap-2"></a>
+        <div class="hover:scale-105 transition-transform flex flex-col items-center gap-2">
+          <img src="assets/logo_winkom.webp" alt="Sponsor Winkom" class="h-20 md:h-24 object-contain">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Winkom</span>
+        </div>
+        </a>
+        <a href="https://www.explore-tunisia.com/fr" target="_blank" rel="noopener"
+          class="hover:scale-105 transition-transform flex flex-col items-center gap-2">
+          <img src="assets/logo_0.png" alt="Partenaire officiel" class="h-12 md:h-16 object-contain">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Inspiring Tunisia</span>
+        </a>
+        <a href="http://www.commune-lagoulette.gov.tn/index.php/ar/" target="_blank" rel="noopener"
+          class="hover:scale-105 transition-transform flex flex-col items-center gap-2">
+          <img src="assets/lagoulette.webp" alt="Partenaire La Goulette" class="h-12 md:h-16 object-contain">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">La commune de La Goulette</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="pt-16 px-5 md:px-8"
+    style="background:#040405; border-top:1px solid var(--border-dark); padding-bottom: max(7rem, calc(env(safe-area-inset-bottom) + 6rem));">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="assets/logo.webp" alt="SFFF 2026 Logo"
+              class="h-10 w-auto rounded-lg border border-amber-500/40 shadow-sm">
+            <span class="font-display font-extrabold text-xl">SFFF <span class="text-gold">2026</span></span>
+          </div>
+          <p id="footerDesc" class="text-neutral-400 text-sm max-w-sm leading-relaxed">Le rendez-vous incontournable de
+            l'été tunisien : gastronomie, culture et innovation réunies sur 1,8 km de corniche.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-4" data-i18n="footer.linksTitle">
+            Navigation</p>
+          <ul class="space-y-3 text-sm text-neutral-300">
+            <li><a href="#concept" class="hover:text-gold transition-colors" data-i18n="nav.concept">Concept</a></li>
+            <li><a href="#pavillons" class="hover:text-gold transition-colors" data-i18n="nav.pavillons">Pavillons</a>
+            </li>
+            <li><a href="#programmation" class="hover:text-gold transition-colors"
+                data-i18n="nav.programmation">Programmation</a></li>
+            <li><a href="#tarifs" class="hover:text-gold transition-colors" data-i18n="nav.tarifs">Tarifs</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-4" data-i18n="footer.contactTitle">
+            Contact</p>
+          <ul class="space-y-3 text-sm text-neutral-300">
+            <li class="flex items-start gap-2.5 text-neutral-300"><svg width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-gold flex-shrink-0 mt-0.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg><span style="word-break:break-all;">contact@globalvillagetunisia.com</span></li>
+            <li id="footerLocation" class="flex items-center gap-2.5 text-neutral-300">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <a href="https://maps.google.com/?q=R7RJ%2B9WH+Walkway+Tunis" target="_blank" rel="noopener"
+                class="hover:text-gold transition-colors underline underline-offset-2">Lac 2 Corniche, Tunis</a>
+            </li>
+            <li><a href="https://www.instagram.com/tunisiaglobalvillage/" target="_blank" rel="noopener"
+                class="flex items-center gap-2.5 text-neutral-300 hover:text-gold transition-colors">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                @tunisiaglobalvillage
+              </a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61590895631274" target="_blank" rel="noopener"
+                class="flex items-center gap-2.5 text-neutral-300 hover:text-gold transition-colors">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+                Tunisia Global Village
+              </a></li>
+            <li><a href="https://www.youtube.com/@SFFF-GlobalVillageTunisia" target="_blank" rel="noopener"
+                class="flex items-center gap-2.5 text-neutral-300 hover:text-gold transition-colors">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" />
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                </svg>
+                SFFF Global Village Tunisia
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider-gold mb-8"></div>
+      <p id="footerCopyright" class="text-center text-xs text-neutral-500">© 2026 SFFF — Street & Fast Food Fest. Tous
+        droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ================= TICKET CHECKOUT MODAL ================= -->
+  <div id="ticketModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-5">
+    <div id="ticketModalBackdrop" class="absolute inset-0 modal-backdrop"></div>
+    <div class="relative w-full max-w-lg rounded-2xl p-6 md:p-8 vip-border shadow-2xl overflow-y-auto max-h-[90vh]">
+      <button id="ticketModalClose" class="absolute top-5 end-5 text-neutral-400 hover:text-white"
+        aria-label="Close modal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
+      <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-2" id="modalEyebrow">Commander mon Passeport
+      </p>
+      <h3 id="modalPassName" class="font-display font-extrabold text-2xl mb-1 text-white">Passeport Normal</h3>
+      <p id="modalPassPrice" class="text-3xl font-extrabold text-gold mb-4">25 DT</p>
+
+      <div class="mb-6 p-4 rounded-xl bg-neutral-900 border border-neutral-800">
+        <ul id="modalPassFeatures" class="space-y-2 text-sm text-neutral-300"></ul>
+      </div>
+
+      <!-- Quantity & Total -->
+      <div class="flex items-center justify-between mb-6 p-3.5 rounded-xl bg-black/60 border border-neutral-800">
+        <span class="text-xs font-bold uppercase text-neutral-400" data-i18n="modal.qty">Quantité</span>
+        <div class="flex items-center gap-3">
+          <button id="qtyMinus"
+            class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">-</button>
+          <span id="qtyVal" class="font-bold text-gold text-lg w-6 text-center">1</span>
+          <button id="qtyPlus"
+            class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">+</button>
+        </div>
+        <div class="text-end">
+          <span class="block text-[10px] text-neutral-500 uppercase" data-i18n="modal.total">Total :</span>
+          <span id="modalTotalPrice" class="font-extrabold text-gold text-lg">25 DT</span>
+        </div>
+      </div>
+
+      <!-- Quick Form -->
+      <form id="modalCheckoutForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.fullName">Nom &
+            Prénom</label>
+          <input type="text" id="tktName" required placeholder="Votre nom complet"
+            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.email">E-mail</label>
+          <input type="email" id="tktEmail" required placeholder="votre@email.com"
+            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.phone">Téléphone</label>
+          <input type="tel" id="tktPhone" required placeholder="+216 -- --- ---"
+            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+        </div>
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-full font-bold text-sm tracking-wide mt-2"
+          id="modalConfirm">Valider la commande</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= SUCCESS CONFIRMATION MODAL ================= -->
+  <div id="successModal" class="hidden fixed inset-0 z-[70] items-center justify-center p-5">
+    <div id="successModalBackdrop" class="absolute inset-0 modal-backdrop"></div>
+    <div class="relative w-full max-w-md rounded-2xl p-7 text-center vip-border bg-neutral-900 shadow-2xl">
+      <div
+        class="w-16 h-16 rounded-full bg-gold/20 border border-gold flex items-center justify-center mx-auto mb-4 text-gold text-2xl">
+        ✓
+      </div>
+      <h3 id="successTitle" class="font-display font-extrabold text-2xl mb-2 text-white">Demande Enregistrée !</h3>
+      <p id="successBody" class="text-sm text-neutral-300 mb-6 leading-relaxed">
+        Votre réservation SFFF 2026 a été enregistrée avec succès. Un e-mail de confirmation vous a été envoyé.
+      </p>
+      <div class="p-3 rounded-xl bg-black/60 border border-neutral-800 text-xs text-neutral-400 mb-6">
+        Référence : <span id="successRef" class="font-mono font-bold text-gold">SFFF-2026-98412</span>
+      </div>
+      <button id="successClose" class="btn-primary px-8 py-3 rounded-full font-bold text-sm w-full">Fermer</button>
+    </div>
+  </div>
+
+  <script>
+    /* ======================= TRANSLATIONS ======================= */
+    const translations = {
+      fr: {
+        nav: { brandSub: "Tunis Global Village", home: "Accueil", concept: "Concept", pavillons: "Pavillons", lab: "Future Food Lab", programmation: "Programmation", zones: "8 Zones", tarifs: "Tarifs", espacePro: "Espace Pro", espaceAmbassade: "Ambassades", reserver: "Réserver mon Passeport", language: "Langue", seeMore: "Voir plus" },
+        hero: {
+          badge: "29 AOÛT – 12 SEPTEMBRE 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de corniche immersive.", ctaPrimary: "Obtenir un Passeport", ctaSecondary: "Découvrir le Concept", countdownLabel: "Le festival ouvre dans", days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec",
+          metrics: [{ v: "GRATUITE", l: "Entrée Site" }, { v: "+100 000", l: "Visiteurs Attendus" }, { v: "42", l: "Nations & Pavillons" }, { v: "1.8 km", l: "de Corniche Aménagée" }, { v: "15", l: "Nuits de Rythme" }]
+        },
+        concept: { eyebrow: "Le Concept", title: "L'Éveil des 5 Sens aux 5 Continents", intro: "Sur 1,8 km de corniche transformée en village-monde, SFFF 2026 réinvente la promenade tunisoise en un parcours immersif et 100% cashless grâce à l'écosystème RFID. Chaque sens est sollicité, chaque pas raconte un continent." },
+        senses: [
+          { icon: "utensils", title: "Le Goût", sub: "Odyssée Culinaire", desc: "310+ exposants et 42 pavillons nationaux pour un tour du monde gastronomique, de la street food aux grandes tables." },
+          { icon: "music", title: "L'Ouïe", sub: "15 Nuits de Rythmes", desc: "Showcases, performances folkloriques et concerts live rythment chaque soirée jusqu'au bout de la nuit." },
+          { icon: "eye", title: "La Vue", sub: "Visuels & Lumières", desc: "Parades des nations et laser mapping spectaculaire projeté sur les eaux du lac." },
+          { icon: "wind", title: "L'Odorat", sub: "World Food Avenue", desc: "Les effluves des cuisines du monde et des épices rares embaument toute la corniche." },
+          { icon: "hand", title: "Le Toucher", sub: "Fluidité RFID", desc: "Artisanat à découvrir et bracelets cashless RFID pour une expérience fluide, sans friction." }
+        ],
+        pavillons: { eyebrow: "Espaces", title: "Les Pavillons Nationaux" },
+        pavillonsList: [
+          { title: "Pavillon Gastronomique", desc: "Espace Terroir, épices, produits AOC & IGP, et coffrets collector à emporter.", icon: "store" },
+          { title: "Espace Commercial", desc: "Boutique souvenirs, artisanat signature, objets collector et le Passeport Saveurs à collectionner.", icon: "shopping-bag" },
+          { title: "Diplomatie Culinaire", desc: "Soirées d'Honneur Nationales sous patronage des ambassades, Médaille de l'Honneur et démonstrations culinaires officielles.", icon: "landmark" }
+        ],
+        countries: { eyebrow: "Aperçu Exclusif", title: "Pavillons & Nations à l'Honneur", subtitle: "Découvrez une sélection des 42 nations représentées au SFFF 2026" },
+        countriesList: [
+          { flag: "🇵🇸", name: "Palestine", tag: "Proche-Orient", img: "assets/countrys/ps.webp", desc: "Gastronomie ancestrale, Knafeh Napoulsiya, Falafels dorés & Huile d'olive d'exception." },
+          { flag: "🇲🇦", name: "Maroc", tag: "Afrique du Nord", img: "assets/countrys/mar.webp", desc: "Couscous Royal, Tajines parfumés aux épices, Pastilla & Thé à la menthe traditionnel." },
+          { flag: "🇮🇹", name: "Italie", tag: "Europe", img: "assets/countrys/it.webp", desc: "Authentique Pizza Napolitaine au feu de bois, Pâtes fraîches, Gelato & Espresso." },
+          { flag: "🇫🇷", name: "France", tag: "Europe", img: "assets/countrys/fr.webp", desc: "Haute street food, Crêpes bretonnes, Pâtisseries fines & Fromages affinés." },
+          { flag: "🇪🇸", name: "Espagne", tag: "Europe", img: "assets/countrys/sp.webp", desc: "Paella géante au safran, Tapas gourmandes, Jamón Ibérico & Churros au chocolat." },
+          { flag: "🇲🇽", name: "Mexique", tag: "Amérique Latine", img: "assets/countrys/mex.webp", desc: "Tacos Al Pastor faits maison, Guacamole frais, Quesadillas & Nachos épicés." },
+          { flag: "🇨🇦", name: "Canada", tag: "Amérique du Nord", img: "assets/countrys/can.webp", desc: "Poutine québécoise artisanale au fromage en grain, Sirop d'érable & Tourtière." },
+          { flag: "🇨🇭", name: "Suisse", tag: "Europe", img: "assets/countrys/sui.webp", desc: "Fondue au fromage des Alpes, Raclette fondante & Maîtres Chocolatiers d'exception." }
+        ],
+        lab: { eyebrow: "Innovation", title: "Future Food Lab" },
+        labList: [
+          { title: "Expérience Tech", desc: "Gastronomie moléculaire, robots serveurs, impression 3D alimentaire et mapping en réalité augmentée.", icon: "cpu" },
+          { title: "Future Food Lab", desc: "Zone de pitch dédiée aux startups FoodTech les plus prometteuses de la région.", icon: "rocket" },
+          { title: "Cooking Shows Célébrités", desc: "Battles culinaires en direct, diffusés sur le CIA Network et ses +2M d'abonnés.", icon: "tv" }
+        ],
+        gami: { eyebrow: "Gamification", title: "Le Passeport Collector & SFFF Awards", desc: "Collectionnez les 42 tampons du Passeport Saveurs à travers les pavillons nationaux et tentez de remporter le Grand Prix SFFF 2026, en édition physique ou digitale.", stampBtn: "Tamponner !" },
+        passport: { name: "Le Passeport Collector", desc: "42 tampons à collectionner pour le Grand Prix" },
+        awards: [
+          { title: "Médaille de l'Honneur Diplomatique", icon: "medal" },
+          { title: "Chef de l'Édition SFFF 2026", icon: "chef-hat" },
+          { title: "Trophée de l'Innovation Culinaire", icon: "trophy" },
+          { title: "Prix du Public — Coup de Cœur", icon: "heart" }
+        ],
+        nights: { eyebrow: "Programmation", title: "15 Nuits · 15 Voyages", venue: "Venue", dates: "29 Août – 12 Sep 2026", hours: "17h00 – 02h00", location: "Lac II, Tunis", mapUrl: "https://maps.google.com/?q=R6C4+F2M,Tunis", tagline: "Chaque soir une nouvelle destination — showcases, spectacles et animations uniques.", seeMore: "Voir plus" },
+        nightsList: [
+          { name: "Méditerranée Antique", sub: "Grèce · Italie" },
+          { name: "Ponts d'Orient & Anatolie", sub: "Turquie · Égypte" },
+          { name: "Caribbean & Fiesta Vibes", sub: "Jamaïque · Amérique Latine" },
+          { name: "Étincelles Slaves & Balkans", sub: "Russie · Balkans" },
+          { name: "Route de la Soie", sub: "Pakistan · Inde" },
+          { name: "Orient Majestueux", sub: "Golfe Persique · Irak" },
+          { name: "Trésors du Levant", sub: "Syrie · Liban" },
+          { name: "Rythmes Afro-Urbains", sub: "Afrique de l'Ouest · Centrale" },
+          { name: "Empire Céleste & Sérénité", sub: "Chine · Japon" },
+          { name: "Vague Asiatique & K-Pop", sub: "Corée du Sud · Thaïlande" },
+          { name: "Passion Europe de l'Ouest", sub: "France · Espagne" },
+          { name: "Americas Urban Vibes", sub: "États-Unis · Brésil" },
+          { name: "Maghreb Fusion", sub: "Maroc · Algérie" },
+          { name: "Patrimoine & Tunisie Moderne", sub: "Héritage Tunisien" },
+          { name: "World All-Stars & Gala Clôture", sub: "Toutes les Nations" }
+        ],
+        map: { eyebrow: "La Carte", title: "Carte Interactive du Festival", intro: "Explorez les 1,8 km de corniche, découvrez les pavillons et planifiez votre parcours." },
+        zones: { eyebrow: "Le Parcours", title: "Les 8 Zones de la Corniche (1,8 km)" },
+        zonesList: [
+          { title: "World Food Avenue", desc: "42 pavillons, 280 stands gourmands.", km: "0.0 - 0.3 km" },
+          { title: "Art & Music Stage", desc: "Scène géante, concerts et laser mapping.", km: "0.3 - 0.5 km" },
+          { title: "5 Zones Ambrées", desc: "Lounges VIP au bord de l'eau.", km: "0.5 - 0.8 km" },
+          { title: "B2B Hub", desc: "1000 m² dédiés au networking et aux investisseurs.", km: "0.8 - 1.0 km" },
+          { title: "Future Food Lab", desc: "Robots serveurs et impression alimentaire 3D.", km: "1.0 - 1.2 km" },
+          { title: "Kids Zone", desc: "Ateliers mini-cuisine et spectacles de marionnettes.", km: "1.2 - 1.4 km" },
+          { title: "Kiosques Divers", desc: "Artisanat, mode, iQOS et parfums.", km: "1.4 - 1.6 km" },
+          { title: "Services & Cashless", desc: "Recharge wallet, navettes et poste médical.", km: "1.6 - 1.8 km" }
+        ],
+        pro: {
+          eyebrow: "Professionnels", title: "Espace Professionnels & Partenaires", intro: "Rejoignez SFFF 2026 en tant que partenaire. Sélectionnez votre profil pour accéder au formulaire adapté.",
+          tabs: ["Investisseur", "Sponsor", "Exposant / Kiosque", "Ambassade", "Média & Presse", "Visiteur"],
+          form: { name: "Nom complet", company: "Organisation / Société", email: "Adresse E-mail", phone: "Numéro de Téléphone", message: "Votre projet ou message", submit: "Envoyer ma demande" }
+        },
+        tickets: { eyebrow: "Billetterie", title: "Passeports & Tarifs" },
+        ticketsList: [
+          { name: "Passeport Normal", price: "25 DT", numericPrice: 25, tag: "", features: ["Accès standard au site", "Carnet de tampons", "Accès à toutes les zones publiques"] },
+          { name: "Passeport Pro", price: "120 DT", numericPrice: 120, tag: "Populaire", features: ["Coupe-file prioritaire", "Accès B2B Hub", "Accès Zones Ambrées"] },
+          { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Accès prioritaire illimité", "Table réservée", "Cocktail de bienvenue", "Parking VIP"] }
+        ],
+        ticketCta: "Choisir ce Passeport",
+        stickyCta: "Réserver mon Passeport",
+        modal: { eyebrow: "Commander mon Passeport", qty: "Quantité", fullName: "Nom & Prénom", email: "E-mail", phone: "Téléphone", confirm: "Valider la commande", total: "Total :" },
+        sponsors: { title: "Partenaires Officiels" },
+        footer: { desc: "Le rendez-vous incontournable de l'été tunisien : gastronomie, culture et innovation réunies sur 1,8 km de corniche.", linksTitle: "Navigation", contactTitle: "Contact", location: "Tunis Lac II, Tunis, Tunisie", copyright: "© 2026 SFFF — Street & Fast Food Fest. Tous droits réservés." }
+      },
+      en: {
+        nav: { brandSub: "Tunis Global Village", home: "Home", concept: "Concept", pavillons: "Pavilions", lab: "Future Food Lab", programmation: "Program", zones: "8 Zones", tarifs: "Pricing", espacePro: "Pro Space", espaceAmbassade: "Embassies", reserver: "Get My Passport", language: "Language", seeMore: "See more" },
+        hero: {
+          badge: "AUGUST 29–SEPTEMBER 12, 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "A journey for the 5 senses across 5 continents, visa-free. The flagship event of the Tunisian summer along 1.8 km of immersive waterfront.", ctaPrimary: "Get a Passport", ctaSecondary: "Discover the Concept", countdownLabel: "The festival opens in", days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec",
+          metrics: [{ v: "FREE", l: "Site Entry" }, { v: "+100,000", l: "Visitors Expected" }, { v: "42", l: "Nations & Pavilions" }, { v: "1.8 km", l: "of Curated Waterfront" }, { v: "15", l: "Nights of Rhythm" }]
+        },
+        concept: { eyebrow: "The Concept", title: "The Awakening of the 5 Senses Across 5 Continents", intro: "Along 1.8 km of waterfront transformed into a world village, SFFF 2026 reinvents the Tunis promenade into an immersive, 100% cashless journey powered by an RFID ecosystem. Every sense is engaged, every step tells a continent's story." },
+        senses: [
+          { icon: "utensils", title: "Taste", sub: "Culinary Odyssey", desc: "310+ exhibitors and 42 national pavilions for a gastronomic world tour, from street food to fine dining." },
+          { icon: "music", title: "Hearing", sub: "15 Nights of Rhythm", desc: "Showcases, folk performances and live concerts fill every evening until late." },
+          { icon: "eye", title: "Sight", sub: "Visuals & Lights", desc: "Parades of nations and spectacular laser mapping projected over the lake's waters." },
+          { icon: "wind", title: "Smell", sub: "World Food Avenue", desc: "The aromas of world cuisines and rare spices fill the entire waterfront." },
+          { icon: "hand", title: "Touch", sub: "Cashless RFID Flow", desc: "Craftsmanship to discover and cashless RFID wristbands for a smooth, frictionless experience." }
+        ],
+        pavillons: { eyebrow: "Spaces", title: "The National Pavilions" },
+        pavillonsList: [
+          { title: "Gastronomic Pavilion", desc: "Terroir space, spices, AOC & PGI products, and collector gift boxes to take home.", icon: "store" },
+          { title: "Retail Space", desc: "Souvenir shop, signature crafts, collector items and the collectible Flavours Passport.", icon: "shopping-bag" },
+          { title: "Culinary Diplomacy", desc: "National Honor Evenings under embassy patronage, the Medal of Honor and official culinary demonstrations.", icon: "landmark" }
+        ],
+        countries: { eyebrow: "Exclusive Showcase", title: "Featured Pavilions & Nations", subtitle: "Explore a selection of the 42 nations represented at SFFF 2026" },
+        countriesList: [
+          { flag: "🇵🇸", name: "Palestine", tag: "Middle East", img: "assets/countrys/ps.webp", desc: "Ancestral gastronomy, Nabulsi Knafeh, golden Falafels & premium olive oil." },
+          { flag: "🇲🇦", name: "Morocco", tag: "North Africa", img: "assets/countrys/mar.webp", desc: "Royal Couscous, spiced Tagines, Pastilla & traditional mint tea." },
+          { flag: "🇮🇹", name: "Italy", tag: "Europe", img: "assets/countrys/it.webp", desc: "Authentic wood-fired Neapolitan Pizza, fresh Pasta, Gelato & Espresso." },
+          { flag: "🇫🇷", name: "France", tag: "Europe", img: "assets/countrys/fr.webp", desc: "Gourmet street food, Breton Crêpes, fine pastries & aged cheeses." },
+          { flag: "🇪🇸", name: "Spain", tag: "Europe", img: "assets/countrys/sp.webp", desc: "Giant Saffron Paella, tapas selection, Ibérico Jamón & chocolate Churros." },
+          { flag: "🇲🇽", name: "Mexico", tag: "Latin America", img: "assets/countrys/mex.webp", desc: "Homemade Tacos Al Pastor, fresh Guacamole, Quesadillas & spicy Nachos." },
+          { flag: "🇨🇦", name: "Canada", tag: "North America", img: "assets/countrys/can.webp", desc: "Artisanal Quebec Poutine with cheese curds, Maple syrup & Tourtière." },
+          { flag: "🇨🇭", name: "Switzerland", tag: "Europe", img: "assets/countrys/sui.webp", desc: "Alpine cheese Fondue, melted Raclette & master Swiss chocolates." }
+        ],
+        lab: { eyebrow: "Innovation", title: "Future Food Lab" },
+        labList: [
+          { title: "Tech Experience", desc: "Molecular gastronomy, serving robots, 3D food printing and augmented reality mapping.", icon: "cpu" },
+          { title: "Future Food Lab", desc: "A dedicated pitch zone for the region's most promising FoodTech startups.", icon: "rocket" },
+          { title: "Celebrity Cooking Shows", desc: "Live culinary battles, broadcast on the CIA Network to its +2M subscribers.", icon: "tv" }
+        ],
+        gami: { eyebrow: "Gamification", title: "The Collector Passport & SFFF Awards", desc: "Collect all 42 stamps of the Flavours Passport across national pavilions and try to win the SFFF 2026 Grand Prix.", stampBtn: "Stamp Passport!" },
+        passport: { name: "The Collector Passport", desc: "42 stamps to collect for the Grand Prix" },
+        awards: [
+          { title: "Diplomatic Medal of Honor", icon: "medal" },
+          { title: "Chef of the SFFF 2026 Edition", icon: "chef-hat" },
+          { title: "Culinary Innovation Trophy", icon: "trophy" },
+          { title: "Audience Award — People's Choice", icon: "heart" }
+        ],
+        nights: { eyebrow: "Program", title: "15 Nights · 15 Journeys", venue: "Venue", dates: "Aug 29 – Sep 12, 2026", hours: "5:00 PM – 2:00 AM", location: "Lac II, Tunis", mapUrl: "https://maps.google.com/?q=R6C4+F2M,Tunis", tagline: "Every evening a new destination — showcases, shows and unique animations.", seeMore: "See more" },
+        nightsList: [
+          { name: "Ancient Mediterranean", sub: "Greece · Italy" },
+          { name: "Gateways of the Orient", sub: "Turkey · Egypt" },
+          { name: "Caribbean & Fiesta Vibes", sub: "Jamaica · Latin America" },
+          { name: "Slavic & Balkan Sparks", sub: "Russia · Balkans" },
+          { name: "Silk Road", sub: "Pakistan · India" },
+          { name: "Majestic Orient", sub: "Gulf · Iraq" },
+          { name: "Treasures of the Levant", sub: "Syria · Lebanon" },
+          { name: "Afro-Urban Rhythms", sub: "West & Central Africa" },
+          { name: "Celestial Empire & Serenity", sub: "China · Japan" },
+          { name: "Asian Wave & K-Pop", sub: "South Korea · Thailand" },
+          { name: "Western Europe Passion", sub: "France · Spain" },
+          { name: "Americas Urban Vibes", sub: "USA · Brazil" },
+          { name: "Maghreb Fusion", sub: "Morocco · Algeria" },
+          { name: "Heritage & Modern Tunisia", sub: "Tunisian Heritage" },
+          { name: "World All-Stars & Closing Gala", sub: "All Nations" }
+        ],
+        map: { eyebrow: "The Map", title: "Interactive Festival Map", intro: "Explore the 1.8 km waterfront, discover pavilions and plan your route." },
+        zones: { eyebrow: "The Route", title: "The 8 Zones of the Waterfront (1.8 km)" },
+        zonesList: [
+          { title: "World Food Avenue", desc: "42 pavilions, 280 gourmet stands.", km: "0.0 - 0.3 km" },
+          { title: "Art & Music Stage", desc: "Giant stage, concerts and laser mapping.", km: "0.3 - 0.5 km" },
+          { title: "5 Amber Zones", desc: "VIP lounges by the water.", km: "0.5 - 0.8 km" },
+          { title: "B2B Hub", desc: "1,000 sqm dedicated to networking and investors.", km: "0.8 - 1.0 km" },
+          { title: "Future Food Lab", desc: "Serving robots and 3D food printing.", km: "1.0 - 1.2 km" },
+          { title: "Kids Zone", desc: "Mini-cooking workshops and puppet shows.", km: "1.2 - 1.4 km" },
+          { title: "Various Kiosks", desc: "Crafts, fashion, iQOS and perfumes.", km: "1.4 - 1.6 km" },
+          { title: "Services & Cashless", desc: "Wallet top-up, shuttles and medical station.", km: "1.6 - 1.8 km" }
+        ],
+        pro: {
+          eyebrow: "Professionals", title: "Professionals & Partners Space", intro: "Join SFFF 2026 as a partner. Select your profile to access the appropriate form.",
+          tabs: ["Investor", "Sponsor", "Exhibitor / Kiosk", "Embassy", "Media & Press", "Visitor"],
+          form: { name: "Full name", company: "Organization / Company", email: "Email address", phone: "Phone number", message: "Your project or message", submit: "Send request" }
+        },
+        tickets: { eyebrow: "Ticketing", title: "Passports & Pricing" },
+        ticketsList: [
+          { name: "Standard Passport", price: "25 DT", numericPrice: 25, tag: "", features: ["Standard site access", "Stamp booklet", "Access to all public zones"] },
+          { name: "Family Passport", price: "55 DT", numericPrice: 55, tag: "Popular", features: ["Valid for 4 people", "Kids Zone access", "Family stamp booklet"] },
+          { name: "Pro Passport", price: "120 DT", numericPrice: 120, tag: "", features: ["Priority fast lane", "B2B Hub access", "Amber Zones access"] },
+          { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Unlimited priority access", "Reserved table", "Welcome cocktail", "VIP parking"] }
+        ],
+        ticketCta: "Choose this Passport",
+        stickyCta: "Get My Passport",
+        modal: { eyebrow: "Order Passport", qty: "Quantity", fullName: "Full Name", email: "Email", phone: "Phone", confirm: "Confirm Order", total: "Total:" },
+        sponsors: { title: "Official Partners" },
+        footer: { desc: "The unmissable event of the Tunisian summer: gastronomy, culture and innovation together along 1.8 km of waterfront.", linksTitle: "Navigation", contactTitle: "Contact", location: "Tunis Lac II, Tunis, Tunisia", copyright: "© 2026 SFFF — Street & Fast Food Fest. All rights reserved." }
+      },
+      ar: {
+        nav: { brandSub: "القرية العالمية تونس", home: "الرئيسية", concept: "المفهوم", pavillons: "الأجنحة", lab: "مختبر الطعام المستقبلي", programmation: "البرنامج", zones: "المناطق 8", tarifs: "الأسعار", espacePro: "فضاء المحترفين", espaceAmbassade: "السفارات", reserver: "احجز جواز سفري", language: "اللغة", seeMore: "عرض المزيد" },
+        hero: {
+          badge: "29 أوت – 12 سبتمبر 2026 • تونس ليك بيرلز", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
+          metrics: [{ v: "مجاني", l: "دخول الموقع" }, { v: "+100,000", l: "زائر متوقع" }, { v: "42", l: "دولة وجناح" }, { v: "1.8 كم", l: "من الكورنيش المهيأ" }, { v: "15", l: "ليلة إيقاع" }]
+        },
+        concept: { eyebrow: "المفهوم", title: "إيقاظ الحواس الخمس عبر القارات الخمس", intro: "على امتداد 1.8 كم من الكورنيش المحوّل إلى قرية عالمية، يعيد SFFF 2026 ابتكار كورنيش تونس كمسار غامر وخالٍ من النقود بفضل منظومة الشرائح الذكية RFID." },
+        senses: [
+          { icon: "utensils", title: "الذوق", sub: "أوديسا الطهي", desc: "أكثر من 310 عارض و42 جناحاً وطنياً في جولة عالمية للمذاقات، من أكل الشارع إلى المائدة الفاخرة." },
+          { icon: "music", title: "السمع", sub: "15 ليلة إيقاع", desc: "عروض وفقرات فلكلورية وحفلات حية تُحيي كل مساء حتى ساعات متأخرة من الليل." },
+          { icon: "eye", title: "البصر", sub: "مرئيات وأضواء", desc: "عروض استعراضية للدول وخرائط ليزرية مبهرة تُسقط على مياه البحيرة." },
+          { icon: "wind", title: "الشم", sub: "جادة الأطعمة العالمية", desc: "روائح المطابخ العالمية والتوابل النادرة تعطّر كامل الكورنيش." },
+          { icon: "hand", title: "اللمس", sub: "سلاسة الدفع بالشريحة", desc: "صناعات تقليدية للاكتشاف وأساور دفع إلكترونية RFID لتجربة سلسة بلا احتكاك." }
+        ],
+        pavillons: { eyebrow: "الفضاءات", title: "الأجنحة الوطنية" },
+        pavillonsList: [
+          { title: "الجناح الغذائي", desc: "فضاء المنتجات المحلية والتوابل ومنتجات ذات الأصل المحمي، وعلب هدايا تذكارية.", icon: "store" },
+          { title: "الفضاء التجاري", desc: "متجر الهدايا التذكارية، الحرف اليدوية المميزة، القطع التذكارية، وجواز النكهات القابل للجمع.", icon: "shopping-bag" },
+          { title: "الدبلوماسية الطهوية", desc: "أمسيات تكريم وطنية تحت رعاية السفارات، وسام الشرف وعروض طهي رسمية.", icon: "landmark" }
+        ],
+        countries: { eyebrow: "عرض حصري", title: "أجنحة ودول في الصدارة", subtitle: "استكشف عينة من 42 دولة مشاركة في مهرجان SFFF 2026" },
+        countriesList: [
+          { flag: "🇵🇸", name: "فلسطين", tag: "الشرق الأوسط", img: "assets/countrys/ps.webp", desc: "المطبخ الفلسطيني الأصيل، الكنافة النابلسية، الفلافل الذهبية وزيت الزيتون الممتاز." },
+          { flag: "🇲🇦", name: "المغرب", tag: "شمال إفريقيا", img: "assets/countrys/mar.webp", desc: "الكسكس الملكي، الطواجن المغربية المعطرة، البسطيلة والشاي بالنعناع الأصيل." },
+          { flag: "🇮🇹", name: "إيطاليا", tag: "أوروبا", img: "assets/countrys/it.webp", desc: "البيتزا النابولية على الحطب، الباستا الطازجة، الجيلاتو والإسبريسو الإيطالي." },
+          { flag: "🇫🇷", name: "فرنسا", tag: "أوروبا", img: "assets/countrys/fr.webp", desc: "أطعمة الشارع الفاخرة، الكريب والغاليت الفرنسي، المعجنات والأجبان المعتقة." },
+          { flag: "🇪🇸", name: "إسبانيا", tag: "أوروبا", img: "assets/countrys/sp.webp", desc: "الباييلا العملاقة بالزعفران، مقبلات التاباس المتنوعة والشوروس بالشوكولاتة." },
+          { flag: "🇲🇽", name: "المكسيك", tag: "أمريكا اللاتينية", img: "assets/countrys/mex.webp", desc: "تاكوس الباستور التقليدي، الغواكامولي الطازج، الكيسادياس والناشوس الحارة." },
+          { flag: "🇨🇦", name: "كندا", tag: "أمريكا الشمالية", img: "assets/countrys/can.webp", desc: "البوتين الكندي الأصيل، شراب القيقب (المابل) والحلويات الكندية الشهية." },
+          { flag: "🇨🇭", name: "سويسرا", tag: "أوروبا", img: "assets/countrys/sui.webp", desc: "فوندو الأجبان السويسرية، الركليت الذائب والشوكولاتة السويسرية الفاخرة." }
+        ],
+        lab: { eyebrow: "الابتكار", title: "مختبر الطعام المستقبلي" },
+        labList: [
+          { title: "تجربة تقنية", desc: "فن الطهي الجزيئي، روبوتات النادل، الطباعة ثلاثية الأبعاد للأطعمة وخرائط الواقع المعزز.", icon: "cpu" },
+          { title: "مختبر الطعام المستقبلي", desc: "فضاء مخصص لعرض أفكار الشركات الناشئة الواعدة في تقنيات الغذاء بالمنطقة.", icon: "rocket" },
+          { title: "عروض طهي مع المشاهير", desc: "مبارزات طهي مباشرة تُبث على شبكة CIA Network وأكثر من مليوني مشترك.", icon: "tv" }
+        ],
+        gami: { eyebrow: "التحفيز باللعب", title: "جواز الجمع و جوائز SFFF", desc: "اجمع 42 ختماً من جواز النكهات عبر الأجنحة الوطنية وحاول الفوز بالجائزة الكبرى لـ SFFF 2026.", stampBtn: "ختم الجواز !" },
+        passport: { name: "جواز الجمع", desc: "42 ختماً للجمع من أجل الجائزة الكبرى" },
+        awards: [
+          { title: "وسام الشرف الدبلوماسي", icon: "medal" },
+          { title: "شيف نسخة SFFF 2026", icon: "chef-hat" },
+          { title: "جائزة الابتكار الطهوي", icon: "trophy" },
+          { title: "جائزة الجمهور — الأقرب للقلوب", icon: "heart" }
+        ],
+        nights: { eyebrow: "البرنامج", title: "15 ليلة · 15 رحلة", venue: "المكان", dates: "29 أوت – 12 سبت 2026", hours: "17:00 – 02:00", location: "ليك بيرلز، تونس", mapUrl: "https://maps.google.com/?q=R6C4+F2M,Tunis", tagline: "كل مساء وجهة جديدة — عروض وفعاليات ورسوم متحركة فريدة.", seeMore: "عرض المزيد" },
+        nightsList: [
+          { name: "البحر المتوسط العريق", sub: "اليونان · إيطاليا" },
+          { name: "بوابات الشرق والأناضول", sub: "تركيا · مصر" },
+          { name: "أجواء الكاريبي والفييستا", sub: "جامايكا · أمريكا اللاتينية" },
+          { name: "شرارات السلاف والبلقان", sub: "روسيا · البلقان" },
+          { name: "طريق الحرير", sub: "باكستان · الهند" },
+          { name: "الشرق المهيب", sub: "الخليج · العراق" },
+          { name: "كنوز المشرق", sub: "سوريا · لبنان" },
+          { name: "إيقاعات أفريقيا الحضرية", sub: "غرب ووسط أفريقيا" },
+          { name: "الإمبراطورية السماوية والصفاء", sub: "الصين · اليابان" },
+          { name: "الموجة الآسيوية والك-بوب", sub: "كوريا الجنوبية · تايلاند" },
+          { name: "شغف أوروبا الغربية", sub: "فرنسا · إسبانيا" },
+          { name: "أجواء الأمريكتين الحضرية", sub: "الولايات المتحدة · البرازيل" },
+          { name: "اندماج المغرب العربي", sub: "المغرب · الجزائر" },
+          { name: "التراث وتونس الحديثة", sub: "التراث التونسي" },
+          { name: "نجوم العالم وحفل الختام", sub: "كل الدول" }
+        ],
+        map: { eyebrow: "الخريطة", title: "خريطة المهرجان التفاعلية", intro: "اكتشف مسار 1.8 كم، وتعرف على الأجنحة وخطط لرحلتك." },
+        zones: { eyebrow: "المسار", title: "المناطق الثمانية للمسار (1.8 كم)" },
+        zonesList: [
+          { title: "جادة الأطعمة العالمية", desc: "42 جناحاً و280 كشكاً للمذاقات.", km: "0.0 - 0.3 كم" },
+          { title: "مسرح الفن والموسيقى", desc: "مسرح عملاق، حفلات وخرائط ليزرية.", km: "0.3 - 0.5 كم" },
+          { title: "5 مناطق كهرمانية", desc: "صالات كبار الزوار على ضفة الماء.", km: "0.5 - 0.8 كم" },
+          { title: "مركز الأعمال B2B", desc: "1000 م² مخصصة للتواصل والمستثمرين.", km: "0.8 - 1.0 كم" },
+          { title: "مختبر الطعام المستقبلي", desc: "روبوتات النادل والطباعة الغذائية ثلاثية الأبعاد.", km: "1.0 - 1.2 كم" },
+          { title: "منطقة الأطفال", desc: "ورشات طهي مصغرة وعروض دمى.", km: "1.2 - 1.4 كم" },
+          { title: "أكشاك متنوعة", desc: "حرف يدوية، أزياء، iQOS وعطور.", km: "1.4 - 1.6 كم" },
+          { title: "الخدمات والدفع الإلكتروني", desc: "شحن المحفظة، حافلات نقل ونقطة طبية.", km: "1.6 - 1.8 كم" }
+        ],
+        pro: {
+          eyebrow: "المحترفون", title: "فضاء المحترفين والشركاء", intro: "انضم إلى SFFF 2026 كشريك. اختر ملفك الشخصي للوصول إلى النموذج المناسب.",
+          tabs: ["مستثمر", "راعٍ", "عارض / كشك", "سفارة", "إعلام وصحافة", "زائر"],
+          form: { name: "الاسم الكامل", company: "المؤسسة / الشركة", email: "البريد الإلكتروني", phone: "رقم الهاتف", message: "مشروعك أو رسالتك", submit: "إرسال طلبي" }
+        },
+        tickets: { eyebrow: "التذاكر", title: "جوازات السفر والأسعار" },
+        ticketsList: [
+          { name: "جواز عادي", price: "25 د.ت", numericPrice: 25, tag: "", features: ["دخول عادي للموقع", "دفتر أختام", "الوصول لكل المناطق العامة"] },
+          { name: "جواز عائلي", price: "55 د.ت", numericPrice: 55, tag: "الأكثر طلباً", features: ["صالح لـ 4 أشخاص", "دخول منطقة الأطفال", "دفتر أختام عائلي"] },
+          { name: "جواز احترافي", price: "120 د.ت", numericPrice: 120, tag: "", features: ["ممر أولوية سريع", "دخول مركز B2B", "دخول المناطق الكهرمانية"] },
+          { name: "VIP Gold", price: "350 د.ت", numericPrice: 350, tag: "VIP", features: ["أولوية دخول غير محدودة", "طاولة محجوزة", "كوكتيل ترحيبي", "موقف سيارات VIP"] }
+        ],
+        ticketCta: "اختر هذا الجواز",
+        stickyCta: "احجز جواز سفري",
+        modal: { eyebrow: "طلب جواز سفر", qty: "الكمية", fullName: "الاسم الكامل", email: "البريد الإلكتروني", phone: "الهاتف", confirm: "تأكيد الطلب", total: "المجموع :" },
+        sponsors: { title: "الشركاء الرسميون" },
+        footer: { desc: "الموعد الذي لا يُفوَّت في صيف تونس: فن الطهي والثقافة والابتكار مجتمعة على امتداد 1.8 كم من الكورنيش.", linksTitle: "روابط", contactTitle: "اتصل بنا", location: "تونس ليك بيرلز، تونس، تونس", copyright: "© 2026 SFFF — مهرجان الأكل السريع والشارعي. جميع الحقوق محفوظة." }
+      }
+    };
+
+    let currentLang = localStorage.getItem('sfff_lang') || 'fr';
+
+    /* Lucide Icon Set */
+    const ICONS = {
+      utensils: '<path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2M7 2v20M17 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z"/>',
+      music: '<path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>',
+      eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+      wind: '<path d="M9.6 4.6A2 2 0 1 1 11 8H2m10.6 11.4A2 2 0 1 0 14 16H2m15.6-6.4A2 2 0 1 1 20 13H2"/>',
+      hand: '<path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-6.3-3.14l-3-4.2a1.7 1.7 0 0 1 2.63-2.13L7 15"/>',
+      store: '<path d="M3 9l1-6h16l1 6M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0M3 9v10a1 1 0 0 0 1 1h6v-6h4v6h6a1 1 0 0 0 1-1V9"/>',
+      'shopping-bag': '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4M3 6h18M16 10a4 4 0 0 1-8 0"/>',
+      landmark: '<path d="M3 22h18M6 18v-8M10 18v-8M14 18v-8M18 18v-8M12 2 3 7h18L12 2z"/>',
+      cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
+      rocket: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2zM9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
+      tv: '<rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2 12 7 7 2"/>',
+      medal: '<circle cx="12" cy="15" r="6"/><path d="M12 9v0M8.5 3l2.5 6h2L15.5 3M9 21l-2 -8M15 21l2 -8"/>',
+      'chef-hat': '<path d="M6 13.87A4 4 0 0 1 7 6a5.6 5.6 0 0 1 4-1 5.6 5.6 0 0 1 4 1 4 4 0 0 1 1 7.87V21H6v-7.13z"/><path d="M6 17h12"/>',
+      trophy: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 5H4a2 2 0 0 0 0 4h1M17 5h3a2 2 0 0 1 0 4h-1"/>',
+      heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>',
+      check: '<path d="M20 6 9 17l-5-5"/>'
+    };
+    function icon(name, cls) { return `<svg class="${cls || ''}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`; }
+
+    /* ======================= RENDER FUNCTIONS ======================= */
+    function renderMetrics(t) {
+      document.getElementById('metricsGrid').innerHTML = t.hero.metrics.map(m => `
+    <div class="panel rounded-2xl py-6 px-3 text-center border border-amber-500/20">
+      <p class="font-display font-extrabold text-lg md:text-2xl text-gold mb-1">${m.v}</p>
+      <p class="text-[11px] md:text-xs text-neutral-400 uppercase tracking-wide font-medium">${m.l}</p>
+    </div>`).join('');
+    }
+
+    function renderSenses(t) {
+      // Always show all — no See More for Le Concept section
+      document.getElementById('sensesGrid').innerHTML = t.senses.map((s, i) => `
+    <div class="panel rounded-2xl p-6 flex flex-col items-start gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center text-gold" style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+        ${icon(s.icon)}
+      </div>
+      <div>
+        <p class="font-bold text-base mb-0.5 text-white">${s.title}</p>
+        <p class="text-gold text-xs font-bold uppercase tracking-wide mb-2">${s.sub}</p>
+        <p class="text-sm text-neutral-400 leading-relaxed">${s.desc}</p>
+      </div>
+    </div>`).join('');
+    }
+
+    function renderPavillons(t) {
+      document.getElementById('pavillonsGrid').innerHTML = t.pavillonsList.map(p => `
+    <div class="panel rounded-2xl p-8">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center text-gold mb-5" style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+        ${icon(p.icon)}
+      </div>
+      <p class="font-display font-bold text-xl mb-3 text-white">${p.title}</p>
+      <p class="text-sm text-neutral-400 leading-relaxed">${p.desc}</p>
+    </div>`).join('');
+    }
+
+    function renderCountries(t) {
+      const el = document.getElementById('countriesGrid');
+      if (!el || !t.countriesList) return;
+      const isDesktop = window.innerWidth >= 1024;
+      const listToRender = (isDesktop || window.showAllCountries) ? t.countriesList : t.countriesList.slice(0, 3);
+      el.innerHTML = listToRender.map(c => `
+    <div class="panel rounded-2xl overflow-hidden group flex flex-col relative border border-amber-500/25 shadow-xl hover:border-gold transition-all duration-300">
+      <div class="relative h-48 overflow-hidden">
+        <img src="${c.img}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#141416] via-black/20 to-black/40"></div>
+        <span class="absolute top-3 start-3 text-2xl drop-shadow-md">${c.flag}</span>
+        <span class="absolute top-3 end-3 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/75 text-gold border border-gold/40 backdrop-blur-sm">${c.tag}</span>
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <h4 class="font-display font-extrabold text-xl text-white mb-2 flex items-center gap-2">
+            <span>${c.name}</span>
+          </h4>
+          <p class="text-xs text-neutral-300 leading-relaxed">${c.desc}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+      const btnContainer = document.getElementById('countriesSeeMoreContainer');
+      if (btnContainer) {
+        if (!window.showAllCountries && t.countriesList.length > 3) {
+          btnContainer.classList.remove('hidden');
+          const btn = document.getElementById('countriesSeeMoreBtn');
+          if (btn) {
+            btn.textContent = t.nav.seeMore || 'Voir plus';
+            btn.onclick = () => { window.showAllCountries = true; renderCountries(translations[currentLang]); };
+          }
+        } else {
+          btnContainer.classList.add('hidden');
+        }
+      }
+    }
+
+    function renderLab(t) {
+      document.getElementById('labGrid').innerHTML = t.labList.map(p => `
+    <div class="panel rounded-2xl p-8" style="background:#111114;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center text-gold mb-5" style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+        ${icon(p.icon)}
+      </div>
+      <p class="font-display font-bold text-xl mb-3 text-white">${p.title}</p>
+      <p class="text-sm text-neutral-400 leading-relaxed">${p.desc}</p>
+    </div>`).join('');
+    }
+
+    function renderAwards(t) {
+      // Always show all — no See More for Gamification section
+      document.getElementById('awardsGrid').innerHTML = t.awards.map(a => `
+    <div class="panel rounded-2xl p-5 flex flex-col items-start gap-3">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center text-gold" style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+        ${icon(a.icon)}
+      </div>
+      <p class="font-semibold text-xs md:text-sm leading-snug text-neutral-200">${a.title}</p>
+    </div>`).join('');
+    }
+
+    function renderNights(t) {
+      const ni = t.nights;
+      // Update venue info bar
+      const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      setTxt('nightsTitle', ni.title);
+      setTxt('nightsTagline', ni.tagline);
+      setTxt('nightsEyebrow', ni.eyebrow);
+      setTxt('nightsValDates', ni.dates);
+      setTxt('nightsValHours', ni.hours);
+      const locEl = document.getElementById('nightsValLocation');
+      if (locEl) { locEl.textContent = ni.location; locEl.href = ni.mapUrl; }
+
+      // Clear any previous interval
+      if (window._nightTimerInt) clearInterval(window._nightTimerInt);
+
+      // Render each night card — show all on desktop, first 6 on mobile
+      const now = new Date();
+      const isDesktop = window.innerWidth >= 1024;
+      const listToRender = (isDesktop || window.showAllNights) ? t.nightsList : t.nightsList.slice(0, 6);
+
+      document.getElementById('nightsGrid').innerHTML = listToRender.map((n, i) => {
+        const dayOffset = i < 3 ? 29 + i : i - 3 + 1; // Aug 29,30,31 then Sep 1,2,...,12
+        const isAug = i < 3;
+        const monthStr = isAug
+          ? (currentLang === 'en' ? 'Aug' : currentLang === 'ar' ? 'أوت' : 'août')
+          : (currentLang === 'en' ? 'Sep' : currentLang === 'ar' ? 'سبت' : 'sep');
+        const dayNum = isAug ? 29 + i : i - 3 + 1;
+        const dateDisplay = currentLang === 'en' ? `${monthStr} ${dayNum}` : `${dayNum} ${monthStr}`;
+        const nightStart = isAug
+          ? new Date(2026, 7, 29 + i, 17, 0, 0)      // Aug 29-31
+          : new Date(2026, 8, i - 3 + 1, 17, 0, 0);  // Sep 1-11
+        const isPast = now >= nightStart;
+        const isTonight = now.getFullYear() === nightStart.getFullYear() && now.getMonth() === nightStart.getMonth() && now.getDate() === nightStart.getDate();
+
+        let statusBadge;
+        if (isPast && !isTonight) {
+          statusBadge = `<span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest bg-neutral-800 text-neutral-500">${currentLang === 'ar' ? 'انتهت' : 'Terminé'}</span>`;
+        } else if (isTonight) {
+          statusBadge = `<span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest bg-gold text-black" style="animation:none;">${currentLang === 'ar' ? 'الليلة' : 'Ce Soir'}</span>`;
+        } else {
+          statusBadge = `<span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest" style="background:rgba(212,175,55,0.12);color:var(--gold);border:1px solid rgba(212,175,55,0.3);">${currentLang === 'ar' ? 'قريباً' : 'À venir'}</span>`;
+        }
+
+        return `
+    <div class="panel rounded-2xl p-5 flex flex-col gap-3 relative overflow-hidden${isTonight ? ' night-tonight' : ''}">
+      <div class="flex items-start justify-between gap-2">
+        <span class="font-display font-extrabold text-3xl text-gold leading-none opacity-50">${String(i + 1).padStart(2, '0')}</span>
+        ${statusBadge}
+      </div>
+      <div>
+        <p class="font-bold text-white text-sm leading-snug">${n.name}</p>
+        <p class="text-[11px] text-neutral-500 mt-0.5">${n.sub}</p>
+      </div>
+      <div class="flex items-center gap-1.5 text-[11px] text-neutral-400 mt-auto pt-2 border-t border-neutral-800/60">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold opacity-70"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="font-semibold">${dateDisplay}</span>
+        <span class="opacity-30 mx-0.5">·</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold opacity-70"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>17:00 – 02:00</span>
+      </div>
+    </div>`;
+      }).join('');
+
+      const btnContainer = document.getElementById('nightsSeeMoreContainer');
+      if (!window.showAllNights && t.nightsList.length > 6) {
+        btnContainer.classList.remove('hidden');
+        const btn = document.getElementById('nightsSeeMoreBtn');
+        btn.textContent = t.nights.seeMore || 'Voir plus';
+        btn.onclick = () => {
+          window.showAllNights = true;
+          renderNights(translations[currentLang]);
+        };
+      } else {
+        btnContainer.classList.add('hidden');
+      }
+    }
+
+    function renderZones(t) {
+      const isDesktop = window.innerWidth >= 1024;
+      const listToRender = (isDesktop || window.showAllZones) ? t.zonesList : t.zonesList.slice(0, 3);
+      document.getElementById('zonesGrid').innerHTML = listToRender.map((z, i) => `
+    <div class="panel rounded-2xl p-6 relative group">
+      <div class="flex items-center justify-between mb-3">
+        <p class="text-gold font-display font-extrabold text-sm">${String(i + 1).padStart(2, '0')}</p>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">${z.km}</span>
+      </div>
+      <p class="font-bold text-white mb-2 text-base">${z.title}</p>
+      <p class="text-sm text-neutral-400 leading-relaxed">${z.desc}</p>
+    </div>`).join('');
+
+      const btnContainer = document.getElementById('zonesSeeMoreContainer');
+      if (btnContainer) {
+        if (!window.showAllZones && t.zonesList.length > 3) {
+          btnContainer.classList.remove('hidden');
+          const btn = document.getElementById('zonesSeeMoreBtn');
+          if (btn) {
+            btn.textContent = t.nav.seeMore || 'Voir plus';
+            btn.onclick = () => { window.showAllZones = true; renderZones(translations[currentLang]); };
+          }
+        } else {
+          btnContainer.classList.add('hidden');
+        }
+      }
+    }
+
+    let activeProTab = 0;
+    function renderProTabs(t) {
+      document.getElementById('proTabs').innerHTML = t.pro.tabs.map((tab, i) => `
+    <button type="button" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-neutral-800 transition-colors ${i === activeProTab ? 'active' : ''}" data-tab="${i}">${tab}</button>`).join('');
+
+      document.querySelectorAll('#proTabs .tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeProTab = parseInt(btn.dataset.tab);
+          renderProTabs(translations[currentLang]);
+          updateProFormProfile();
+        });
+      });
+    }
+
+    function updateProFormProfile() {
+      const t = translations[currentLang];
+      const profileName = t.pro.tabs[activeProTab];
+      document.getElementById('selectedProfileLabel').textContent = `${t.pro.form.selectedProfile || 'Profil :'} ${profileName}`;
+    }
+
+    let activeTicketIdx = 0;
+    let activeQty = 1;
+
+    function renderTickets(t) {
+      // Always show all — no See More for Tarifs section
+      document.getElementById('ticketsGrid').innerHTML = t.ticketsList.map((tk, i) => `
+    <div class="${i === 3 ? 'vip-border' : 'panel'} ticket-card rounded-2xl p-7 flex flex-col relative shadow-xl ${tk.tag ? 'pt-9' : ''}">
+      ${tk.tag ? `<span class="absolute -top-3.5 ${document.documentElement.dir === 'rtl' ? 'left-6' : 'right-6'} text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap z-10" style="background:var(--gold);color:#0A0A0A;">${tk.tag}</span>` : ''}
+      <p class="font-display font-bold text-lg mb-1 text-white">${tk.name}</p>
+      <p class="font-display font-extrabold text-3xl text-gold mb-6">${tk.price}</p>
+      <ul class="space-y-3 mb-8 flex-1">
+        ${tk.features.map(f => `<li class="flex items-start gap-2.5 text-sm text-neutral-300"><span class="text-gold mt-0.5 flex-shrink-0">${icon('check')}</span><span>${f}</span></li>`).join('')}
+      </ul>
+      <button class="ticket-select-btn ${i === 3 ? 'btn-primary' : 'btn-outline'} w-full py-3.5 rounded-full font-bold text-sm" data-idx="${i}">${t.ticketCta}</button>
+    </div>`).join('');
+
+      document.querySelectorAll('.ticket-select-btn').forEach(btn => {
+        btn.addEventListener('click', () => openTicketModal(parseInt(btn.dataset.idx)));
+      });
+    }
+
+    function openTicketModal(idx) {
+      activeTicketIdx = idx;
+      activeQty = 1;
+      const t = translations[currentLang];
+      const tk = t.ticketsList[idx];
+
+      document.getElementById('modalEyebrow').textContent = t.modal.eyebrow;
+      document.getElementById('modalPassName').textContent = tk.name;
+      document.getElementById('modalPassPrice').textContent = tk.price;
+      document.getElementById('modalPassFeatures').innerHTML = tk.features.map(f => `<li class="flex items-start gap-2 text-sm text-neutral-300"><span class="text-gold mt-0.5">${icon('check')}</span><span>${f}</span></li>`).join('');
+      document.getElementById('modalConfirm').textContent = t.modal.confirm;
+      updateModalTotal();
+
+      const modal = document.getElementById('ticketModal');
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+    }
+
+    function updateModalTotal() {
+      const tk = translations[currentLang].ticketsList[activeTicketIdx];
+      const total = tk.numericPrice * activeQty;
+      document.getElementById('qtyVal').textContent = activeQty;
+      document.getElementById('modalTotalPrice').textContent = `${total} DT`;
+    }
+
+    function closeTicketModal() {
+      const modal = document.getElementById('ticketModal');
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+    }
+
+    document.getElementById('qtyMinus').addEventListener('click', () => { if (activeQty > 1) { activeQty--; updateModalTotal(); } });
+    document.getElementById('qtyPlus').addEventListener('click', () => { if (activeQty < 10) { activeQty++; updateModalTotal(); } });
+    document.getElementById('ticketModalClose').addEventListener('click', closeTicketModal);
+    document.getElementById('ticketModalBackdrop').addEventListener('click', closeTicketModal);
+
+    document.getElementById('modalCheckoutForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      closeTicketModal();
+      const name = document.getElementById('tktName').value;
+      const refNum = 'SFFF-TKT-' + Math.floor(10000 + Math.random() * 90000);
+
+      showSuccessModal(
+        currentLang === 'fr' ? 'Commande Confirmée !' : (currentLang === 'en' ? 'Order Confirmed!' : 'تم تأكيد الطلب!'),
+        currentLang === 'fr' ? `Merci ${name} ! Votre réservation a été enregistrée avec succès. Redirection vers le paiement sécurisé.` :
+          (currentLang === 'en' ? `Thank you ${name}! Your passport reservation has been saved. Redirecting to payment.` : `شكراً ${name}! تم حفظ حجزك بنجاح. جارٍ التحويل للدفع.`),
+        refNum
+      );
+      e.target.reset();
+    });
+
+    function showSuccessModal(title, body, ref) {
+      document.getElementById('successTitle').textContent = title;
+      document.getElementById('successBody').textContent = body;
+      document.getElementById('successRef').textContent = ref;
+      const modal = document.getElementById('successModal');
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+    }
+    function closeSuccessModal() {
+      const modal = document.getElementById('successModal');
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+    }
+    document.getElementById('successClose').addEventListener('click', closeSuccessModal);
+    document.getElementById('successModalBackdrop').addEventListener('click', closeSuccessModal);
+
+    /* Pro Form Submit */
+    document.getElementById('proForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('proName').value;
+      const refNum = 'SFFF-PRO-' + Math.floor(10000 + Math.random() * 90000);
+
+      showSuccessModal(
+        currentLang === 'fr' ? 'Demande Envoyée !' : (currentLang === 'en' ? 'Request Sent!' : 'تم إرسال الطلب!'),
+        currentLang === 'fr' ? `Merci ${name} ! Votre dossier de partenariat a bien été transmis à l'équipe organisatrice.` :
+          (currentLang === 'en' ? `Thank you ${name}! Your partnership inquiry has been submitted successfully.` : `شكراً ${name}! تم إرسال ملف الشراكة بنجاح.`),
+        refNum
+      );
+      e.target.reset();
+    });
+
+    /* Ambassades Header Button Link */
+    document.getElementById('headerAmbassadorBtn').addEventListener('click', (e) => {
+      activeProTab = 3; // Ambassade tab
+      renderProTabs(translations[currentLang]);
+      updateProFormProfile();
+    });
+
+    /* ======================= STAMP COLLECTOR SIMULATOR ======================= */
+    const countryFlags = ["🇹🇳", "🇫🇷", "🇮🇹", "🇪🇸", "🇯🇵", "🇱🇧", "🇲🇦", "🇲🇽", "🇺🇸", "🇬🇧", "🇹🇷", "🇪🇬", "🇬🇷", "🇧🇷", "🇨🇳", "🇮🇳", "🇩🇪", "🇰🇷", "🇨🇦", "🇸🇦", "🇦🇪", "🇩🇿", "🇸🇳", "🇨🇮", "🇿🇦", "🇹🇭", "🇻🇳", "🇮🇩", "🇵🇹", "🇦🇷", "🇨🇱", "🇵🇪", "🇨🇭", "🇧🇪", "🇳🇱", "🇸🇪", "🇳🇴", "🇩🇰", "🇫🇮", "🇵🇱", "🇦🇺", "🇳🇿"];
+    let collectedStamps = parseInt(localStorage.getItem('sfff_stamps') || '0');
+
+    function updateStampUI() {
+      document.getElementById('stampCount').textContent = collectedStamps;
+      const pct = Math.min(100, Math.round((collectedStamps / 42) * 100));
+      document.getElementById('stampProgressBar').style.width = `${pct}%`;
+
+      const container = document.getElementById('stampBadgesContainer');
+      if (collectedStamps === 0) {
+        container.innerHTML = `<span class="text-xs text-neutral-400 px-2 italic">Cliquez sur Tamponner pour commencer la collection des pavillons...</span>`;
+      } else {
+        let html = '';
+        for (let i = 0; i < collectedStamps; i++) {
+          html += `<span class="stamp-badge inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-500/20 text-gold border border-amber-500/40 shadow-sm">${countryFlags[i % countryFlags.length]} Stamp #${i + 1}</span>`;
+        }
+        container.innerHTML = html;
+      }
+    }
+
+    document.getElementById('stampBtn').addEventListener('click', () => {
+      if (collectedStamps < 42) {
+        collectedStamps++;
+        localStorage.setItem('sfff_stamps', collectedStamps.toString());
+        updateStampUI();
+      } else {
+        alert(currentLang === 'fr' ? 'Bravo ! Vous avez collecté les 42 tampons du Passeport SFFF 2026 ! 🎉' : 'Congratulations! You collected all 42 stamps! 🎉');
+      }
+    });
+
+    document.getElementById('resetStampBtn').addEventListener('click', () => {
+      collectedStamps = 0;
+      localStorage.setItem('sfff_stamps', '0');
+      updateStampUI();
+    });
+    updateStampUI();
+
+    /* ======================= APPLY TRANSLATIONS ======================= */
+    function applyTranslations(lang) {
+      currentLang = lang;
+      localStorage.setItem('sfff_lang', lang);
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const path = el.getAttribute('data-i18n').split('.');
+        let val = t;
+        for (const p of path) { val = val && val[p]; }
+        if (typeof val === 'string') el.textContent = val;
+      });
+
+      document.getElementById('heroBadge').textContent = t.hero.badge;
+      document.getElementById('heroTitleLine1').textContent = t.hero.titleLine1;
+      document.getElementById('heroTitleLine2').textContent = t.hero.titleLine2;
+      document.getElementById('heroSubhead').textContent = t.hero.subhead;
+      document.getElementById('countdownLabel').textContent = t.hero.countdownLabel;
+
+      document.getElementById('conceptTitle').textContent = t.concept.title;
+      document.getElementById('conceptIntro').textContent = t.concept.intro;
+      document.getElementById('pavillonsTitle').textContent = t.pavillons.title;
+      document.getElementById('labTitle').textContent = t.lab.title;
+      document.getElementById('gamiTitle').textContent = t.gami.title;
+      document.getElementById('gamiDesc').textContent = t.gami.desc;
+      document.getElementById('passportName').textContent = t.passport.name;
+      document.getElementById('passportDesc').innerHTML = `${t.gami.progressLabel || 'tampons collectés'} : <span id="stampCount" class="font-bold text-gold text-sm">${collectedStamps}</span> / 42`;
+      document.getElementById('nightsTitle').textContent = t.nights.title;
+      document.getElementById('zonesTitle').textContent = t.zones.title;
+      document.getElementById('proTitle').textContent = t.pro.title;
+      document.getElementById('proIntro').textContent = t.pro.intro;
+      document.getElementById('ticketsTitle').textContent = t.tickets.title;
+      document.getElementById('stickyCta').textContent = t.stickyCta;
+      document.getElementById('footerDesc').textContent = t.footer.desc;
+      // footerLocation is static HTML (icon + Google Maps link) — not overwritten by i18n
+      document.getElementById('footerCopyright').textContent = t.footer.copyright;
+
+      const flagMap = { fr: '🇫🇷 FR', en: '🇬🇧 EN', ar: '🇹🇳 AR' };
+      document.getElementById('langBtnLabel').textContent = flagMap[lang];
+
+      // Highlight active lang buttons
+      document.querySelectorAll('.lang-opt, .lang-opt-mobile').forEach(b => {
+        if (b.dataset.lang === lang) {
+          b.classList.add('text-gold', 'border-gold', 'bg-amber-500/10');
+        } else {
+          b.classList.remove('text-gold', 'border-gold', 'bg-amber-500/10');
+        }
+      });
+
+      renderMetrics(t);
+      renderSenses(t);
+      renderPavillons(t);
+      renderCountries(t);
+      renderLab(t);
+      renderAwards(t);
+      renderNights(t);
+      renderZones(t);
+      renderProTabs(t);
+      updateProFormProfile();
+      renderTickets(t);
+      updateStampUI();
+    }
+
+    /* ======================= LANGUAGE SWITCHER ======================= */
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
+    langBtn.addEventListener('click', () => langMenu.classList.toggle('hidden'));
+    document.addEventListener('click', (e) => { if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) langMenu.classList.add('hidden'); });
+
+    document.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.addEventListener('click', () => { applyTranslations(btn.dataset.lang); langMenu.classList.add('hidden'); });
+    });
+    document.querySelectorAll('.lang-opt-mobile').forEach(btn => {
+      btn.addEventListener('click', () => { applyTranslations(btn.dataset.lang); closeMobileMenu(); });
+    });
+
+    /* ======================= MOBILE MENU ======================= */
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    let _drawerAnimTimer;
+
+    function openMobileMenu() {
+      clearTimeout(_drawerAnimTimer);
+      mobileDrawer.classList.remove('hidden');
+      void mobileDrawer.offsetWidth; // Trigger reflow for CSS transition
+      mobileDrawer.classList.add('active');
+    }
+
+    function closeMobileMenu() {
+      mobileDrawer.classList.remove('active');
+      clearTimeout(_drawerAnimTimer);
+      _drawerAnimTimer = setTimeout(() => {
+        if (!mobileDrawer.classList.contains('active')) {
+          mobileDrawer.classList.add('hidden');
+        }
+      }, 350);
+    }
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', openMobileMenu);
+    document.getElementById('mobileMenuClose').addEventListener('click', closeMobileMenu);
+    document.getElementById('mobileDrawerBackdrop').addEventListener('click', closeMobileMenu);
+    document.querySelectorAll('.mobile-nav-link').forEach(a => a.addEventListener('click', closeMobileMenu));
+
+    /* ======================= SCROLL TO TOP BUTTON ======================= */
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (scrollTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+
+      function smoothScrollToTop(duration = 750) {
+        const startPos = window.scrollY || window.pageYOffset;
+        if (startPos === 0) return;
+        const startTime = performance.now();
+
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        }
+
+        function step(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = easeInOutCubic(progress);
+
+          window.scrollTo(0, startPos * (1 - easeProgress));
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      scrollTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        smoothScrollToTop(750);
+      });
+    }
+    let _lastIsDesktop = window.innerWidth >= 1024;
+    let _resizeDebounceTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(_resizeDebounceTimer);
+      _resizeDebounceTimer = setTimeout(() => {
+        const currentIsDesktop = window.innerWidth >= 1024;
+        if (currentIsDesktop !== _lastIsDesktop) {
+          _lastIsDesktop = currentIsDesktop;
+          const t = translations[currentLang];
+          if (t) {
+            renderCountries(t);
+            renderNights(t);
+            renderZones(t);
+          }
+        }
+      }, 150);
+    });
+
+    /* ======================= SMART COUNTDOWN ======================= */
+    // Event runs Nuit 1 = Aug 29 17:00 → Nuit 15 = Sep 12 17:00
+    const EVENT_NIGHTS = [
+  ...Array.from({ length: 3 }, (_, i) => new Date(2026, 7, 29 + i, 17, 0, 0)), // Aug 29-31 (3 days)
+  ...Array.from({ length: 12 }, (_, i) => new Date(2026, 8, 1 + i, 17, 0, 0))  // Sep 1-12 (12 days)
+];
+    // last night (Nuit 15, Sep 12) ends at 02:00 the next morning (Sep 13 02:00)
+   const EVENT_END = new Date(2026, 8, 13, 2, 0, 0); // Sep 13 02:00 closing
+
+    function getCountdownTarget() {
+      const now = new Date();
+      // Before the first night
+      if (now < EVENT_NIGHTS[0]) return { target: EVENT_NIGHTS[0], label: null };
+      // During the event: find the next upcoming night start
+      for (let i = 0; i < EVENT_NIGHTS.length; i++) {
+        if (now < EVENT_NIGHTS[i]) return { target: EVENT_NIGHTS[i], label: i + 1 };
+      }
+      // After all nights but before final closing
+      if (now < EVENT_END) return { target: EVENT_END, label: 'end' };
+      return null; // festival over
+    }
+
+    /* Single-class flip animation: text swapped at midpoint when digit is off-screen */
+    const _cdPrev = {};
+    const FLIP_MS = 500; // total animation duration (matches css)
+    const FLIP_HALF_MS = 190; // when digit is invisible (38% of 500ms)
+
+    function animateDigit(id, newVal) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      // On first call: set immediately, no animation
+      if (_cdPrev[id] === undefined) {
+        _cdPrev[id] = newVal;
+        el.textContent = newVal;
+        return;
+      }
+
+      if (_cdPrev[id] === newVal) return;
+      _cdPrev[id] = newVal;
+
+      // Start the flip animation
+      el.classList.remove('is-changing');
+      void el.offsetWidth; // reflow to restart animation
+      el.classList.add('is-changing');
+
+      // Swap text at midpoint when digit is fully off-screen
+      setTimeout(() => { el.textContent = newVal; }, FLIP_HALF_MS);
+
+      // Clean up class after animation completes
+      setTimeout(() => el.classList.remove('is-changing'), FLIP_MS + 20);
+    }
+
+    /* 3D flip-clock effect for the seconds digits — ported from Originkit's Text3DFlip:
+       rotate the card to reveal the back face (already showing the new digit), then
+       snap the transform back to resting with duration:0 once the front face is updated,
+       exactly like the original component's animate-then-instant-reset sequence. */
+    const _flip3dPrev = {};
+    const FLIP3D_MS = 420;
+
+    function flip3dDigit(id, newChar) {
+      const card = document.getElementById(id);
+      if (!card) return;
+      const front = card.querySelector('.front');
+      const back = card.querySelector('.back');
+
+      if (_flip3dPrev[id] === undefined) {
+        _flip3dPrev[id] = newChar;
+        front.textContent = newChar;
+        back.textContent = newChar;
+        return;
+      }
+      if (_flip3dPrev[id] === newChar) return;
+      _flip3dPrev[id] = newChar;
+
+      back.textContent = newChar;
+      card.classList.add('is-flipping');
+
+      setTimeout(() => {
+        card.classList.add('is-resetting');
+        card.classList.remove('is-flipping');
+        front.textContent = newChar;
+        void card.offsetWidth; // reflow so the transition:none takes effect before re-enabling it
+        card.classList.remove('is-resetting');
+      }, FLIP3D_MS);
+    }
+
+    function updateSecondsFlip(secStr) {
+      flip3dDigit('cd-sec-tens', secStr[0]);
+      flip3dDigit('cd-sec-units', secStr[1]);
+    }
+
+    function updateCountdown() {
+      const info = getCountdownTarget();
+      const labelEl = document.getElementById('countdownLabel');
+      const t = translations[currentLang];
+
+      if (!info) {
+        ['cd-days', 'cd-hours', 'cd-min'].forEach(id => animateDigit(id, '00'));
+        updateSecondsFlip('00');
+        if (labelEl) labelEl.textContent = currentLang === 'ar' ? 'انتهى المهرجان' : currentLang === 'en' ? 'Festival has ended' : 'Le festival est terminé';
+        return;
+      }
+
+      if (info.label === null) {
+        if (labelEl) labelEl.textContent = t.hero.countdownLabel || 'Le festival ouvre dans';
+      } else if (info.label === 'end') {
+        if (labelEl) labelEl.textContent = currentLang === 'ar' ? 'يغلق المهرجان بعد' : currentLang === 'en' ? 'Festival closes in' : 'Le festival ferme dans';
+      } else {
+        const nightName = t.nightsList[info.label - 1]?.name || `Nuit ${info.label}`;
+        const phrases = {
+          fr: `Nuit ${String(info.label).padStart(2, '0')} — ${nightName} commence dans`,
+          en: `Night ${String(info.label).padStart(2, '0')} — ${nightName} starts in`,
+          ar: `الليلة ${String(info.label).padStart(2, '0')} — ${nightName} تبدأ بعد`
+        };
+        if (labelEl) labelEl.textContent = phrases[currentLang] || phrases.fr;
+      }
+
+      let diff = Math.max(0, info.target - new Date());
+      const days = Math.floor(diff / 86400000); diff %= 86400000;
+      const hours = Math.floor(diff / 3600000); diff %= 3600000;
+      const mins = Math.floor(diff / 60000); diff %= 60000;
+      const secs = Math.floor(diff / 1000);
+      const pad = v => String(v).padStart(2, '0');
+
+      animateDigit('cd-days', pad(days));
+      animateDigit('cd-hours', pad(hours));
+      animateDigit('cd-min', pad(mins));
+      updateSecondsFlip(pad(secs));
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* Map Reset Control */
+    const mapResetBtn = document.getElementById('mapResetBtn');
+    if (mapResetBtn) {
+      mapResetBtn.addEventListener('click', () => {
+        const iframe = document.querySelector('.map-iframe-wrap iframe');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage('resetMap', '*');
+        }
+      });
+    }
+
+    /* ======================= SCROLL REVEAL & NAV SPY ======================= */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    function observeFadeUps() { document.querySelectorAll('.fade-up').forEach(el => observer.observe(el)); }
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('site-header');
+      if (window.scrollY > 20) { header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.6)'; }
+      else { header.style.boxShadow = 'none'; }
+
+      // Active section spy
+      const sections = document.querySelectorAll('section[id]');
+      let currentSec = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) { currentSec = sec.getAttribute('id'); }
+      });
+      if (currentSec) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          if (link.getAttribute('href') === `#${currentSec}`) {
+            link.classList.add('active-nav');
+          } else {
+            link.classList.remove('active-nav');
+          }
+        });
+      }
+    });
+
+    /* ======================= ANIMATED GOLD DUST & LAKE RIPPLE CANVAS ======================= */
+    (function initBgCanvas() {
+      const canvas = document.getElementById('bgCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Particles (Gold dust stars)
+      const particles = [];
+      const particleCount = Math.min(75, Math.floor(window.innerWidth / 18));
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 2.2 + 0.6,
+          alpha: Math.random() * 0.7 + 0.2,
+          speedY: Math.random() * 0.45 + 0.15,
+          speedX: (Math.random() - 0.5) * 0.25,
+          angle: Math.random() * Math.PI * 2
+        });
+      }
+
+      // Interactive Mouse aura
+      let mouseX = width / 2, mouseY = height / 2;
+      let targetX = mouseX, targetY = mouseY;
+      window.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
+
+      let waveOffset = 0;
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Lerp mouse aura
+        mouseX += (targetX - mouseX) * 0.05;
+        mouseY += (targetY - mouseY) * 0.05;
+
+        // Render Mouse Ambient Light Aura
+        const auraGrad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 400);
+        auraGrad.addColorStop(0, 'rgba(212, 175, 55, 0.08)');
+        auraGrad.addColorStop(0.5, 'rgba(212, 175, 55, 0.025)');
+        auraGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = auraGrad;
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 400, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Render Floating Gold Dust Particles
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.y -= p.speedY;
+          p.x += Math.sin(p.angle) * p.speedX;
+          p.angle += 0.02;
+
+          if (p.y < -10) {
+            p.y = height + 10;
+            p.x = Math.random() * width;
+          }
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(229, 193, 88, ${Math.max(0.15, Math.min(0.85, p.alpha))})`;
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = '#D4AF37';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        // Render Golden Sine Waves at bottom (Tunis Lake Reflections)
+        waveOffset += 0.015;
+        ctx.beginPath();
+        ctx.moveTo(0, height);
+        for (let x = 0; x <= width; x += 15) {
+          const y = height - 45 + Math.sin(x * 0.005 + waveOffset) * 12 + Math.cos(x * 0.003 + waveOffset * 0.8) * 8;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(width, height);
+        ctx.closePath();
+        const waveGrad = ctx.createLinearGradient(0, height - 60, 0, height);
+        waveGrad.addColorStop(0, 'rgba(212, 175, 55, 0.06)');
+        waveGrad.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        ctx.fillStyle = waveGrad;
+        ctx.fill();
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    /* ======================= INIT ======================= */
+    applyTranslations(currentLang);
+    observeFadeUps();
+  </script>
+
+  <!-- jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    function generateProPDF() {
+      const name = document.getElementById('proName').value.trim();
+      const company = document.getElementById('proCompany').value.trim();
+      const email = document.getElementById('proEmail').value.trim();
+      const phone = document.getElementById('proPhone').value.trim();
+      const message = document.getElementById('proMessage').value.trim();
+      const profile = document.getElementById('selectedProfileLabel').textContent.replace('Profil : ', '').trim();
+
+      if (!name || !email) {
+        alert('Veuillez remplir au moins le nom et l\'email avant de générer le PDF.');
+        return;
+      }
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const W = 210, H = 297;
+      const goldR = 180, goldG = 145, goldB = 35;
+
+      // Gold Top Accent Bar
+      doc.setFillColor(goldR, goldG, goldB);
+      doc.rect(0, 0, W, 4, 'F');
+
+      function buildPDF(logoData) {
+        let y = 16;
+
+        if (logoData) {
+          const logoW = 45, logoH = 45;
+          doc.addImage(logoData, 'JPEG', (W - logoW) / 2, y, logoW, logoH);
+          y += logoH + 6;
+        }
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(24);
+        doc.setTextColor(goldR, goldG, goldB);
+        doc.text('STREET & FAST FOOD FEST', W / 2, y, { align: 'center' });
+        y += 9;
+
+        doc.setFontSize(13);
+        doc.setTextColor(40, 40, 40);
+        doc.text('ÉDITION 2026', W / 2, y, { align: 'center' });
+        y += 8;
+
+        doc.setFontSize(9);
+        doc.setTextColor(goldR, goldG, goldB);
+        doc.text('#SFFF2K26   •   #GLOBAL_VILLAGE_TUNISIA', W / 2, y, { align: 'center' });
+        y += 8;
+
+        doc.setDrawColor(goldR, goldG, goldB);
+        doc.setLineWidth(0.6);
+        doc.line(25, y, W - 25, y);
+        y += 12;
+
+        doc.setFontSize(16);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(30, 30, 30);
+        doc.text('FICHE DE DEMANDE PARTENAIRE', W / 2, y, { align: 'center' });
+        y += 7;
+
+        doc.setFontSize(9);
+        doc.setTextColor(130, 130, 130);
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+        doc.text('Générée le ' + dateStr, W / 2, y, { align: 'center' });
+        y += 14;
+
+        const cardX = 22, cardW = W - 44;
+        doc.setFillColor(248, 248, 248);
+        doc.roundedRect(cardX, y, cardW, 105, 3, 3, 'F');
+        doc.setDrawColor(goldR, goldG, goldB);
+        doc.setLineWidth(0.4);
+        doc.roundedRect(cardX, y, cardW, 105, 3, 3, 'S');
+
+        const fields = [
+          { label: 'PROFIL', value: profile },
+          { label: 'NOM COMPLET', value: name },
+          { label: 'ORGANISATION', value: company || '—' },
+          { label: 'E-MAIL', value: email },
+          { label: 'TÉLÉPHONE', value: phone || '—' }
+        ];
+
+        let fieldY = y + 13;
+        fields.forEach((f, i) => {
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(7.5);
+          doc.setTextColor(goldR, goldG, goldB);
+          doc.text(f.label, cardX + 12, fieldY);
+
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(12);
+          doc.setTextColor(30, 30, 30);
+          doc.text(f.value, cardX + 12, fieldY + 7);
+
+          if (i < fields.length - 1) {
+            doc.setDrawColor(215, 215, 215);
+            doc.setLineWidth(0.2);
+            doc.line(cardX + 10, fieldY + 12, cardX + cardW - 10, fieldY + 12);
+          }
+          fieldY += 20;
+        });
+
+        y += 115;
+
+        if (message) {
+          doc.setFillColor(248, 248, 248);
+          doc.roundedRect(cardX, y, cardW, 55, 3, 3, 'F');
+          doc.setDrawColor(goldR, goldG, goldB);
+          doc.setLineWidth(0.4);
+          doc.roundedRect(cardX, y, cardW, 55, 3, 3, 'S');
+
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(7.5);
+          doc.setTextColor(goldR, goldG, goldB);
+          doc.text('MESSAGE / PROJET', cardX + 12, y + 11);
+
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(10);
+          doc.setTextColor(50, 50, 50);
+          const msgLines = doc.splitTextToSize(message, cardW - 24);
+          doc.text(msgLines.slice(0, 6), cardX + 12, y + 20);
+        }
+
+        doc.setDrawColor(goldR, goldG, goldB);
+        doc.setLineWidth(0.6);
+        doc.line(25, H - 30, W - 25, H - 30);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(120, 120, 120);
+        doc.text('29 Août — 12 Septembre 2026  |  Tunis Lac II  |  fastfoodfestival.com', W / 2, H - 23, { align: 'center' });
+
+        doc.setFontSize(7);
+        doc.setTextColor(160, 160, 160);
+        doc.text('Ce document a été généré automatiquement. Il ne constitue pas un engagement contractuel.', W / 2, H - 17, { align: 'center' });
+
+        doc.setFillColor(goldR, goldG, goldB);
+        doc.rect(0, H - 4, W, 4, 'F');
+
+        const safeName = name.replace(/[^a-zA-Z0-9]/g, '_');
+        doc.save('SFFF2026_Demande_' + safeName + '.pdf');
+      }
+
+      const logoImg = new Image();
+      logoImg.crossOrigin = 'anonymous';
+      logoImg.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = logoImg.naturalWidth;
+        canvas.height = logoImg.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(logoImg, 0, 0);
+        buildPDF(canvas.toDataURL('image/jpeg', 0.92));
+      };
+      logoImg.onerror = function () {
+        buildPDF(null);
+      };
+      logoImg.src = 'assets/logo.webp';
+    }
+
+    /* ======================= MAGNETIC HOVER BUTTON SYSTEM ======================= */
+    (function initMagneticButtons() {
+      const RANGE_PER_POINT = 18;
+      const MAX_PULL = 0.5;
+      const magnet = 10;
+      const pull = (magnet / 20) * MAX_PULL;
+      const reach = magnet * RANGE_PER_POINT;
+
+      function setupButton(button) {
+        if (button.dataset.magneticInit) return;
+        button.dataset.magneticInit = 'true';
+
+        button.classList.add('magnetic-btn-wrap');
+
+        let sweep = button.querySelector('.magnetic-sweep');
+        if (!sweep) {
+          sweep = document.createElement('span');
+          sweep.className = 'magnetic-sweep';
+          sweep.setAttribute('aria-hidden', 'true');
+          button.appendChild(sweep);
+        }
+
+        let isHovered = false;
+        let currX = 0, currY = 0;
+        let targetX = 0, targetY = 0;
+        let animId = null;
+
+        function render() {
+          currX += (targetX - currX) * 0.18;
+          currY += (targetY - currY) * 0.18;
+
+          button.style.transform = `translate3d(${currX.toFixed(2)}px, ${currY.toFixed(2)}px, 0px)`;
+
+          if (Math.abs(targetX - currX) > 0.05 || Math.abs(targetY - currY) > 0.05 || isHovered) {
+            animId = requestAnimationFrame(render);
+          } else {
+            button.style.transform = 'translate3d(0px, 0px, 0px)';
+            animId = null;
+          }
+        }
+
+        function startLoop() {
+          if (!animId) animId = requestAnimationFrame(render);
+        }
+
+        function onPointerMove(e) {
+          const rect = button.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2 - currX;
+          const cy = rect.top + rect.height / 2 - currY;
+
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+
+          const inside =
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom;
+
+          const edgeX = Math.max(0, Math.abs(dx) - rect.width / 2);
+          const edgeY = Math.max(0, Math.abs(dy) - rect.height / 2);
+          const gap = Math.hypot(edgeX, edgeY);
+
+          if (inside !== isHovered) {
+            isHovered = inside;
+            if (inside) {
+              button.classList.add('is-hovered');
+              const lx = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+              const ly = Math.max(0, Math.min(rect.height, e.clientY - rect.top));
+              const d = 2.2 * Math.hypot(rect.width, rect.height);
+              sweep.style.width = d + 'px';
+              sweep.style.height = d + 'px';
+              sweep.style.top = ly + 'px';
+              sweep.style.left = lx + 'px';
+              sweep.style.marginLeft = (-d / 2) + 'px';
+              sweep.style.marginTop = (-d / 2) + 'px';
+              sweep.style.transform = 'scale(1)';
+            } else {
+              button.classList.remove('is-hovered');
+              sweep.style.transform = 'scale(0)';
+            }
+          }
+
+          if (gap > reach) {
+            targetX = 0;
+            targetY = 0;
+          } else {
+            const falloff = reach === 0 ? 0 : 1 - gap / reach;
+            targetX = dx * pull * falloff;
+            targetY = dy * pull * falloff;
+          }
+
+          startLoop();
+        }
+
+        function onPointerLeave() {
+          targetX = 0;
+          targetY = 0;
+          isHovered = false;
+          button.classList.remove('is-hovered');
+          sweep.style.transform = 'scale(0)';
+          startLoop();
+        }
+
+        window.addEventListener('pointermove', onPointerMove);
+        document.addEventListener('pointerleave', onPointerLeave);
+      }
+
+      function initAll() {
+        const selector = '#heroPassportBtn';
+        document.querySelectorAll(selector).forEach(setupButton);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
+      }
+      setTimeout(initAll, 500);
+    })();
+  </script>
+
+</body>
+
+</html>
