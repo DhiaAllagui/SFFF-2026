@@ -2490,12 +2490,60 @@
     function icon(name, cls) { return `<svg class="${cls || ''}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`; }
 
     /* ======================= RENDER FUNCTIONS ======================= */
+    /* Parses a metric string like "+100 000", "1.8 km", "42" into an animatable
+       {prefix, suffix, target, decimals, groupSep} descriptor. Non-numeric values
+       (e.g. "GRATUITE"/"FREE") return null and are left static. */
+    function parseMetricValue(raw) {
+      const m = raw.match(/^(\D*?)(\d(?:[\d,.\s]*\d)?)(\D*)$/);
+      if (!m) return null;
+      const [, prefix, numRaw, suffix] = m;
+      const groupSep = numRaw.includes(',') ? ',' : (numRaw.includes(' ') ? ' ' : '');
+      const cleaned = numRaw.replace(/[,\s]/g, '');
+      const dotIndex = cleaned.indexOf('.');
+      const decimals = dotIndex === -1 ? 0 : cleaned.length - dotIndex - 1;
+      const target = parseFloat(cleaned);
+      if (!isFinite(target)) return null;
+      return { prefix, suffix, target, decimals, groupSep };
+    }
+
+    function formatCountValue(value, decimals, groupSep) {
+      const fixed = value.toFixed(decimals);
+      if (!groupSep) return fixed;
+      const parts = fixed.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, groupSep);
+      return parts.join('.');
+    }
+
+    function animateCountUp(el, info) {
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic: fast climb, smooth settle
+        el.textContent = `${info.prefix}${formatCountValue(info.target * eased, info.decimals, info.groupSep)}${info.suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
     function renderMetrics(t) {
-      document.getElementById('metricsGrid').innerHTML = t.hero.metrics.map(m => `
+      const grid = document.getElementById('metricsGrid');
+      grid.innerHTML = t.hero.metrics.map((m, i) => `
     <div class="panel rounded-2xl py-6 px-3 text-center border border-amber-500/20">
-      <p class="font-display font-extrabold text-lg md:text-2xl text-gold mb-1">${m.v}</p>
+      <p class="font-display font-extrabold text-lg md:text-2xl text-gold mb-1" id="metric-val-${i}">${m.v}</p>
       <p class="text-[11px] md:text-xs text-neutral-400 uppercase tracking-wide font-medium">${m.l}</p>
     </div>`).join('');
+
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      t.hero.metrics.forEach((m, i) => {
+        const info = parseMetricValue(m.v);
+        const el = document.getElementById(`metric-val-${i}`);
+        if (!info || !el) return;
+        el.textContent = `${info.prefix}${formatCountValue(0, info.decimals, info.groupSep)}${info.suffix}`;
+        animateCountUp(el, info);
+      });
     }
 
     function renderSenses(t) {
