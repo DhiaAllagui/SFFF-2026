@@ -429,6 +429,14 @@
         display: flex !important;
       }
 
+      .lg\:block {
+        display: block !important;
+      }
+
+      .lg\:grid {
+        display: grid !important;
+      }
+
       .lg\:hidden {
         display: none !important;
       }
@@ -748,6 +756,82 @@
       pointer-events: none;
     }
 
+    /* Modal sizing/scrolling, split across two elements on purpose: .vip-border's
+       gradient-ring border is a ::before with inset:0, and if that same element
+       also scrolls, the border stops tracking the content and tall forms (e.g.
+       the Documents fill-form, 15+ fields) visually spill outside the frame.
+       .modal-frame stays fixed (never scrolls) and owns the border; only
+       .modal-scroll-inner, nested inside it, scrolls. */
+    .modal-frame {
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-scroll-inner {
+      overflow-y: auto;
+      min-height: 0;
+    }
+
+    /* ===== Custom checkbox/radio styling for the document fill-online forms ===== */
+    .doc-fill-option {
+      position: relative;
+    }
+
+    .doc-fill-option input[type="radio"],
+    .doc-fill-option input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1.5px solid var(--border-dark);
+      background: #0d0d0f;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .doc-fill-option input[type="radio"] {
+      border-radius: 50%;
+    }
+
+    .doc-fill-option input[type="checkbox"] {
+      border-radius: 5px;
+    }
+
+    .doc-fill-option input[type="radio"]:checked,
+    .doc-fill-option input[type="checkbox"]:checked {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .doc-fill-option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      inset: 4.5px;
+      border-radius: 50%;
+      background: var(--bg);
+    }
+
+    .doc-fill-option input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 9px;
+      border: solid var(--bg);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .doc-fill-option input:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
     /* ===== COUNTDOWN TIMER ===== */
     .cd-unit {
       display: flex;
@@ -957,6 +1041,65 @@
       color: var(--muted);
     }
 
+    /* Documents section — sticky sidebar category index (desktop only) */
+    .doc-index-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      width: 100%;
+      text-align: start;
+      padding: 0.65rem 0.65rem;
+      border-radius: 0.65rem;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .doc-index-row:hover {
+      background: rgba(212, 175, 55, 0.08);
+      color: #fff;
+    }
+
+    .doc-index-row.active {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--border);
+      color: var(--gold-hi);
+    }
+
+    .doc-index-row .doc-index-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    .doc-index-row .doc-index-name {
+      flex: 1;
+      line-height: 1.3;
+    }
+
+    .doc-index-row .doc-index-count {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 9999px;
+      padding: 0.15rem 0.5rem;
+      min-width: 1.6rem;
+      text-align: center;
+    }
+
+    .doc-index-row.active .doc-index-count {
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--gold-hi);
+    }
+
     .modal-backdrop {
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(8px);
@@ -1128,10 +1271,156 @@
         transition: none !important;
       }
     }
+
+    /* ============ PRELOADER ============ */
+    #sitePreloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #070708;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #sitePreloader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    body.preload-lock {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .pl-loader {
+      --size: 220px;
+      --duration: 2s;
+      height: var(--size);
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .pl-loader .pl-box {
+      position: absolute;
+      background: linear-gradient(0deg, rgba(212, 175, 55, 0.08) 0%, rgba(243, 229, 171, 0.12) 100%);
+      border-radius: 50%;
+      border-top: 1px solid rgba(212, 175, 55, 0.9);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px -0px;
+      backdrop-filter: blur(5px);
+      animation: pl-ripple var(--duration) infinite ease-in-out;
+    }
+
+    .pl-loader .pl-box:nth-child(1) {
+      inset: 40%;
+      z-index: 99;
+    }
+
+    .pl-loader .pl-box:nth-child(2) {
+      inset: 30%;
+      z-index: 98;
+      border-color: rgba(212, 175, 55, 0.7);
+      animation-delay: 0.2s;
+    }
+
+    .pl-loader .pl-box:nth-child(3) {
+      inset: 20%;
+      z-index: 97;
+      border-color: rgba(212, 175, 55, 0.5);
+      animation-delay: 0.4s;
+    }
+
+    .pl-loader .pl-box:nth-child(4) {
+      inset: 10%;
+      z-index: 96;
+      border-color: rgba(212, 175, 55, 0.3);
+      animation-delay: 0.6s;
+    }
+
+    .pl-loader .pl-box:nth-child(5) {
+      inset: 0%;
+      z-index: 95;
+      border-color: rgba(212, 175, 55, 0.15);
+      animation-delay: 0.8s;
+    }
+
+    .pl-loader .pl-logo {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      padding: 28%;
+    }
+
+    .pl-loader .pl-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: pl-pulse var(--duration) infinite ease-in-out;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+    }
+
+    @keyframes pl-ripple {
+      0% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px -0px;
+      }
+
+      50% {
+        transform: scale(1.3);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 20px -0px;
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px -0px;
+      }
+    }
+
+    @keyframes pl-pulse {
+      0% {
+        opacity: 0.75;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.12);
+      }
+
+      100% {
+        opacity: 0.75;
+        transform: scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pl-loader .pl-box,
+      .pl-loader .pl-logo img {
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 
-<body class="grain">
+<body class="grain preload-lock">
+
+  <!-- ================= PRELOADER ================= -->
+  <div id="sitePreloader" aria-hidden="true">
+    <div class="pl-loader">
+      <div class="pl-box">
+        <div class="pl-logo">
+          <img src="assets/logo.webp" alt="">
+        </div>
+      </div>
+      <div class="pl-box"></div>
+      <div class="pl-box"></div>
+      <div class="pl-box"></div>
+      <div class="pl-box"></div>
+    </div>
+  </div>
 
   <!-- Animated Gold Dust & Lake Reflections — sits above background image, below content -->
   <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none opacity-50" style="z-index:2;"></canvas>
@@ -1160,6 +1449,7 @@
           <a href="#programmation" class="nav-link whitespace-nowrap" data-i18n="nav.programmation">Programmation</a>
           <a href="#zones" class="nav-link whitespace-nowrap" data-i18n="nav.zones">8 Zones</a>
           <a href="#tarifs" class="nav-link whitespace-nowrap" data-i18n="nav.tarifs">Tarifs</a>
+          <a href="#documents" class="nav-link whitespace-nowrap" data-i18n="nav.documents">Documents</a>
         </nav>
 
         <!-- Action buttons & Language -->
@@ -1235,6 +1525,7 @@
           data-i18n="nav.programmation">Programmation</a>
         <a href="#zones" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.zones">8 Zones</a>
         <a href="#tarifs" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.tarifs">Tarifs</a>
+        <a href="#documents" class="mobile-nav-link text-neutral-300 hover:text-gold" data-i18n="nav.documents">Documents</a>
       </nav>
 
       <div class="divider-gold"></div>
@@ -1950,7 +2241,7 @@
         </p>
         <h2 id="ticketsTitle" class="font-display font-extrabold text-3xl md:text-5xl">Passeports &amp; Tarifs</h2>
       </div>
-      <div id="ticketsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" style="padding-top: 1.25rem;"></div>
+      <div id="ticketsGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" style="padding-top: 1.25rem;"></div>
       <!-- ticketsSeeMoreContainer removed: Tarifs shows all items always -->
     </div>
   </section>
@@ -1983,6 +2274,23 @@
       <path d="M18 15l-6-6-6 6" />
     </svg>
   </button>
+
+  <!-- ================= DOCUMENTS UTILES ================= -->
+  <section id="documents" class="py-24 px-5 md:px-8 border-t border-neutral-800/50" style="background:#0b0b0d;">
+    <div class="max-w-[1600px] mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" id="documentsEyebrow">Ressources</p>
+        <h2 id="documentsTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">Documents Utiles</h2>
+        <p id="documentsIntro" class="text-neutral-400 text-sm md:text-base">Consultez ou téléchargez les dossiers
+          officiels du festival, classés par profil.</p>
+      </div>
+      <div id="documentsTabs" class="flex flex-wrap justify-center gap-2 mb-10 lg:hidden"></div>
+      <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-10 lg:items-start">
+        <aside id="documentsIndex" class="hidden lg:block sticky panel rounded-2xl p-5" style="top:6.5rem;"></aside>
+        <div id="documentsGrid" class="space-y-12"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= PARTENAIRES OFFICIELS ================= -->
   <section class="py-12 px-5 md:px-8 border-t border-neutral-800/50" style="background:#070708;">
@@ -2108,59 +2416,62 @@
   <!-- ================= TICKET CHECKOUT MODAL ================= -->
   <div id="ticketModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-5">
     <div id="ticketModalBackdrop" class="absolute inset-0 modal-backdrop"></div>
-    <div class="relative w-full max-w-lg rounded-2xl p-6 md:p-8 vip-border shadow-2xl overflow-y-auto max-h-[90vh]">
-      <button id="ticketModalClose" class="absolute top-5 end-5 text-neutral-400 hover:text-white"
+    <div class="relative w-full max-w-lg rounded-2xl vip-border shadow-2xl modal-frame">
+      <button id="ticketModalClose" class="absolute top-5 end-5 text-neutral-400 hover:text-white z-10"
         aria-label="Close modal">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 6l12 12M6 18L18 6" />
         </svg>
       </button>
-      <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-2" id="modalEyebrow">Commander mon Passeport
-      </p>
-      <h3 id="modalPassName" class="font-display font-extrabold text-2xl mb-1 text-white">Passeport Normal</h3>
-      <p id="modalPassPrice" class="text-3xl font-extrabold text-gold mb-4">25 DT</p>
+      <div class="modal-scroll-inner p-6 md:p-8">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-2" id="modalEyebrow">Commander mon
+          Passeport
+        </p>
+        <h3 id="modalPassName" class="font-display font-extrabold text-2xl mb-1 text-white">Passeport Normal</h3>
+        <p id="modalPassPrice" class="text-3xl font-extrabold text-gold mb-4">25 DT</p>
 
-      <div class="mb-6 p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-        <ul id="modalPassFeatures" class="space-y-2 text-sm text-neutral-300"></ul>
+        <div class="mb-6 p-4 rounded-xl bg-neutral-900 border border-neutral-800">
+          <ul id="modalPassFeatures" class="space-y-2 text-sm text-neutral-300"></ul>
+        </div>
+
+        <!-- Quantity & Total -->
+        <div class="flex items-center justify-between mb-6 p-3.5 rounded-xl bg-black/60 border border-neutral-800">
+          <span class="text-xs font-bold uppercase text-neutral-400" data-i18n="modal.qty">Quantité</span>
+          <div class="flex items-center gap-3">
+            <button id="qtyMinus"
+              class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">-</button>
+            <span id="qtyVal" class="font-bold text-gold text-lg w-6 text-center">1</span>
+            <button id="qtyPlus"
+              class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">+</button>
+          </div>
+          <div class="text-end">
+            <span class="block text-[10px] text-neutral-500 uppercase" data-i18n="modal.total">Total :</span>
+            <span id="modalTotalPrice" class="font-extrabold text-gold text-lg">25 DT</span>
+          </div>
+        </div>
+
+        <!-- Quick Form -->
+        <form id="modalCheckoutForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.fullName">Nom &
+              Prénom</label>
+            <input type="text" id="tktName" required placeholder="Votre nom complet"
+              class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.email">E-mail</label>
+            <input type="email" id="tktEmail" required placeholder="votre@email.com"
+              class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.phone">Téléphone</label>
+            <input type="tel" id="tktPhone" required placeholder="+216 -- --- ---"
+              class="w-full rounded-lg px-3.5 py-2.5 text-sm">
+          </div>
+          <button type="submit" class="btn-primary w-full py-3.5 rounded-full font-bold text-sm tracking-wide mt-2"
+            id="modalConfirm">Valider la commande</button>
+        </form>
       </div>
-
-      <!-- Quantity & Total -->
-      <div class="flex items-center justify-between mb-6 p-3.5 rounded-xl bg-black/60 border border-neutral-800">
-        <span class="text-xs font-bold uppercase text-neutral-400" data-i18n="modal.qty">Quantité</span>
-        <div class="flex items-center gap-3">
-          <button id="qtyMinus"
-            class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">-</button>
-          <span id="qtyVal" class="font-bold text-gold text-lg w-6 text-center">1</span>
-          <button id="qtyPlus"
-            class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold">+</button>
-        </div>
-        <div class="text-end">
-          <span class="block text-[10px] text-neutral-500 uppercase" data-i18n="modal.total">Total :</span>
-          <span id="modalTotalPrice" class="font-extrabold text-gold text-lg">25 DT</span>
-        </div>
-      </div>
-
-      <!-- Quick Form -->
-      <form id="modalCheckoutForm" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.fullName">Nom &
-            Prénom</label>
-          <input type="text" id="tktName" required placeholder="Votre nom complet"
-            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.email">E-mail</label>
-          <input type="email" id="tktEmail" required placeholder="votre@email.com"
-            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-neutral-400 mb-1" data-i18n="modal.phone">Téléphone</label>
-          <input type="tel" id="tktPhone" required placeholder="+216 -- --- ---"
-            class="w-full rounded-lg px-3.5 py-2.5 text-sm">
-        </div>
-        <button type="submit" class="btn-primary w-full py-3.5 rounded-full font-bold text-sm tracking-wide mt-2"
-          id="modalConfirm">Valider la commande</button>
-      </form>
     </div>
   </div>
 
@@ -2183,11 +2494,96 @@
     </div>
   </div>
 
+  <!-- Document Fill-Online Modal -->
+  <div id="docFillModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-5">
+    <div id="docFillModalBackdrop" class="absolute inset-0 modal-backdrop"></div>
+    <div class="relative w-full max-w-2xl rounded-2xl vip-border shadow-2xl modal-frame">
+      <button id="docFillModalClose" class="absolute top-5 end-5 text-neutral-400 hover:text-white z-10"
+        aria-label="Close modal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
+      <div class="modal-scroll-inner p-6 md:p-8">
+        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-2">Remplir en ligne</p>
+        <h3 id="docFillModalTitle" class="font-display font-extrabold text-xl md:text-2xl mb-1 text-white"></h3>
+        <p class="text-xs text-neutral-500 mb-6">Vos informations seront intégrées au document PDF officiel — vous
+          pourrez le télécharger à la fin.</p>
+        <form id="docFillForm" class="space-y-4"></form>
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <button type="button" id="docFillGenerateBtn"
+            class="btn-primary flex-1 py-3 rounded-full font-bold text-sm">Générer &amp; Télécharger mon PDF</button>
+        </div>
+        <p id="docFillStatus" class="text-xs text-center mt-3 text-neutral-500"></p>
+      </div>
+    </div>
+  </div>
+
   <script>
+    /* ======================================================================
+       DOCUMENTS UTILES — add or remove a document HERE, in one place.
+       ======================================================================
+       To DELETE a document: delete its object from DOCUMENTS_REGISTRY below.
+       That's the only place a document's existence is defined — it disappears
+       from the site (all 3 languages) automatically.
+
+       To ADD a document:
+         1. Put the PDF file in assets/documents/
+         2. Add an entry to DOCUMENTS_REGISTRY:
+              { id: 'unique-id', category: 'sponsors', file: 'assets/documents/yourfile.pdf' }
+            - `category` must be one of the keys in DOCUMENT_CATEGORIES below
+              (sponsors / exposants / ambassades / presse / b2b).
+            - Add `formId: '...'` only if it's one of the 5 fillable forms
+              already wired up in DOC_FORMS further down this file — most new
+              documents are just a PDF to view/download and should omit it.
+         3. Add its title + description in DOCUMENTS_TEXT below, once per
+            language (fr / en / ar), using the same id you picked in step 2.
+
+       To ADD a whole new category: add an entry to DOCUMENT_CATEGORIES (pick
+       any icon name from the ICONS object further down), then add its name
+       to each language's `categoryNames` in DOCUMENTS_TEXT.
+       ====================================================================== */
+    const DOCUMENT_CATEGORIES = [
+      { key: 'sponsors', icon: 'trophy' },
+      { key: 'exposants', icon: 'store' },
+      { key: 'ambassades', icon: 'landmark' },
+      { key: 'presse', icon: 'tv' },
+      { key: 'b2b', icon: 'shopping-bag' }
+    ];
+
+    const DOCUMENTS_REGISTRY = [
+      { id: 'sponsor-dossier', category: 'sponsors', file: 'assets/documents/dossier-sponsoring-programmation.pdf' },
+      { id: 'sponsor-fiche', category: 'sponsors', file: 'assets/documents/fiche-reservation-sponsor.pdf', formId: 'sponsor' },
+      { id: 'exposant-modulaire', category: 'exposants', file: 'assets/documents/dossier-reservation-exposant.pdf', formId: 'exposant_modulaire' },
+      { id: 'exposant-business', category: 'exposants', file: 'assets/documents/dossier-reservation-exposant.pdf', formId: 'exposant_business' },
+      { id: 'ambassade-guide', category: 'ambassades', file: 'assets/documents/guide-ambassade.pdf' },
+      { id: 'ambassade-fiche', category: 'ambassades', file: 'assets/documents/fiche-reservation-ambassade.pdf', formId: 'ambassade' },
+      { id: 'presse-guide', category: 'presse', file: 'assets/documents/guide-presse-influenceur.pdf' },
+      { id: 'presse-fiche', category: 'presse', file: 'assets/documents/fiche-accreditation-presse.pdf', formId: 'presse' },
+      { id: 'b2b-guide', category: 'b2b', file: 'assets/documents/guide-b2b.pdf' }
+    ];
+
     /* ======================= TRANSLATIONS ======================= */
     const translations = {
       fr: {
-        nav: { brandSub: "Tunis Global Village", home: "Accueil", concept: "Concept", pavillons: "Pavillons", lab: "Future Food Lab", programmation: "Programmation", zones: "8 Zones", tarifs: "Tarifs", espacePro: "Espace Pro", espaceAmbassade: "Ambassades", reserver: "Réserver mon Passeport", language: "Langue", seeMore: "Voir plus" },
+        nav: { brandSub: "Tunis Global Village", home: "Accueil", concept: "Concept", pavillons: "Pavillons", lab: "Future Food Lab", programmation: "Programmation", zones: "8 Zones", tarifs: "Tarifs", documents: "Documents", espacePro: "Espace Pro", espaceAmbassade: "Ambassades", reserver: "Réserver mon Passeport", language: "Langue", seeMore: "Voir plus" },
+        documents: {
+          eyebrow: "Ressources", title: "Documents Utiles",
+          intro: "Consultez ou téléchargez les dossiers officiels du festival, classés par profil. Les formulaires marqués « Remplir en ligne » peuvent être complétés directement sur le site.",
+          view: "Voir", download: "Télécharger", fill: "Remplir en ligne", allLabel: "Tous", indexLabel: "Catégories",
+          categoryNames: { sponsors: "Sponsors & Partenaires", exposants: "Exposants & Kiosques", ambassades: "Ambassades & Diplomatie", presse: "Média, Presse & Créateurs", b2b: "Fournisseurs B2B" },
+          items: {
+            'sponsor-dossier': { title: "Dossier de Sponsoring & Programmation", desc: "Masterplan stratégique, chronologie des 15 soirées thématiques et grille tarifaire early bird." },
+            'sponsor-fiche': { title: "Fiche de Réservation Sponsor", desc: "Bon de commande à compléter pour réserver votre pack de partenariat." },
+            'exposant-modulaire': { title: "Dossier de Réservation — Packs Modulaires & Mobiles", desc: "Tentes, kiosques et brouettes mobiles." },
+            'exposant-business': { title: "Dossier de Réservation — Packs Business & Premium", desc: "Containers et structures premium." },
+            'ambassade-guide': { title: "Guide des Ambassades", desc: "Zones régionales, pavillons nationaux et protocole d'accueil diplomatique." },
+            'ambassade-fiche': { title: "Fiche de Réservation Ambassade", desc: "Réservez votre pavillon national, votre zone régionale et vos animations protocolaires." },
+            'presse-guide': { title: "Guide Presse & Influenceurs", desc: "Accréditations, Press Lounge, studio streaming et charte digitale des hashtags." },
+            'presse-fiche': { title: "Demande d'Accréditation Presse", desc: "Formulaire d'accréditation pour journalistes, créateurs de contenu et photographes." },
+            'b2b-guide': { title: "Guide Officiel B2B", desc: "Opportunités pour industriels, équipementiers, packaging et fournisseurs CHR." }
+          }
+        },
         hero: {
           badge: "29 AOÛT – 12 SEPTEMBRE 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de corniche immersive.", ctaPrimary: "Obtenir un Passeport", ctaSecondary: "Découvrir le Concept", countdownLabel: "Le festival ouvre dans", days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec",
           metrics: [{ v: "GRATUITE", l: "Entrée Site" }, { v: "+100 000", l: "Visiteurs Attendus" }, { v: "42", l: "Nations & Pavillons" }, { v: "1.8 km", l: "de Corniche Aménagée" }, { v: "15", l: "Nuits de Rythme" }]
@@ -2267,9 +2663,16 @@
           form: { name: "Nom complet", company: "Organisation / Société", email: "Adresse E-mail", phone: "Numéro de Téléphone", message: "Votre projet ou message", submit: "Envoyer ma demande" }
         },
         tickets: { eyebrow: "Billetterie", title: "Passeports & Tarifs" },
+        /* Each passport card: name, price (display text, e.g. "80 DT"),
+           numericPrice (plain number, used to compute the checkout total),
+           tag (badge text like "Populaire" / "VIP", or "" for no badge —
+           a tag of exactly "VIP" also gives the card the gold border),
+           features (list of bullet points shown on the card and in the
+           order modal). Just edit the [PLACEHOLDER] entry below directly. */
         ticketsList: [
           { name: "Passeport Normal", price: "25 DT", numericPrice: 25, tag: "", features: ["Accès standard au site", "Carnet de tampons", "Accès à toutes les zones publiques"] },
           { name: "Passeport Pro", price: "120 DT", numericPrice: 120, tag: "Populaire", features: ["Coupe-file prioritaire", "Accès B2B Hub", "Accès Zones Ambrées"] },
+          { name: "[Nom du Passeport]", price: "[Prix] DT", numericPrice: 0, tag: "", features: ["[Avantage 1]", "[Avantage 2]", "[Avantage 3]"] },
           { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Accès prioritaire illimité", "Table réservée", "Cocktail de bienvenue", "Parking VIP"] }
         ],
         ticketCta: "Choisir ce Passeport",
@@ -2279,7 +2682,24 @@
         footer: { desc: "Le rendez-vous incontournable de l'été tunisien : gastronomie, culture et innovation réunies sur 1,8 km de corniche.", linksTitle: "Navigation", contactTitle: "Contact", location: "Tunis Lac II, Tunis, Tunisie", copyright: "© 2026 SFFF — Street & Fast Food Fest. Tous droits réservés." }
       },
       en: {
-        nav: { brandSub: "Tunis Global Village", home: "Home", concept: "Concept", pavillons: "Pavilions", lab: "Future Food Lab", programmation: "Program", zones: "8 Zones", tarifs: "Pricing", espacePro: "Pro Space", espaceAmbassade: "Embassies", reserver: "Get My Passport", language: "Language", seeMore: "See more" },
+        nav: { brandSub: "Tunis Global Village", home: "Home", concept: "Concept", pavillons: "Pavilions", lab: "Future Food Lab", programmation: "Program", zones: "8 Zones", tarifs: "Pricing", documents: "Documents", espacePro: "Pro Space", espaceAmbassade: "Embassies", reserver: "Get My Passport", language: "Language", seeMore: "See more" },
+        documents: {
+          eyebrow: "Resources", title: "Useful Documents",
+          intro: "View or download the festival's official documents, sorted by profile. Forms marked \"Fill Online\" can be completed directly on the site.",
+          view: "View", download: "Download", fill: "Fill Online", allLabel: "All", indexLabel: "Categories",
+          categoryNames: { sponsors: "Sponsors & Partners", exposants: "Exhibitors & Kiosks", ambassades: "Embassies & Diplomacy", presse: "Media, Press & Creators", b2b: "B2B Suppliers" },
+          items: {
+            'sponsor-dossier': { title: "Sponsoring & Programming Dossier", desc: "Strategic masterplan, 15-night schedule and early bird pricing grid." },
+            'sponsor-fiche': { title: "Sponsor Reservation Form", desc: "Order form to complete to reserve your partnership pack." },
+            'exposant-modulaire': { title: "Exhibitor Dossier — Modular & Mobile Packs", desc: "Tents, kiosks and mobile carts." },
+            'exposant-business': { title: "Exhibitor Dossier — Business & Premium Packs", desc: "Containers and premium structures." },
+            'ambassade-guide': { title: "Embassy Guide", desc: "Regional zones, national pavilions and diplomatic welcome protocol." },
+            'ambassade-fiche': { title: "Embassy Reservation Form", desc: "Reserve your national pavilion, regional zone and protocol events." },
+            'presse-guide': { title: "Press & Influencer Guide", desc: "Accreditations, Press Lounge, streaming studio and digital charter." },
+            'presse-fiche': { title: "Press Accreditation Request", desc: "Accreditation form for journalists, content creators and photographers." },
+            'b2b-guide': { title: "Official B2B Guide", desc: "Opportunities for industrials, equipment suppliers, packaging and CHR suppliers." }
+          }
+        },
         hero: {
           badge: "AUGUST 29–SEPTEMBER 12, 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "A journey for the 5 senses across 5 continents, visa-free. The flagship event of the Tunisian summer along 1.8 km of immersive waterfront.", ctaPrimary: "Get a Passport", ctaSecondary: "Discover the Concept", countdownLabel: "The festival opens in", days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec",
           metrics: [{ v: "FREE", l: "Site Entry" }, { v: "+100,000", l: "Visitors Expected" }, { v: "42", l: "Nations & Pavilions" }, { v: "1.8 km", l: "of Curated Waterfront" }, { v: "15", l: "Nights of Rhythm" }]
@@ -2361,8 +2781,8 @@
         tickets: { eyebrow: "Ticketing", title: "Passports & Pricing" },
         ticketsList: [
           { name: "Standard Passport", price: "25 DT", numericPrice: 25, tag: "", features: ["Standard site access", "Stamp booklet", "Access to all public zones"] },
-          { name: "Family Passport", price: "55 DT", numericPrice: 55, tag: "Popular", features: ["Valid for 4 people", "Kids Zone access", "Family stamp booklet"] },
-          { name: "Pro Passport", price: "120 DT", numericPrice: 120, tag: "", features: ["Priority fast lane", "B2B Hub access", "Amber Zones access"] },
+          { name: "Pro Passport", price: "120 DT", numericPrice: 120, tag: "Popular", features: ["Priority fast lane", "B2B Hub access", "Amber Zones access"] },
+          { name: "[Passport Name]", price: "[Price] DT", numericPrice: 0, tag: "", features: ["[Benefit 1]", "[Benefit 2]", "[Benefit 3]"] },
           { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Unlimited priority access", "Reserved table", "Welcome cocktail", "VIP parking"] }
         ],
         ticketCta: "Choose this Passport",
@@ -2372,7 +2792,24 @@
         footer: { desc: "The unmissable event of the Tunisian summer: gastronomy, culture and innovation together along 1.8 km of waterfront.", linksTitle: "Navigation", contactTitle: "Contact", location: "Tunis Lac II, Tunis, Tunisia", copyright: "© 2026 SFFF — Street & Fast Food Fest. All rights reserved." }
       },
       ar: {
-        nav: { brandSub: "القرية العالمية تونس", home: "الرئيسية", concept: "المفهوم", pavillons: "الأجنحة", lab: "مختبر الطعام المستقبلي", programmation: "البرنامج", zones: "المناطق 8", tarifs: "الأسعار", espacePro: "فضاء المحترفين", espaceAmbassade: "السفارات", reserver: "احجز جواز سفري", language: "اللغة", seeMore: "عرض المزيد" },
+        nav: { brandSub: "القرية العالمية تونس", home: "الرئيسية", concept: "المفهوم", pavillons: "الأجنحة", lab: "مختبر الطعام المستقبلي", programmation: "البرنامج", zones: "المناطق 8", tarifs: "الأسعار", documents: "الوثائق", espacePro: "فضاء المحترفين", espaceAmbassade: "السفارات", reserver: "احجز جواز سفري", language: "اللغة", seeMore: "عرض المزيد" },
+        documents: {
+          eyebrow: "الموارد", title: "وثائق مفيدة",
+          intro: "اطّلع على وثائق المهرجان الرسمية أو حمّلها، مصنّفة حسب الفئة. النماذج المصنّفة بـ«التعبئة عبر الإنترنت» يمكن ملؤها مباشرة على الموقع.",
+          view: "عرض", download: "تحميل", fill: "تعبئة عبر الإنترنت", allLabel: "الكل", indexLabel: "الفئات",
+          categoryNames: { sponsors: "الرعاة والشركاء", exposants: "العارضون والأكشاك", ambassades: "السفارات والدبلوماسية", presse: "الإعلام والصحافة والمبدعون", b2b: "موردو B2B" },
+          items: {
+            'sponsor-dossier': { title: "ملف الرعاية والبرمجة", desc: "المخطط الاستراتيجي، برنامج الخمس عشرة ليلة وجدول التسعير المبكر." },
+            'sponsor-fiche': { title: "استمارة حجز الرعاية", desc: "استمارة الطلب الواجب تعبئتها لحجز باقة الشراكة." },
+            'exposant-modulaire': { title: "ملف حجز العارضين — باقات متنقلة وقابلة للتركيب", desc: "خيام، أكشاك وعربات متنقلة." },
+            'exposant-business': { title: "ملف حجز العارضين — باقات أعمال ومميزة", desc: "حاويات وهياكل مميزة." },
+            'ambassade-guide': { title: "دليل السفارات", desc: "المناطق الجهوية، الأجنحة الوطنية وبروتوكول الاستقبال الدبلوماسي." },
+            'ambassade-fiche': { title: "استمارة حجز السفارة", desc: "احجز جناحك الوطني ومنطقتك الجهوية وفعالياتك البروتوكولية." },
+            'presse-guide': { title: "دليل الصحافة والمؤثرين", desc: "الاعتمادات، صالة الصحافة، استوديو البث والميثاق الرقمي." },
+            'presse-fiche': { title: "طلب اعتماد صحفي", desc: "استمارة اعتماد للصحفيين وصنّاع المحتوى والمصورين." },
+            'b2b-guide': { title: "الدليل الرسمي B2B", desc: "فرص للصناعيين ومورّدي المعدات والتغليف وقطاع المطاعم والفنادق." }
+          }
+        },
         hero: {
           badge: "29 أوت – 12 سبتمبر 2026 • تونس ليك بيرلز", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
           metrics: [{ v: "مجاني", l: "دخول الموقع" }, { v: "+100,000", l: "زائر متوقع" }, { v: "42", l: "دولة وجناح" }, { v: "1.8 كم", l: "من الكورنيش المهيأ" }, { v: "15", l: "ليلة إيقاع" }]
@@ -2454,8 +2891,8 @@
         tickets: { eyebrow: "التذاكر", title: "جوازات السفر والأسعار" },
         ticketsList: [
           { name: "جواز عادي", price: "25 د.ت", numericPrice: 25, tag: "", features: ["دخول عادي للموقع", "دفتر أختام", "الوصول لكل المناطق العامة"] },
-          { name: "جواز عائلي", price: "55 د.ت", numericPrice: 55, tag: "الأكثر طلباً", features: ["صالح لـ 4 أشخاص", "دخول منطقة الأطفال", "دفتر أختام عائلي"] },
-          { name: "جواز احترافي", price: "120 د.ت", numericPrice: 120, tag: "", features: ["ممر أولوية سريع", "دخول مركز B2B", "دخول المناطق الكهرمانية"] },
+          { name: "جواز احترافي", price: "120 د.ت", numericPrice: 120, tag: "الأكثر طلباً", features: ["ممر أولوية سريع", "دخول مركز B2B", "دخول المناطق الكهرمانية"] },
+          { name: "[اسم الجواز]", price: "[السعر] د.ت", numericPrice: 0, tag: "", features: ["[الميزة 1]", "[الميزة 2]", "[الميزة 3]"] },
           { name: "VIP Gold", price: "350 د.ت", numericPrice: 350, tag: "VIP", features: ["أولوية دخول غير محدودة", "طاولة محجوزة", "كوكتيل ترحيبي", "موقف سيارات VIP"] }
         ],
         ticketCta: "اختر هذا الجواز",
@@ -2485,9 +2922,12 @@
       'chef-hat': '<path d="M6 13.87A4 4 0 0 1 7 6a5.6 5.6 0 0 1 4-1 5.6 5.6 0 0 1 4 1 4 4 0 0 1 1 7.87V21H6v-7.13z"/><path d="M6 17h12"/>',
       trophy: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 5H4a2 2 0 0 0 0 4h1M17 5h3a2 2 0 0 1 0 4h-1"/>',
       heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>',
-      check: '<path d="M20 6 9 17l-5-5"/>'
+      check: '<path d="M20 6 9 17l-5-5"/>',
+      file: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/>',
+      download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+      edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>'
     };
-    function icon(name, cls) { return `<svg class="${cls || ''}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`; }
+    function icon(name, cls, size) { size = size || 22; return `<svg class="${cls || ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`; }
 
     /* ======================= RENDER FUNCTIONS ======================= */
     /* Parses a metric string like "+100 000", "1.8 km", "42" into an animatable
@@ -2738,6 +3178,106 @@
       }
     }
 
+    let activeDocCategory = 'all';
+
+    /* Builds { key, icon, name, items: [{id, file, formId, title, desc}] } per
+       category by joining the language-independent DOCUMENTS_REGISTRY with the
+       current language's category names + item text. Categories with no
+       documents in the registry are skipped automatically. */
+    function getDocCategories(t) {
+      return DOCUMENT_CATEGORIES.map(cat => {
+        const items = DOCUMENTS_REGISTRY
+          .filter(doc => doc.category === cat.key)
+          .map(doc => Object.assign({}, doc, t.documents.items[doc.id]));
+        return { key: cat.key, icon: cat.icon, name: t.documents.categoryNames[cat.key], items };
+      }).filter(cat => cat.items.length > 0);
+    }
+
+    function renderDocuments(t) {
+      const grid = document.getElementById('documentsGrid');
+      const tabsEl = document.getElementById('documentsTabs');
+      const indexEl = document.getElementById('documentsIndex');
+      if (!grid || !t.documents) return;
+      document.getElementById('documentsEyebrow').textContent = t.documents.eyebrow;
+      document.getElementById('documentsTitle').textContent = t.documents.title;
+      document.getElementById('documentsIntro').textContent = t.documents.intro;
+
+      const allCategories = getDocCategories(t);
+      if (activeDocCategory !== 'all' && !allCategories.some(c => c.key === activeDocCategory)) activeDocCategory = 'all';
+      const totalDocs = allCategories.reduce((sum, c) => sum + c.items.length, 0);
+
+      const selectCategory = (key) => {
+        activeDocCategory = key;
+        renderDocuments(translations[currentLang]);
+      };
+
+      if (tabsEl) {
+        tabsEl.innerHTML = [
+          `<button type="button" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-neutral-800 transition-colors ${activeDocCategory === 'all' ? 'active' : ''}" data-cat="all">${t.documents.allLabel}</button>`,
+          ...allCategories.map(cat => `<button type="button" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-neutral-800 transition-colors ${activeDocCategory === cat.key ? 'active' : ''}" data-cat="${cat.key}">${cat.name}</button>`)
+        ].join('');
+        tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => selectCategory(btn.dataset.cat));
+        });
+      }
+
+      /* Sidebar "table of contents" — visible on large screens only, fills the
+         wide gutter next to the document cards instead of leaving it empty. */
+      if (indexEl) {
+        indexEl.innerHTML = `
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4 px-1">${t.documents.indexLabel || t.documents.allLabel}</p>
+          <div class="flex flex-col gap-1">
+            <button type="button" class="doc-index-row ${activeDocCategory === 'all' ? 'active' : ''}" data-cat="all">
+              <span class="doc-index-icon">${icon('file', '', 15)}</span>
+              <span class="doc-index-name">${t.documents.allLabel}</span>
+              <span class="doc-index-count">${totalDocs}</span>
+            </button>
+            ${allCategories.map(cat => `
+            <button type="button" class="doc-index-row ${activeDocCategory === cat.key ? 'active' : ''}" data-cat="${cat.key}">
+              <span class="doc-index-icon">${icon(cat.icon || 'file', '', 15)}</span>
+              <span class="doc-index-name">${cat.name}</span>
+              <span class="doc-index-count">${cat.items.length}</span>
+            </button>`).join('')}
+          </div>`;
+        indexEl.querySelectorAll('.doc-index-row').forEach(btn => {
+          btn.addEventListener('click', () => selectCategory(btn.dataset.cat));
+        });
+      }
+
+      const categoriesToRender = activeDocCategory === 'all'
+        ? allCategories
+        : allCategories.filter(c => c.key === activeDocCategory);
+
+      grid.innerHTML = categoriesToRender.map(cat => `
+    <div>
+      <h3 class="font-display font-bold text-lg md:text-xl text-white mb-5 flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg flex items-center justify-center text-gold shrink-0"
+          style="background:rgba(212,175,55,0.12);border:1px solid var(--border);">${icon(cat.icon || 'file', '', 15)}</span>
+        ${cat.name}
+      </h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        ${cat.items.map(doc => `
+        <div class="panel rounded-2xl p-5 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-gold shrink-0"
+            style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+            ${icon('file')}
+          </div>
+          <div class="flex-1">
+            <p class="font-bold text-white text-sm leading-snug mb-1">${doc.title}</p>
+            <p class="text-xs text-neutral-400 leading-relaxed">${doc.desc}</p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <a href="${doc.file}" target="_blank" rel="noopener"
+              class="btn-outline px-3 py-1.5 rounded-full text-[11px] font-semibold inline-flex items-center gap-1.5">${icon('eye', '', 14)}${t.documents.view}</a>
+            <a href="${doc.file}" download
+              class="btn-outline px-3 py-1.5 rounded-full text-[11px] font-semibold inline-flex items-center gap-1.5">${icon('download', '', 14)}${t.documents.download}</a>
+            ${doc.formId ? `<button type="button" class="btn-primary px-3 py-1.5 rounded-full text-[11px] font-bold inline-flex items-center gap-1.5" onclick="openDocFillModal('${doc.formId}')">${icon('edit', '', 14)}${t.documents.fill}</button>` : ''}
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+    }
+
     let activeProTab = 0;
     function renderProTabs(t) {
       document.getElementById('proTabs').innerHTML = t.pro.tabs.map((tab, i) => `
@@ -2764,14 +3304,14 @@
     function renderTickets(t) {
       // Always show all — no See More for Tarifs section
       document.getElementById('ticketsGrid').innerHTML = t.ticketsList.map((tk, i) => `
-    <div class="${i === 3 ? 'vip-border' : 'panel'} ticket-card rounded-2xl p-7 flex flex-col relative shadow-xl ${tk.tag ? 'pt-9' : ''}">
+    <div class="${tk.tag === 'VIP' ? 'vip-border' : 'panel'} ticket-card rounded-2xl p-7 flex flex-col relative shadow-xl ${tk.tag ? 'pt-9' : ''}">
       ${tk.tag ? `<span class="absolute -top-3.5 ${document.documentElement.dir === 'rtl' ? 'left-6' : 'right-6'} text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap z-10" style="background:var(--gold);color:#0A0A0A;">${tk.tag}</span>` : ''}
       <p class="font-display font-bold text-lg mb-1 text-white">${tk.name}</p>
       <p class="font-display font-extrabold text-3xl text-gold mb-6">${tk.price}</p>
       <ul class="space-y-3 mb-8 flex-1">
         ${tk.features.map(f => `<li class="flex items-start gap-2.5 text-sm text-neutral-300"><span class="text-gold mt-0.5 flex-shrink-0">${icon('check')}</span><span>${f}</span></li>`).join('')}
       </ul>
-      <button class="ticket-select-btn ${i === 3 ? 'btn-primary' : 'btn-outline'} w-full py-3.5 rounded-full font-bold text-sm" data-idx="${i}">${t.ticketCta}</button>
+      <button class="ticket-select-btn ${tk.tag === 'VIP' ? 'btn-primary' : 'btn-outline'} w-full py-3.5 rounded-full font-bold text-sm" data-idx="${i}">${t.ticketCta}</button>
     </div>`).join('');
 
       document.querySelectorAll('.ticket-select-btn').forEach(btn => {
@@ -2841,6 +3381,390 @@
     }
     document.getElementById('successClose').addEventListener('click', closeSuccessModal);
     document.getElementById('successModalBackdrop').addEventListener('click', closeSuccessModal);
+
+    /* ======================= DOCUMENT FILL-ONLINE ======================= */
+    /* Field labels/options are transcribed directly from the official SFFF 2026 PDF
+       forms and kept in French to match the source documents being filled.
+       `coords` (x/y text-overlay positions per PDF page) are intentionally left
+       empty until the real PDF files are available to calibrate against — see
+       generateFilledPdf() below for what happens in the meantime. */
+    const DOC_FORMS = {
+      presse: {
+        title: "Demande d'Accréditation Presse, Médias & Influenceur",
+        pdf: "assets/documents/fiche-accreditation-presse.pdf",
+        fields: [
+          { id: 'nom', label: 'Nom', type: 'text', required: true },
+          { id: 'prenom', label: 'Prénom', type: 'text', required: true },
+          { id: 'nationalite', label: 'Nationalité', type: 'text' },
+          { id: 'passeport', label: 'N° Passeport / CIN', type: 'text' },
+          { id: 'telephone', label: 'Téléphone / WhatsApp', type: 'tel', required: true },
+          { id: 'email', label: 'E-mail Officiel', type: 'email', required: true },
+          { id: 'organisme', label: 'Organisme / Média / Nom de la Chaîne ou Compte', type: 'text' },
+          { id: 'categorie', label: "Catégorie d'accréditation", type: 'radio', options: ['PRESS / Média Officiel', 'CREATOR / Influenceur', 'PHOTO PASS', 'DRONE / Captation Aérienne'] },
+          { id: 'siteweb', label: 'Site Web / Média', type: 'text' },
+          { id: 'instagram', label: 'Instagram (@)', type: 'text' },
+          { id: 'tiktok', label: 'TikTok (@)', type: 'text' },
+          { id: 'youtube', label: 'YouTube / Kick / Twitch', type: 'text' },
+          { id: 'audience', label: "Nombre Cumulé d'Abonnés / Audience", type: 'text' },
+          { id: 'cartepresse', label: 'N° Carte de Presse (si applicable)', type: 'text' },
+          { id: 'equipements', label: 'Équipements & Inclusions Média souhaités', type: 'checkbox-group', options: ['Accès Press Lounge & Wi-Fi Haut Débit', 'Réservation Créneau Studio Podcast / Streaming', 'Accès Fosse Photo / Scène Principale', "Demande d'Interviews Chefs / Organisateurs"] },
+          { id: 'jours', label: 'Jours de présence prévus sur le festival', type: 'radio', options: ['Du 16 au 22 Août', 'Du 23 au 30 Août', '15 Jours Continu'] }
+        ],
+        coords: [
+          { page: 0, field: 'nom', x: 75, y: 634.9, maxLen: 24 },
+          { page: 0, field: 'prenom', x: 341, y: 634.9, maxLen: 24 },
+          { page: 0, field: 'nationalite', x: 99, y: 616.7, maxLen: 24 },
+          { page: 0, field: 'passeport', x: 385, y: 616.7, maxLen: 24 },
+          { page: 0, field: 'telephone', x: 147, y: 598.4, maxLen: 24 },
+          { page: 0, field: 'email', x: 366, y: 598.4, maxLen: 24 },
+          { page: 0, field: 'organisme', x: 257, y: 580.1, maxLen: 55 },
+          { page: 0, field: 'categorie', value: 'PRESS / Média Officiel', x: 47.5, y: 492.9 },
+          { page: 0, field: 'categorie', value: 'CREATOR / Influenceur', x: 301.4, y: 492.9 },
+          { page: 0, field: 'categorie', value: 'PHOTO PASS', x: 47.5, y: 454.0 },
+          { page: 0, field: 'categorie', value: 'DRONE / Captation Aérienne', x: 301.4, y: 460.9 },
+          { page: 0, field: 'siteweb', x: 123, y: 371.0, maxLen: 24 },
+          { page: 0, field: 'instagram', x: 358, y: 371.0, maxLen: 20 },
+          { page: 0, field: 'tiktok', x: 91, y: 352.7, maxLen: 20 },
+          { page: 0, field: 'youtube', x: 403, y: 352.7, maxLen: 24 },
+          { page: 0, field: 'audience', x: 212, y: 334.5, maxLen: 24 },
+          { page: 0, field: 'cartepresse', x: 445, y: 334.5, maxLen: 24 },
+          { page: 0, field: 'equipements', value: 'Accès Press Lounge & Wi-Fi Haut Débit', x: 48.3, y: 263.3 },
+          { page: 0, field: 'equipements', value: 'Réservation Créneau Studio Podcast / Streaming', x: 302.1, y: 263.3 },
+          { page: 0, field: 'equipements', value: 'Accès Fosse Photo / Scène Principale', x: 48.3, y: 243.6 },
+          { page: 0, field: 'equipements', value: "Demande d'Interviews Chefs / Organisateurs", x: 302.1, y: 243.6 },
+          { page: 0, field: 'jours', value: 'Du 16 au 22 Août', x: 215.4, y: 221.7 },
+          { page: 0, field: 'jours', value: 'Du 23 au 30 Août', x: 313.0, y: 221.7 },
+          { page: 0, field: 'jours', value: '15 Jours Continu', x: 410.6, y: 221.7 }
+        ]
+      },
+      ambassade: {
+        title: "Fiche de Réservation & d'Engagement Diplomatique",
+        pdf: "assets/documents/fiche-reservation-ambassade.pdf",
+        fields: [
+          { id: 'ambassade', label: 'Ambassade / Chancellerie de', type: 'text', required: true },
+          { id: 'pays', label: 'Pays Représenté', type: 'text', required: true },
+          { id: 'service', label: 'Service / Pôle Référent', type: 'text' },
+          { id: 'responsable', label: 'Responsable du Dossier', type: 'text' },
+          { id: 'titre', label: 'Titre / Fonction Protocolaire', type: 'text' },
+          { id: 'telephone', label: 'Téléphone Direct / Mobile', type: 'tel', required: true },
+          { id: 'adresse', label: 'Adresse Officielle à Tunis', type: 'text' },
+          { id: 'email', label: 'E-mail Officiel / Diplomatic Contact', type: 'email', required: true },
+          { id: 'zone', label: "Zone Régionale d'Implantation", type: 'radio', options: ['African Zone', 'Mediterranean Zone', 'Orient Zone', 'European Zone', 'America Zone', 'Global Market'] },
+          { id: 'animations', label: 'Demandes d\'Animations Protocolaires & Soirée Nationale', type: 'checkbox-group', options: ['Réservation "Journée Nationale du Pays" (Scène Principale)', 'Atelier Showcooking avec Chef Invité', 'Spectacle / Troupe Artistique ou Folklorique', 'Réception Protocolaire au VIP Lounge'] },
+          { id: 'dateEvenement', label: "Date souhaitée pour l'événement officiel (jour / 08 / 2026)", type: 'text' },
+          { id: 'pavillon', label: 'Format du Pavillon National', type: 'radio', options: ['Pavillon Grand Format — Real Container ProMax (48 m²)', 'Pavillon Standard — Container Junior Pro (30 m²)', 'Pavillon Kiosque Prestige (15 m²)', 'Espace Culturel / Exposition Seule (Sur Devis)'] },
+          { id: 'badgesVip', label: 'Nombre de badges Diplomatic VIP requis', type: 'text' },
+          { id: 'macarons', label: "Nombre de macarons d'accès véhicules officiels", type: 'text' },
+          { id: 'douane', label: 'Facilitation Douanière & Sanitaire sollicitée ?', type: 'radio', options: ['Oui', 'Non'] }
+        ],
+        coords: [
+          { page: 0, field: 'ambassade', x: 174, y: 634.9, maxLen: 16 },
+          { page: 0, field: 'pays', x: 378, y: 634.9, maxLen: 16 },
+          { page: 0, field: 'service', x: 148, y: 616.7, maxLen: 16 },
+          { page: 0, field: 'responsable', x: 409, y: 616.7, maxLen: 16 },
+          { page: 0, field: 'titre', x: 169, y: 598.4, maxLen: 16 },
+          { page: 0, field: 'telephone', x: 412, y: 598.4, maxLen: 16 },
+          { page: 0, field: 'adresse', x: 159, y: 580.1, maxLen: 55 },
+          { page: 0, field: 'email', x: 197, y: 561.8, maxLen: 55 },
+          { page: 0, field: 'zone', value: 'African Zone', x: 46.8, y: 475.4 },
+          { page: 0, field: 'zone', value: 'Mediterranean Zone', x: 214.3, y: 475.4 },
+          { page: 0, field: 'zone', value: 'Orient Zone', x: 381.9, y: 475.4 },
+          { page: 0, field: 'zone', value: 'European Zone', x: 46.8, y: 458.6 },
+          { page: 0, field: 'zone', value: 'America Zone', x: 214.3, y: 458.6 },
+          { page: 0, field: 'zone', value: 'Global Market', x: 381.9, y: 458.6 },
+          { page: 0, field: 'animations', value: 'Réservation "Journée Nationale du Pays" (Scène Principale)', x: 48.3, y: 195.3 },
+          { page: 0, field: 'animations', value: 'Atelier Showcooking avec Chef Invité', x: 302.1, y: 188.4 },
+          { page: 0, field: 'animations', value: 'Spectacle / Troupe Artistique ou Folklorique', x: 48.3, y: 161.8 },
+          { page: 0, field: 'animations', value: 'Réception Protocolaire au VIP Lounge', x: 302.1, y: 161.8 },
+          { page: 0, field: 'dateEvenement', x: 215.8, y: 140.7, size: 8, maxLen: 2 },
+          { page: 0, field: 'pavillon', value: 'Pavillon Grand Format — Real Container ProMax (48 m²)', x: 519.2, y: 374.9 },
+          { page: 0, field: 'pavillon', value: 'Pavillon Standard — Container Junior Pro (30 m²)', x: 519.2, y: 339.0 },
+          { page: 0, field: 'pavillon', value: 'Pavillon Kiosque Prestige (15 m²)', x: 519.2, y: 303.1 },
+          { page: 0, field: 'pavillon', value: 'Espace Culturel / Exposition Seule (Sur Devis)', x: 519.2, y: 267.2 },
+          { page: 0, field: 'badgesVip', x: 518, y: 76.8, size: 8, maxLen: 7 },
+          { page: 0, field: 'macarons', x: 368, y: 53.6, size: 8, maxLen: 7 },
+          { page: 1, field: 'douane', value: 'Oui', x: 279.7, y: 779.3 },
+          { page: 1, field: 'douane', value: 'Non', x: 314.0, y: 779.3 }
+        ]
+      },
+      sponsor: {
+        title: 'Fiche de Réservation & Bon de Commande Sponsor',
+        pdf: 'assets/documents/fiche-reservation-sponsor.pdf',
+        fields: [
+          { id: 'societe', label: 'Raison Sociale / Société', type: 'text', required: true },
+          { id: 'marque', label: 'Nom de la Marque', type: 'text' },
+          { id: 'matricule', label: 'Matricule Fiscal / Identifiant', type: 'text' },
+          { id: 'secteur', label: "Secteur d'Activité", type: 'text' },
+          { id: 'signataire', label: 'Nom & Prénom du Signataire', type: 'text', required: true },
+          { id: 'qualite', label: 'Qualité / Fonction', type: 'text' },
+          { id: 'telephone', label: 'Téléphone Direct / Mobile', type: 'tel', required: true },
+          { id: 'email', label: 'E-mail Officiel', type: 'email', required: true },
+          { id: 'adresseSiege', label: 'Adresse du Siège Social', type: 'text' },
+          { id: 'pack', label: 'Pack de Partenariat', type: 'radio', options: ['Sponsor Titulaire (Main Partner) — 100 000 DT', 'Pack Or (Gold Partner) — 50 000 DT', 'Pack Argent (Silver Partner) — 25 000 DT', 'Pack Bronze (Bronze Partner) — 10 000 DT'] },
+          { id: 'options', label: "Options d'Activation & Parrainage Thématique (en supplément)", type: 'checkbox-group', options: ['Sponsorship Zone Cashless / Borne NFC (+15 000 DT)', 'Naming Scène Principale & Concerts (+20 000 DT)', 'Sponsorship Zone Enfants / Familles (+8 000 DT)', 'Parrainage Espace Eco / Clean Fest (+5 000 DT)'] }
+        ],
+        coords: [
+          { page: 0, field: 'societe', x: 154, y: 630.0, maxLen: 16 },
+          { page: 0, field: 'marque', x: 383, y: 630.0, maxLen: 16 },
+          { page: 0, field: 'matricule', x: 167, y: 611.7, maxLen: 16 },
+          { page: 0, field: 'secteur', x: 380, y: 611.7, maxLen: 16 },
+          { page: 0, field: 'signataire', x: 173, y: 593.5, maxLen: 16 },
+          { page: 0, field: 'qualite', x: 381, y: 593.5, maxLen: 16 },
+          { page: 0, field: 'telephone', x: 158, y: 575.2, maxLen: 16 },
+          { page: 0, field: 'email', x: 366, y: 575.2, maxLen: 16 },
+          { page: 0, field: 'adresseSiege', x: 154, y: 556.9, maxLen: 55 },
+          { page: 0, field: 'pack', value: 'Sponsor Titulaire (Main Partner) — 100 000 DT', x: 531.2, y: 451.5 },
+          { page: 0, field: 'pack', value: 'Pack Or (Gold Partner) — 50 000 DT', x: 531.2, y: 415.6 },
+          { page: 0, field: 'pack', value: 'Pack Argent (Silver Partner) — 25 000 DT', x: 531.2, y: 379.7 },
+          { page: 0, field: 'pack', value: 'Pack Bronze (Bronze Partner) — 10 000 DT', x: 531.2, y: 343.8 },
+          { page: 0, field: 'options', value: 'Sponsorship Zone Cashless / Borne NFC (+15 000 DT)', x: 48.9, y: 270.4 },
+          { page: 0, field: 'options', value: 'Naming Scène Principale & Concerts (+20 000 DT)', x: 302.8, y: 263.5 },
+          { page: 0, field: 'options', value: 'Sponsorship Zone Enfants / Familles (+8 000 DT)', x: 48.9, y: 236.9 },
+          { page: 0, field: 'options', value: 'Parrainage Espace Eco / Clean Fest (+5 000 DT)', x: 302.8, y: 236.9 }
+        ]
+      },
+      exposant_modulaire: {
+        title: 'Réservation Exposant — Packs Modulaires & Mobiles',
+        pdf: 'assets/documents/dossier-reservation-exposant.pdf',
+        fields: [
+          { id: 'entreprise', label: "Nom de l'entreprise / Enseigne", type: 'text', required: true },
+          { id: 'responsableLegal', label: 'Responsable Légal', type: 'text' },
+          { id: 'fonction', label: 'Fonction', type: 'text' },
+          { id: 'telephone', label: 'Téléphone Mobile', type: 'tel', required: true },
+          { id: 'adressePro', label: 'Adresse Postale Professionnelle', type: 'text' },
+          { id: 'email', label: 'E-mail', type: 'email', required: true },
+          { id: 'typeCuisine', label: 'Type de cuisine / Produits proposés', type: 'text' },
+          { id: 'zone', label: "Zone d'Implantation Souhaitée", type: 'radio', options: ['Zone Tunisienne', 'Zone Méditerranéenne', 'Zone Africaine', 'Zone Européenne', 'Zone Américaine', 'Zone Orientale', 'Global Market'] },
+          { id: 'pack', label: 'Choix du Pack Modulaire', type: 'radio', options: ['Pack Standard — Tente Standard 3m×3m (9 m², 3 000 DT)', 'Pack Standard — Tente avec Habillage 5m×3m (15 m², 4 500 DT)', 'Pack Privilège — Kiosque 2m×2m (4 m², 6 000 DT)', 'Pack Privilège — Kiosque 3m×3m (9 m², 7 500 DT)', 'Pack Mobile — Brouette Éco (1 500 DT)', 'Pack Mobile — Brouette Fantaisie (4 500 DT)', 'Food Truck — Emplacement seul (Sur Devis)'] }
+        ],
+        coords: [
+          { page: 0, field: 'entreprise', x: 187.4, y: 577.7, maxLen: 16 },
+          { page: 0, field: 'responsableLegal', x: 392.1, y: 577.7, maxLen: 16 },
+          { page: 0, field: 'fonction', x: 94, y: 559.4, maxLen: 16 },
+          { page: 0, field: 'telephone', x: 385.4, y: 559.4, maxLen: 16 },
+          { page: 0, field: 'adressePro', x: 195.6, y: 541.1, maxLen: 16 },
+          { page: 0, field: 'email', x: 337, y: 541.1, maxLen: 16 },
+          { page: 0, field: 'typeCuisine', x: 210, y: 522.8, maxLen: 55 },
+          { page: 0, field: 'zone', value: 'Zone Tunisienne', x: 51.3, y: 453.5 },
+          { page: 0, field: 'zone', value: 'Zone Méditerranéenne', x: 305.1, y: 453.5 },
+          { page: 0, field: 'zone', value: 'Zone Africaine', x: 51.3, y: 432.9 },
+          { page: 0, field: 'zone', value: 'Zone Européenne', x: 305.1, y: 432.9 },
+          { page: 0, field: 'zone', value: 'Zone Américaine', x: 51.3, y: 412.4 },
+          { page: 0, field: 'zone', value: 'Zone Orientale', x: 305.1, y: 412.4 },
+          { page: 0, field: 'zone', value: 'Global Market', x: 51.3, y: 391.8 },
+          { page: 0, field: 'pack', value: 'Pack Standard — Tente Standard 3m×3m (9 m², 3 000 DT)', x: 517, y: 297.5 },
+          { page: 0, field: 'pack', value: 'Pack Standard — Tente avec Habillage 5m×3m (15 m², 4 500 DT)', x: 517, y: 274.0 },
+          { page: 0, field: 'pack', value: 'Pack Privilège — Kiosque 2m×2m (4 m², 6 000 DT)', x: 517, y: 250.4 },
+          { page: 0, field: 'pack', value: 'Pack Privilège — Kiosque 3m×3m (9 m², 7 500 DT)', x: 517, y: 226.8 },
+          { page: 0, field: 'pack', value: 'Pack Mobile — Brouette Éco (1 500 DT)', x: 517, y: 203.2 },
+          { page: 0, field: 'pack', value: 'Pack Mobile — Brouette Fantaisie (4 500 DT)', x: 517, y: 179.7 },
+          { page: 0, field: 'pack', value: 'Food Truck — Emplacement seul (Sur Devis)', x: 517, y: 156.1 }
+        ]
+      },
+      exposant_business: {
+        title: 'Réservation Exposant — Packs Business & Premium',
+        pdf: 'assets/documents/dossier-reservation-exposant.pdf',
+        fields: [
+          { id: 'nomRaisonSociale', label: 'Nom / Raison Sociale', type: 'text', required: true },
+          { id: 'enseigneCommerciale', label: 'Enseigne Commerciale', type: 'text' },
+          { id: 'matriculeFiscal', label: 'Matricule Fiscal', type: 'text' },
+          { id: 'telephone', label: 'Téléphone', type: 'tel', required: true },
+          { id: 'contactPrincipal', label: 'Contact Principal (Nom & Fonction)', type: 'text' },
+          { id: 'pack', label: "Configuration de l'Espace Container", type: 'radio', options: ['Pack Business — Container Junior 5m×3m (15 m², 7 500 DT)', 'Pack Business — Container Junior Pro 10m×3m (30 m², 15 000 DT)', 'Pack Business — Container Junior ProMax 10m×3m (45 m², 18 000 DT)', 'Pack Premium — Real Container Pro 6m×2.5m (24 m², 18 000 DT)', 'Pack Premium — Real Container ProMax 12m×2.5m (48 m², 22 500 DT)'] },
+          { id: 'rooftop', label: 'Option Exclusive : Aménagement ROOFTOP / Terrasse supérieure (+7 500 DT)', type: 'checkbox' },
+          { id: 'equipements', label: 'Équipements de cuisson ou réfrigération lourds prévus sur l\'espace', type: 'textarea' },
+          { id: 'puissance', label: 'Puissance électrique totale requise (kW)', type: 'text' },
+          { id: 'tension', label: 'Tension souhaitée', type: 'radio', options: ['220V (Monophasé)', '380V (Triphasé)'] }
+        ],
+        coords: [
+          { page: 2, field: 'nomRaisonSociale', x: 147.8, y: 696.0, maxLen: 16 },
+          { page: 2, field: 'enseigneCommerciale', x: 409, y: 696.0, maxLen: 16 },
+          { page: 2, field: 'matriculeFiscal', x: 123.6, y: 677.7, maxLen: 16 },
+          { page: 2, field: 'telephone', x: 354.4, y: 677.7, maxLen: 16 },
+          { page: 2, field: 'contactPrincipal', x: 208.1, y: 659.5, maxLen: 55 },
+          { page: 2, field: 'pack', value: 'Pack Business — Container Junior 5m×3m (15 m², 7 500 DT)', x: 520.2, y: 572.1 },
+          { page: 2, field: 'pack', value: 'Pack Business — Container Junior Pro 10m×3m (30 m², 15 000 DT)', x: 520.2, y: 548.5 },
+          { page: 2, field: 'pack', value: 'Pack Business — Container Junior ProMax 10m×3m (45 m², 18 000 DT)', x: 520.2, y: 525.0 },
+          { page: 2, field: 'pack', value: 'Pack Premium — Real Container Pro 6m×2.5m (24 m², 18 000 DT)', x: 520.2, y: 501.4 },
+          { page: 2, field: 'pack', value: 'Pack Premium — Real Container ProMax 12m×2.5m (48 m², 22 500 DT)', x: 520.2, y: 477.8 },
+          { page: 2, field: 'rooftop', x: 520.2, y: 454.2 },
+          { page: 2, field: 'equipements', x: 46, y: 375, maxLen: 100 },
+          { page: 2, field: 'puissance', x: 205.3, y: 333.4, size: 8, maxLen: 8 },
+          { page: 2, field: 'tension', value: '220V (Monophasé)', x: 392.4, y: 340.1 },
+          { page: 2, field: 'tension', value: '380V (Triphasé)', x: 500.9, y: 340.1 }
+        ]
+      }
+    };
+
+    function renderDocFillField(f) {
+      const req = f.required ? 'required' : '';
+      if (f.type === 'text' || f.type === 'email' || f.type === 'tel') {
+        return `<div><label class="block text-xs font-semibold text-neutral-400 mb-1">${f.label}${f.required ? ' *' : ''}</label>
+        <input type="${f.type}" name="${f.id}" ${req} class="w-full rounded-lg px-4 py-2.5 text-sm bg-neutral-900 border border-neutral-800 focus:border-gold outline-none text-white"></div>`;
+      }
+      if (f.type === 'textarea') {
+        return `<div><label class="block text-xs font-semibold text-neutral-400 mb-1">${f.label}</label>
+        <textarea name="${f.id}" rows="3" class="w-full rounded-lg px-4 py-2.5 text-sm bg-neutral-900 border border-neutral-800 focus:border-gold outline-none text-white"></textarea></div>`;
+      }
+      if (f.type === 'radio') {
+        return `<div><p class="text-xs font-semibold text-neutral-400 mb-2">${f.label}</p>
+        <div class="grid gap-2">
+          ${f.options.map((o, i) => `<label class="doc-fill-option flex items-center gap-2.5 text-sm text-neutral-300 p-2.5 rounded-lg border border-neutral-800 hover:border-gold/50 cursor-pointer transition-colors">
+            <input type="radio" name="${f.id}" value="${o.replace(/"/g, '&quot;')}" ${i === 0 ? 'checked' : ''}> ${o}
+          </label>`).join('')}
+        </div></div>`;
+      }
+      if (f.type === 'checkbox-group') {
+        return `<div><p class="text-xs font-semibold text-neutral-400 mb-2">${f.label}</p>
+        <div class="grid gap-2">
+          ${f.options.map(o => `<label class="doc-fill-option flex items-center gap-2.5 text-sm text-neutral-300 p-2.5 rounded-lg border border-neutral-800 hover:border-gold/50 cursor-pointer transition-colors">
+            <input type="checkbox" name="${f.id}" value="${o.replace(/"/g, '&quot;')}"> ${o}
+          </label>`).join('')}
+        </div></div>`;
+      }
+      if (f.type === 'checkbox') {
+        return `<label class="doc-fill-option flex items-center gap-2.5 text-sm text-neutral-300 p-2.5 rounded-lg border border-neutral-800 cursor-pointer">
+        <input type="checkbox" name="${f.id}"> ${f.label}
+      </label>`;
+      }
+      return '';
+    }
+
+    let currentDocFormId = null;
+    function openDocFillModal(formId) {
+      const cfg = DOC_FORMS[formId];
+      if (!cfg) return;
+      currentDocFormId = formId;
+      document.getElementById('docFillModalTitle').textContent = cfg.title;
+      document.getElementById('docFillForm').innerHTML = cfg.fields.map(renderDocFillField).join('');
+      document.getElementById('docFillStatus').textContent = '';
+      const modal = document.getElementById('docFillModal');
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDocFillModal() {
+      const modal = document.getElementById('docFillModal');
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('docFillModalClose').addEventListener('click', closeDocFillModal);
+    document.getElementById('docFillModalBackdrop').addEventListener('click', closeDocFillModal);
+
+    async function generateFilledPdf() {
+      const cfg = DOC_FORMS[currentDocFormId];
+      if (!cfg) return;
+      const formEl = document.getElementById('docFillForm');
+      const statusEl = document.getElementById('docFillStatus');
+
+      if (!formEl.reportValidity()) return;
+
+      const formData = new FormData(formEl);
+      const values = {};
+      cfg.fields.forEach(f => {
+        if (f.type === 'checkbox-group') values[f.id] = formData.getAll(f.id);
+        else if (f.type === 'checkbox') values[f.id] = !!formEl.querySelector(`[name="${f.id}"]`)?.checked;
+        else values[f.id] = formData.get(f.id) || '';
+      });
+
+      if (location.protocol === 'file:') {
+        statusEl.textContent = "Cette fonctionnalité ne marche pas en ouvrant le fichier directement (file://) — le navigateur bloque le chargement du PDF. Lancez un serveur local (ex: npx serve, ou l'extension Live Server) ou testez sur le site déjà en ligne.";
+        return;
+      }
+      if (typeof PDFLib === 'undefined') {
+        statusEl.textContent = "La librairie PDF (pdf-lib) ne s'est pas chargée — vérifiez la connexion internet ou un bloqueur de script, puis rechargez la page.";
+        return;
+      }
+
+      statusEl.textContent = 'Génération du document…';
+      const btn = document.getElementById('docFillGenerateBtn');
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(cfg.pdf);
+        if (!res.ok) throw new Error('missing-pdf:' + res.status);
+        const bytes = await res.arrayBuffer();
+
+        const { PDFDocument, StandardFonts, rgb } = PDFLib;
+        const pdfDoc = await PDFDocument.load(bytes);
+
+        // If the PDF has real AcroForm fields, try filling them by matching field names.
+        let filledViaForm = false;
+        try {
+          const form = pdfDoc.getForm();
+          const formFields = form.getFields();
+          if (formFields.length) {
+            formFields.forEach(field => {
+              const name = field.getName();
+              const match = cfg.fields.find(f => name.toLowerCase().includes(f.id.toLowerCase()));
+              if (match && typeof field.setText === 'function') {
+                const v = values[match.id];
+                field.setText(Array.isArray(v) ? v.join(', ') : String(v || ''));
+                filledViaForm = true;
+              }
+            });
+            if (filledViaForm) form.flatten();
+          }
+        } catch (e) { /* not a real AcroForm — fall through to coordinate overlay */ }
+
+        // Flat/graphic PDF fallback: draw text at calibrated x/y positions, measured
+        // directly against the real PDF files (see each form's `coords` array).
+        // Text fields draw the typed value; radio/checkbox-group entries carry a
+        // `value` and only draw a mark when that specific option was selected.
+        if (!filledViaForm && Array.isArray(cfg.coords) && cfg.coords.length) {
+          const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+          const pages = pdfDoc.getPages();
+          cfg.coords.forEach(c => {
+            const page = pages[c.page];
+            if (!page) return;
+            const fieldDef = cfg.fields.find(f => f.id === c.field);
+            const val = values[c.field];
+            let mark = null;
+            if (!fieldDef) return;
+            if (fieldDef.type === 'radio') {
+              if (val === c.value) mark = 'X';
+            } else if (fieldDef.type === 'checkbox-group') {
+              if (Array.isArray(val) && val.includes(c.value)) mark = 'X';
+            } else if (fieldDef.type === 'checkbox') {
+              if (val === true) mark = 'X';
+            } else {
+              mark = val;
+            }
+            if (!mark) return;
+            let str = String(mark);
+            if (c.maxLen && str.length > c.maxLen) str = str.slice(0, c.maxLen - 1) + '…';
+            page.drawText(str, { x: c.x, y: c.y, size: c.size || 8.5, font, color: rgb(0.1, 0.1, 0.15) });
+          });
+        } else if (!filledViaForm) {
+          statusEl.textContent = "Ce document n'est pas encore calibré pour le remplissage automatique — contactez l'organisateur.";
+          btn.disabled = false;
+          return;
+        }
+
+        const outBytes = await pdfDoc.save();
+        const blob = new Blob([outBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = cfg.pdf.split('/').pop().replace('.pdf', '-complete.pdf');
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        statusEl.textContent = 'Document généré et téléchargé avec succès.';
+      } catch (err) {
+        if (String(err.message).startsWith('missing-pdf')) {
+          statusEl.textContent = `Le fichier PDF source est introuvable (${cfg.pdf}) — vérifiez qu'il est bien dans assets/documents/.`;
+        } else if (err.name === 'TypeError' && /fetch/i.test(err.message)) {
+          statusEl.textContent = "Impossible de charger le PDF (échec réseau). Si vous testez en local, assurez-vous d'utiliser un serveur local et non le fichier ouvert directement.";
+        } else {
+          statusEl.textContent = 'Erreur : ' + (err.message || err);
+        }
+        console.error('PDF generation failed:', err);
+      } finally {
+        btn.disabled = false;
+      }
+    }
+    document.getElementById('docFillGenerateBtn').addEventListener('click', generateFilledPdf);
 
     /* Pro Form Submit */
     document.getElementById('proForm').addEventListener('submit', (e) => {
@@ -2961,6 +3885,7 @@
       renderAwards(t);
       renderNights(t);
       renderZones(t);
+      renderDocuments(t);
       renderProTabs(t);
       updateProFormProfile();
       renderTickets(t);
@@ -3345,6 +4270,9 @@
   <!-- jsPDF Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+  <!-- pdf-lib: loads an existing PDF and fills it in (used by the "Documents Utiles" fill-online forms) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
   <script>
     function generateProPDF() {
       const name = document.getElementById('proName').value.trim();
@@ -3622,6 +4550,27 @@
         initAll();
       }
       setTimeout(initAll, 500);
+    })();
+  </script>
+
+  <!-- ================= PRELOADER LOGIC ================= -->
+  <script>
+    (function () {
+      const preloader = document.getElementById('sitePreloader');
+      if (!preloader) return;
+
+      let hidden = false;
+      function hidePreloader() {
+        if (hidden) return;
+        hidden = true;
+        preloader.classList.add('is-hidden');
+        document.body.classList.remove('preload-lock');
+        setTimeout(() => preloader.remove(), 700);
+      }
+
+      window.addEventListener('load', hidePreloader);
+      // Safety net in case the load event is delayed or missed (slow/blocked assets)
+      setTimeout(hidePreloader, 4000);
     })();
   </script>
 
