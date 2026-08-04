@@ -7,10 +7,27 @@
   <title>SFFF 2026 — Street & Fast Food Fest | Tunis Lac II</title>
   <meta name="description"
     content="SFFF 2026 - Street & Fast Food Fest à Tunis Lac II. 29 août au 12 septembre 2026. Voyagez à travers 5 continents sur 1,8 km de corniche immersive.">
+  <link rel="canonical" href="https://www.globalvillagetunisia.com/">
+
+  <!-- Open Graph / Facebook / WhatsApp / Instagram link preview -->
   <meta property="og:title" content="SFFF 2026 — Street & Fast Food Fest | Tunis">
   <meta property="og:description"
     content="15 Nuits, 42 Pavillons Nationaux, 310+ Exposants sur 1,8 km de corniche à Tunis Lac II.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.globalvillagetunisia.com/">
+  <meta property="og:image" content="https://www.globalvillagetunisia.com/assets/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="SFFF 2026">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SFFF 2026 — Street & Fast Food Fest | Tunis">
+  <meta name="twitter:description"
+    content="15 Nuits, 42 Pavillons Nationaux, 310+ Exposants sur 1,8 km de corniche à Tunis Lac II.">
+  <meta name="twitter:image" content="https://www.globalvillagetunisia.com/assets/og-preview.jpg">
+
   <link rel="icon" type="image/webp" href="assets/logo.webp">
 
   <!-- Fonts & Tailwind CSS (production build via Tailwind CLI, purged to only the classes this page uses) -->
@@ -40,7 +57,9 @@
       "addressCountry": "TN"
     }
   },
-  "description": "Le plus grand festival gastronomique et culturel de l'été tunisien."
+  "description": "Le plus grand festival gastronomique et culturel de l'été tunisien.",
+  "url": "https://www.globalvillagetunisia.com/",
+  "image": "https://www.globalvillagetunisia.com/assets/og-preview.jpg"
 }
 </script>
 
@@ -1402,6 +1421,96 @@
         animation: none !important;
       }
     }
+
+    /* ============ PASSPORT HERO (Billetterie) ============ */
+    .passport-hero-rig {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      isolation: isolate;
+    }
+
+    /* Warm gold glow pooling under the pedestal, breathing in sync with the float */
+    .passport-hero-rig::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 6%;
+      width: 62%;
+      height: 26%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.55) 0%, rgba(212, 175, 55, 0.22) 45%, rgba(212, 175, 55, 0) 75%);
+      filter: blur(14px);
+      z-index: 0;
+      animation: passportGlowPulse 4.5s ease-in-out infinite;
+    }
+
+    .passport-hero-img {
+      position: relative;
+      z-index: 1;
+      animation: passportFloat 5.5s ease-in-out infinite;
+      filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.55));
+    }
+
+    /* Diagonal light sweep crossing the passports, reusing the site's gold-shimmer language */
+    .passport-hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 40%, rgba(255, 240, 190, 0.55) 50%, transparent 60%);
+      background-size: 300% 300%;
+      background-position: -120% -120%;
+      mix-blend-mode: soft-light;
+      animation: passportSweep 6s ease-in-out infinite;
+      animation-delay: 1.2s;
+      pointer-events: none;
+    }
+
+    @keyframes passportFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(-0.6deg);
+      }
+    }
+
+    @keyframes passportGlowPulse {
+
+      0%,
+      100% {
+        opacity: 0.65;
+        transform: translateX(-50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.12);
+      }
+    }
+
+    @keyframes passportSweep {
+      0% {
+        background-position: -120% -120%;
+      }
+
+      35%,
+      100% {
+        background-position: 120% 120%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .passport-hero-rig::before,
+      .passport-hero-img,
+      .passport-hero-img::after {
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -2236,10 +2345,14 @@
   <!-- ================= TICKETING ================= -->
   <section id="tarifs" class="py-24 px-5 md:px-8" style="background:#0b0b0d; padding-bottom: 8rem;">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+      <div class="text-center max-w-2xl mx-auto fade-up">
         <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" data-i18n="tickets.eyebrow">Billetterie
         </p>
         <h2 id="ticketsTitle" class="font-display font-extrabold text-3xl md:text-5xl">Passeports &amp; Tarifs</h2>
+      </div>
+      <div class="passport-hero-rig -mt-4 mb-2 fade-up">
+        <img src="assets/passport-hero.webp" alt="Les 4 Passeports SFFF 2026"
+          class="passport-hero-img w-full max-w-md md:max-w-lg h-auto object-contain" loading="lazy">
       </div>
       <div id="ticketsGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" style="padding-top: 1.25rem;"></div>
       <!-- ticketsSeeMoreContainer removed: Tarifs shows all items always -->
@@ -2366,7 +2479,7 @@
                 class="text-gold flex-shrink-0 mt-0.5">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
-              </svg><span style="word-break:break-all;">contact@globalvillagetunisia.com</span></li>
+              </svg><a href="mailto:contact@globalvillagetunisia.com" class="hover:text-gold transition-colors underline underline-offset-2" style="word-break:break-all;">contact@globalvillagetunisia.com</a></li>
             <li id="footerLocation" class="flex items-center gap-2.5 text-neutral-300">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
@@ -2672,7 +2785,7 @@
         ticketsList: [
           { name: "Passeport Normal", price: "25 DT", numericPrice: 25, tag: "", features: ["Accès standard au site", "Carnet de tampons", "Accès à toutes les zones publiques"] },
           { name: "Passeport Pro", price: "120 DT", numericPrice: 120, tag: "Populaire", features: ["Coupe-file prioritaire", "Accès B2B Hub", "Accès Zones Ambrées"] },
-          { name: "[Nom du Passeport]", price: "[Prix] DT", numericPrice: 0, tag: "", features: ["[Avantage 1]", "[Avantage 2]", "[Avantage 3]"] },
+          { name: "Passeport  Diplomatique", price: "230 DT", numericPrice: 230, tag: "", features: ["Accès prioritaire", "parking VIP", "Accès lounge diplomatique"] },
           { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Accès prioritaire illimité", "Table réservée", "Cocktail de bienvenue", "Parking VIP"] }
         ],
         ticketCta: "Choisir ce Passeport",
@@ -2782,7 +2895,7 @@
         ticketsList: [
           { name: "Standard Passport", price: "25 DT", numericPrice: 25, tag: "", features: ["Standard site access", "Stamp booklet", "Access to all public zones"] },
           { name: "Pro Passport", price: "120 DT", numericPrice: 120, tag: "Popular", features: ["Priority fast lane", "B2B Hub access", "Amber Zones access"] },
-          { name: "[Passport Name]", price: "[Price] DT", numericPrice: 0, tag: "", features: ["[Benefit 1]", "[Benefit 2]", "[Benefit 3]"] },
+          { name: "Diplomatic Passport", price: "230 DT", numericPrice: 230, tag: "", features: ["Priority access", "VIP parking", "Diplomatic lounge access"] },
           { name: "VIP Gold", price: "350 DT", numericPrice: 350, tag: "VIP", features: ["Unlimited priority access", "Reserved table", "Welcome cocktail", "VIP parking"] }
         ],
         ticketCta: "Choose this Passport",
@@ -2892,7 +3005,7 @@
         ticketsList: [
           { name: "جواز عادي", price: "25 د.ت", numericPrice: 25, tag: "", features: ["دخول عادي للموقع", "دفتر أختام", "الوصول لكل المناطق العامة"] },
           { name: "جواز احترافي", price: "120 د.ت", numericPrice: 120, tag: "الأكثر طلباً", features: ["ممر أولوية سريع", "دخول مركز B2B", "دخول المناطق الكهرمانية"] },
-          { name: "[اسم الجواز]", price: "[السعر] د.ت", numericPrice: 0, tag: "", features: ["[الميزة 1]", "[الميزة 2]", "[الميزة 3]"] },
+          { name: "جواز دبلوماسي", price: "230 د.ت", numericPrice: 230, tag: "", features: ["أولوية دخول", "موقف سيارات VIP", "دخول الصالة الدبلوماسية"] },
           { name: "VIP Gold", price: "350 د.ت", numericPrice: 350, tag: "VIP", features: ["أولوية دخول غير محدودة", "طاولة محجوزة", "كوكتيل ترحيبي", "موقف سيارات VIP"] }
         ],
         ticketCta: "اختر هذا الجواز",
@@ -3416,7 +3529,7 @@
           { page: 0, field: 'nationalite', x: 99, y: 616.7, maxLen: 24 },
           { page: 0, field: 'passeport', x: 385, y: 616.7, maxLen: 24 },
           { page: 0, field: 'telephone', x: 147, y: 598.4, maxLen: 24 },
-          { page: 0, field: 'email', x: 366, y: 598.4, maxLen: 24 },
+          { page: 0, field: 'email', x: 366, y: 598.4, maxLen: 45 },
           { page: 0, field: 'organisme', x: 257, y: 580.1, maxLen: 55 },
           { page: 0, field: 'categorie', value: 'PRESS / Média Officiel', x: 47.5, y: 492.9 },
           { page: 0, field: 'categorie', value: 'CREATOR / Influenceur', x: 301.4, y: 492.9 },
@@ -3511,7 +3624,7 @@
           { page: 0, field: 'signataire', x: 173, y: 593.5, maxLen: 16 },
           { page: 0, field: 'qualite', x: 381, y: 593.5, maxLen: 16 },
           { page: 0, field: 'telephone', x: 158, y: 575.2, maxLen: 16 },
-          { page: 0, field: 'email', x: 366, y: 575.2, maxLen: 16 },
+          { page: 0, field: 'email', x: 366, y: 575.2, maxLen: 45 },
           { page: 0, field: 'adresseSiege', x: 154, y: 556.9, maxLen: 55 },
           { page: 0, field: 'pack', value: 'Sponsor Titulaire (Main Partner) — 100 000 DT', x: 531.2, y: 451.5 },
           { page: 0, field: 'pack', value: 'Pack Or (Gold Partner) — 50 000 DT', x: 531.2, y: 415.6 },
@@ -3543,7 +3656,7 @@
           { page: 0, field: 'fonction', x: 94, y: 559.4, maxLen: 16 },
           { page: 0, field: 'telephone', x: 385.4, y: 559.4, maxLen: 16 },
           { page: 0, field: 'adressePro', x: 195.6, y: 541.1, maxLen: 16 },
-          { page: 0, field: 'email', x: 337, y: 541.1, maxLen: 16 },
+          { page: 0, field: 'email', x: 337, y: 541.1, maxLen: 45 },
           { page: 0, field: 'typeCuisine', x: 210, y: 522.8, maxLen: 55 },
           { page: 0, field: 'zone', value: 'Zone Tunisienne', x: 51.3, y: 453.5 },
           { page: 0, field: 'zone', value: 'Zone Méditerranéenne', x: 305.1, y: 453.5 },
