@@ -708,6 +708,111 @@
 
     .ticket-card {
       overflow: visible !important;
+      perspective: 1800px;
+    }
+
+    /* Passport "book cover" flip — closed cover sits on top, flips open on
+       hover/focus to reveal the pricing panel underneath. Cover colors echo
+       the 4 real passports in the Billetterie hero image. */
+    .book-cover {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      border-radius: 1rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.5rem;
+      text-align: center;
+      transform-origin: left center;
+      transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+      box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    [dir="rtl"] .book-cover {
+      transform-origin: right center;
+    }
+
+    /* Trigger on the whole card, not just the cover itself — once the flip
+       starts, the cover rotates away and the cursor ends up over the
+       newly-revealed content underneath, which must keep the card "hovered"
+       (via :hover on .ticket-card) so the cover doesn't snap shut mid-click. */
+    .ticket-card:hover .book-cover,
+    .ticket-card:focus-within .book-cover {
+      transform: rotateY(-100deg);
+    }
+
+    [dir="rtl"] .ticket-card:hover .book-cover,
+    [dir="rtl"] .ticket-card:focus-within .book-cover {
+      transform: rotateY(100deg);
+    }
+
+    .book-cover .book-cover-globe {
+      width: 46px;
+      height: 46px;
+      opacity: 0.85;
+    }
+
+    .book-cover .book-cover-brand {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .book-cover .book-cover-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    .book-cover .book-cover-hint {
+      margin-top: 0.4rem;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      opacity: 0.55;
+    }
+
+    .book-cover-standard {
+      background: linear-gradient(160deg, #2a2a2e 0%, #101012 100%);
+      color: #e8e8ea;
+    }
+
+    .book-cover-pro {
+      background: linear-gradient(160deg, #1f3f8f 0%, #0e1f4d 100%);
+      color: #eaf0ff;
+    }
+
+    .book-cover-diplomatique {
+      background: linear-gradient(160deg, #9e1e22 0%, #4d0e10 100%);
+      color: #ffeaea;
+    }
+
+    .book-cover-vip {
+      background: linear-gradient(160deg, var(--gold-accent) 0%, #6b4e12 100%);
+      color: #1a1200;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .book-cover {
+        transition: none !important;
+      }
+    }
+
+    @media (hover: none) {
+      .book-cover {
+        transform: rotateY(-100deg);
+        transition: none;
+      }
     }
 
     .glass-nav {
@@ -3414,10 +3519,26 @@
     let activeTicketIdx = 0;
     let activeQty = 1;
 
+    /* Book-cover style per passport tier (color + label), keyed by position
+       since the lineup is always Standard -> Pro -> mid-tier -> VIP. Falls
+       back to the standard (black) cover if a 5th tier is ever added. */
+    const BOOK_COVERS = ['book-cover-standard', 'book-cover-pro', 'book-cover-diplomatique', 'book-cover-vip'];
+    const BOOK_COVER_GLOBE = `<svg class="book-cover-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+      <circle cx="12" cy="12" r="9.5" />
+      <ellipse cx="12" cy="12" rx="4.2" ry="9.5" />
+      <path d="M2.5 12h19M3.8 7.5h16.4M3.8 16.5h16.4" />
+    </svg>`;
+
     function renderTickets(t) {
       // Always show all — no See More for Tarifs section
       document.getElementById('ticketsGrid').innerHTML = t.ticketsList.map((tk, i) => `
     <div class="${tk.tag === 'VIP' ? 'vip-border' : 'panel'} ticket-card rounded-2xl p-7 flex flex-col relative shadow-xl ${tk.tag ? 'pt-9' : ''}">
+      <div class="book-cover ${BOOK_COVERS[i] || BOOK_COVERS[0]}" tabindex="0" aria-label="${tk.name}">
+        ${BOOK_COVER_GLOBE}
+        <span class="book-cover-brand">SFFF Passport</span>
+        <span class="book-cover-name">${tk.name}</span>
+        <span class="book-cover-hint">${t.ticketCta}</span>
+      </div>
       ${tk.tag ? `<span class="absolute -top-3.5 ${document.documentElement.dir === 'rtl' ? 'left-6' : 'right-6'} text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap z-10" style="background:var(--gold);color:#0A0A0A;">${tk.tag}</span>` : ''}
       <p class="font-display font-bold text-lg mb-1 text-white">${tk.name}</p>
       <p class="font-display font-extrabold text-3xl text-gold mb-6">${tk.price}</p>
