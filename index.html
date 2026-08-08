@@ -1165,63 +1165,172 @@
       color: var(--muted);
     }
 
-    /* Documents section — sticky sidebar category index (desktop only) */
-    .doc-index-row {
-      display: flex;
+    /* ============ DOCUMENTS UTILES — profile pills, search, cards ============ */
+    .doc-profile-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
-      width: 100%;
-      text-align: start;
-      padding: 0.65rem 0.65rem;
-      border-radius: 0.65rem;
-      background: transparent;
-      border: 1px solid transparent;
+      gap: 0.55rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 9999px;
+      background: var(--panel);
+      border: 1px solid var(--border-dark);
       color: var(--muted);
       font-size: 0.83rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+      white-space: nowrap;
     }
 
-    .doc-index-row:hover {
-      background: rgba(212, 175, 55, 0.08);
+    .doc-profile-pill:hover {
       color: #fff;
+      border-color: rgba(212, 175, 55, 0.4);
     }
 
-    .doc-index-row.active {
-      background: rgba(212, 175, 55, 0.12);
-      border-color: var(--border);
-      color: var(--gold-hi);
+    .doc-profile-pill.active {
+      background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold) 100%);
+      border-color: var(--gold);
+      color: #0A0A0A;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
     }
 
-    .doc-index-row .doc-index-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    .doc-profile-pill .doc-profile-count {
+      font-size: 0.68rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      padding: 0.1rem 0.45rem;
+      color: inherit;
+      opacity: 0.75;
+    }
+
+    .doc-profile-pill.active .doc-profile-count {
+      background: rgba(10, 10, 10, 0.18);
       opacity: 0.85;
     }
 
-    .doc-index-row .doc-index-name {
-      flex: 1;
-      line-height: 1.3;
+    .doc-search-input {
+      background: var(--panel);
+      border: 1px solid var(--border-dark);
+      color: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
 
-    .doc-index-row .doc-index-count {
-      flex-shrink: 0;
-      font-size: 0.7rem;
-      font-weight: 700;
+    .doc-search-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+
+    .doc-search-input::placeholder {
       color: var(--muted);
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 9999px;
-      padding: 0.15rem 0.5rem;
-      min-width: 1.6rem;
-      text-align: center;
     }
 
-    .doc-index-row.active .doc-index-count {
-      background: rgba(212, 175, 55, 0.2);
+    /* "Fillable now" accent — deliberately NOT gold, so the one action that
+       actually matters (submitting a form) reads as visually distinct from
+       passive view/download actions everywhere else on the site. */
+    :root {
+      --doc-action: #3DDC97;
+      --doc-action-hi: #6FF0B7;
+    }
+
+    .btn-doc-action {
+      background: linear-gradient(135deg, var(--doc-action-hi) 0%, var(--doc-action) 100%);
+      color: #06251A;
+      font-weight: 800;
+      box-shadow: 0 4px 16px rgba(61, 220, 151, 0.3);
+      transition: box-shadow .25s ease, transform .15s ease;
+    }
+
+    .btn-doc-action:hover {
+      box-shadow: 0 10px 28px rgba(61, 220, 151, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .doc-card {
+      cursor: pointer;
+      transition: transform .25s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.55);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+    }
+
+    .doc-card.doc-card-essential {
+      border-color: rgba(61, 220, 151, 0.5);
+      box-shadow: 0 0 0 1px rgba(61, 220, 151, 0.15), 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .doc-card-essential-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #06251A;
+      background: linear-gradient(135deg, var(--doc-action-hi), var(--doc-action));
+      padding: 0.25rem 0.55rem;
+      border-radius: 9999px;
+    }
+
+    .doc-type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.5rem;
+      border-radius: 0.4rem;
+      border: 1px solid var(--border-dark);
+      color: var(--muted);
+    }
+
+    .doc-type-badge.doc-type-form {
+      color: var(--doc-action-hi);
+      border-color: rgba(61, 220, 151, 0.35);
+      background: rgba(61, 220, 151, 0.08);
+    }
+
+    .doc-lang-pills {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .doc-lang-pill {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      padding: 0.2rem 0.45rem;
+      border-radius: 0.35rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-dark);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+
+    .doc-lang-pill:hover {
+      color: #fff;
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .doc-lang-pill.active {
+      background: rgba(212, 175, 55, 0.16);
+      border-color: var(--gold);
       color: var(--gold-hi);
+    }
+
+    .doc-card-actions a,
+    .doc-card-actions button {
+      position: relative;
+      z-index: 2;
     }
 
     .modal-backdrop {
@@ -2495,18 +2604,33 @@
 
   <!-- ================= DOCUMENTS UTILES ================= -->
   <section id="documents" class="py-24 px-5 md:px-8 border-t border-neutral-800/50" style="background:#0b0b0d;">
-    <div class="max-w-[1600px] mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
-        <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" id="documentsEyebrow">Ressources</p>
-        <h2 id="documentsTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">Documents Utiles</h2>
-        <p id="documentsIntro" class="text-neutral-400 text-sm md:text-base">Consultez ou téléchargez les dossiers
-          officiels du festival, classés par profil.</p>
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 fade-up">
+        <div class="max-w-2xl">
+          <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" id="documentsEyebrow">Ressources</p>
+          <h2 id="documentsTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">Documents Utiles</h2>
+          <p id="documentsIntro" class="text-neutral-400 text-sm md:text-base">Consultez ou téléchargez les dossiers
+            officiels du festival, classés par profil.</p>
+        </div>
+        <div class="w-full lg:w-80 shrink-0">
+          <div class="relative">
+            <span id="docSearchIcon" class="absolute start-4 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none flex"></span>
+            <input type="search" id="docSearchInput" autocomplete="off"
+              class="doc-search-input w-full rounded-full py-3 ps-11 pe-4 text-sm"
+              placeholder="Rechercher un document...">
+          </div>
+        </div>
       </div>
-      <div id="documentsTabs" class="flex flex-wrap justify-center gap-2 mb-10 lg:hidden"></div>
-      <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-10 lg:items-start">
-        <aside id="documentsIndex" class="hidden lg:block sticky panel rounded-2xl p-5" style="top:6.5rem;"></aside>
-        <div id="documentsGrid" class="space-y-12"></div>
+
+      <!-- Profile onboarding pills — "Je suis : ..." fast-path, doubles as the category filter -->
+      <div class="mb-10 fade-up">
+        <p id="docProfileLabel" class="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 mb-3">Je suis :</p>
+        <div id="documentsTabs" class="flex flex-wrap gap-2.5"></div>
       </div>
+
+      <p id="docResultsMeta" class="text-xs text-neutral-500 mb-5 min-h-[1rem]"></p>
+      <div id="documentsGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      <p id="docEmptyState" class="hidden text-center text-neutral-500 text-sm py-16"></p>
     </div>
   </section>
 
@@ -2737,6 +2861,29 @@
     </div>
   </div>
 
+  <!-- Document Quick-Preview Modal -->
+  <div id="docPreviewModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-5">
+    <div id="docPreviewModalBackdrop" class="absolute inset-0 modal-backdrop"></div>
+    <div class="relative w-full max-w-4xl rounded-2xl vip-border shadow-2xl modal-frame" style="height:88vh;">
+      <div class="modal-scroll-inner p-0 h-full flex flex-col">
+        <div class="flex items-center justify-between gap-3 px-5 py-4 border-b border-neutral-800/70 shrink-0">
+          <h3 id="docPreviewTitle" class="font-display font-bold text-sm md:text-base text-white truncate"></h3>
+          <div class="flex items-center gap-2 shrink-0">
+            <a id="docPreviewDownload" href="#" download
+              class="btn-primary px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-1.5"></a>
+            <button id="docPreviewModalClose" class="text-neutral-400 hover:text-white p-1.5"
+              aria-label="Close preview">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 6l12 12M6 18L18 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <iframe id="docPreviewFrame" class="w-full flex-1 border-0 bg-neutral-900" title="Document preview"></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
     /* ======================================================================
        DOCUMENTS UTILES — add or remove a document HERE, in one place.
@@ -2769,17 +2916,34 @@
       { key: 'b2b', icon: 'shopping-bag' }
     ];
 
+    /* ======================================================================
+       Each entry is one CARD. Most documents are a single file; documents
+       available in several languages instead carry a `variants` array
+       ({ lang, file }) and the card shows FR|EN|AR pills to switch between
+       them instead of splitting into separate cards.
+       `formId` marks a document as fillable online (maps into DOC_FORMS
+       further down) — this is also what the "essential" onboarding badge
+       keys off, so keep it accurate.
+       ====================================================================== */
     const DOCUMENTS_REGISTRY = [
       { id: 'sponsor-dossier', category: 'sponsors', file: 'assets/documents/dossier-sponsoring-programmation.pdf' },
-      { id: 'sponsor-guide-fr', category: 'sponsors', file: 'assets/documents/guide-sponsor-fr.pdf' },
-      { id: 'sponsor-guide-en', category: 'sponsors', file: 'assets/documents/guide-sponsor-en.pdf' },
-      { id: 'sponsor-guide-ar', category: 'sponsors', file: 'assets/documents/guide-sponsor-ar.pdf' },
+      {
+        id: 'sponsor-guide', category: 'sponsors', variants: [
+          { lang: 'fr', file: 'assets/documents/guide-sponsor-fr.pdf' },
+          { lang: 'en', file: 'assets/documents/guide-sponsor-en.pdf' },
+          { lang: 'ar', file: 'assets/documents/guide-sponsor-ar.pdf' }
+        ]
+      },
       { id: 'sponsor-fiche', category: 'sponsors', file: 'assets/documents/fiche-reservation-sponsor.pdf', formId: 'sponsor' },
       { id: 'exposant-modulaire', category: 'exposants', file: 'assets/documents/dossier-reservation-exposant.pdf', formId: 'exposant_modulaire' },
       { id: 'exposant-business', category: 'exposants', file: 'assets/documents/dossier-reservation-exposant.pdf', formId: 'exposant_business' },
-      { id: 'ambassade-guide-fr', category: 'ambassades', file: 'assets/documents/guide-ambassade-fr.pdf' },
-      { id: 'ambassade-guide-en', category: 'ambassades', file: 'assets/documents/guide-ambassade-en.pdf' },
-      { id: 'ambassade-guide-ar', category: 'ambassades', file: 'assets/documents/guide-ambassade-ar.pdf' },
+      {
+        id: 'ambassade-guide', category: 'ambassades', variants: [
+          { lang: 'fr', file: 'assets/documents/guide-ambassade-fr.pdf' },
+          { lang: 'en', file: 'assets/documents/guide-ambassade-en.pdf' },
+          { lang: 'ar', file: 'assets/documents/guide-ambassade-ar.pdf' }
+        ]
+      },
       { id: 'ambassade-fiche', category: 'ambassades', file: 'assets/documents/fiche-reservation-ambassade.pdf', formId: 'ambassade' },
       { id: 'presse-guide', category: 'presse', file: 'assets/documents/guide-presse-influenceur.pdf' },
       { id: 'presse-fiche', category: 'presse', file: 'assets/documents/fiche-accreditation-presse.pdf', formId: 'presse' },
@@ -2794,18 +2958,16 @@
           eyebrow: "Ressources", title: "Documents Utiles",
           intro: "Consultez ou téléchargez les dossiers officiels du festival, classés par profil. Les formulaires marqués « Remplir en ligne » peuvent être complétés directement sur le site.",
           view: "Voir", download: "Télécharger", fill: "Remplir en ligne", allLabel: "Tous", indexLabel: "Catégories",
+          searchPlaceholder: "Rechercher un document...", profileLabel: "Je suis :", essential: "Essentiel pour vous", typeForm: "Formulaire", typePdf: "PDF",
+          noResults: "Aucun document ne correspond à votre recherche.", previewCta: "Aperçu rapide", previewHint: "Cliquez sur une carte pour un aperçu rapide",
           categoryNames: { sponsors: "Sponsors & Partenaires", exposants: "Exposants & Kiosques", ambassades: "Ambassades & Diplomatie", presse: "Média, Presse & Créateurs", b2b: "Fournisseurs B2B" },
           items: {
             'sponsor-dossier': { title: "Dossier de Sponsoring & Programmation", desc: "Masterplan stratégique, chronologie des 15 soirées thématiques et grille tarifaire early bird." },
-            'sponsor-guide-fr': { title: "Guide Sponsor (Français)", desc: "Guide officiel des packs de partenariat, en français." },
-            'sponsor-guide-en': { title: "Guide Sponsor (English)", desc: "Official sponsorship pack guide, in English." },
-            'sponsor-guide-ar': { title: "Guide Sponsor (العربية)", desc: "الدليل الرسمي لباقات الرعاية، باللغة العربية." },
+            'sponsor-guide': { title: "Guide Sponsor", desc: "Guide officiel des packs de partenariat, disponible en français, anglais et arabe." },
             'sponsor-fiche': { title: "Fiche de Réservation Sponsor", desc: "Bon de commande à compléter pour réserver votre pack de partenariat." },
             'exposant-modulaire': { title: "Dossier de Réservation — Packs Modulaires & Mobiles", desc: "Tentes, kiosques et brouettes mobiles." },
             'exposant-business': { title: "Dossier de Réservation — Packs Business & Premium", desc: "Containers et structures premium." },
-            'ambassade-guide-fr': { title: "Guide des Ambassades (Français)", desc: "Zones régionales, pavillons nationaux et protocole d'accueil diplomatique, en français." },
-            'ambassade-guide-en': { title: "Guide des Ambassades (English)", desc: "Regional zones, national pavilions and diplomatic protocol, in English." },
-            'ambassade-guide-ar': { title: "دليل السفارات (العربية)", desc: "المناطق الجهوية والأجنحة الوطنية والبروتوكول الدبلوماسي، باللغة العربية." },
+            'ambassade-guide': { title: "Guide des Ambassades", desc: "Zones régionales, pavillons nationaux et protocole d'accueil diplomatique, disponible en français, anglais et arabe." },
             'ambassade-fiche': { title: "Fiche de Réservation Ambassade", desc: "Réservez votre pavillon national, votre zone régionale et vos animations protocolaires." },
             'presse-guide': { title: "Guide Presse & Influenceurs", desc: "Accréditations, Press Lounge, studio streaming et charte digitale des hashtags." },
             'presse-fiche': { title: "Demande d'Accréditation Presse", desc: "Formulaire d'accréditation pour journalistes, créateurs de contenu et photographes." },
@@ -2915,18 +3077,16 @@
           eyebrow: "Resources", title: "Useful Documents",
           intro: "View or download the festival's official documents, sorted by profile. Forms marked \"Fill Online\" can be completed directly on the site.",
           view: "View", download: "Download", fill: "Fill Online", allLabel: "All", indexLabel: "Categories",
+          searchPlaceholder: "Search a document...", profileLabel: "I am:", essential: "Essential for you", typeForm: "Form", typePdf: "PDF",
+          noResults: "No document matches your search.", previewCta: "Quick preview", previewHint: "Click a card for a quick preview",
           categoryNames: { sponsors: "Sponsors & Partners", exposants: "Exhibitors & Kiosks", ambassades: "Embassies & Diplomacy", presse: "Media, Press & Creators", b2b: "B2B Suppliers" },
           items: {
             'sponsor-dossier': { title: "Sponsoring & Programming Dossier", desc: "Strategic masterplan, 15-night schedule and early bird pricing grid." },
-            'sponsor-guide-fr': { title: "Sponsor Guide (Français)", desc: "Official sponsorship pack guide, in French." },
-            'sponsor-guide-en': { title: "Sponsor Guide (English)", desc: "Official sponsorship pack guide, in English." },
-            'sponsor-guide-ar': { title: "Sponsor Guide (العربية)", desc: "Official sponsorship pack guide, in Arabic." },
+            'sponsor-guide': { title: "Sponsor Guide", desc: "Official sponsorship pack guide, available in French, English and Arabic." },
             'sponsor-fiche': { title: "Sponsor Reservation Form", desc: "Order form to complete to reserve your partnership pack." },
             'exposant-modulaire': { title: "Exhibitor Dossier — Modular & Mobile Packs", desc: "Tents, kiosks and mobile carts." },
             'exposant-business': { title: "Exhibitor Dossier — Business & Premium Packs", desc: "Containers and premium structures." },
-            'ambassade-guide-fr': { title: "Embassy Guide (Français)", desc: "Regional zones, national pavilions and diplomatic welcome protocol, in French." },
-            'ambassade-guide-en': { title: "Embassy Guide (English)", desc: "Regional zones, national pavilions and diplomatic welcome protocol, in English." },
-            'ambassade-guide-ar': { title: "Embassy Guide (العربية)", desc: "Regional zones, national pavilions and diplomatic welcome protocol, in Arabic." },
+            'ambassade-guide': { title: "Embassy Guide", desc: "Regional zones, national pavilions and diplomatic welcome protocol, available in French, English and Arabic." },
             'ambassade-fiche': { title: "Embassy Reservation Form", desc: "Reserve your national pavilion, regional zone and protocol events." },
             'presse-guide': { title: "Press & Influencer Guide", desc: "Accreditations, Press Lounge, streaming studio and digital charter." },
             'presse-fiche': { title: "Press Accreditation Request", desc: "Accreditation form for journalists, content creators and photographers." },
@@ -3030,18 +3190,16 @@
           eyebrow: "الموارد", title: "وثائق مفيدة",
           intro: "اطّلع على وثائق المهرجان الرسمية أو حمّلها، مصنّفة حسب الفئة. النماذج المصنّفة بـ«التعبئة عبر الإنترنت» يمكن ملؤها مباشرة على الموقع.",
           view: "عرض", download: "تحميل", fill: "تعبئة عبر الإنترنت", allLabel: "الكل", indexLabel: "الفئات",
+          searchPlaceholder: "ابحث عن وثيقة...", profileLabel: "أنا:", essential: "أساسي بالنسبة لك", typeForm: "استمارة", typePdf: "PDF",
+          noResults: "لا توجد وثيقة مطابقة لبحثك.", previewCta: "معاينة سريعة", previewHint: "انقر على بطاقة لمعاينة سريعة",
           categoryNames: { sponsors: "الرعاة والشركاء", exposants: "العارضون والأكشاك", ambassades: "السفارات والدبلوماسية", presse: "الإعلام والصحافة والمبدعون", b2b: "موردو B2B" },
           items: {
             'sponsor-dossier': { title: "ملف الرعاية والبرمجة", desc: "المخطط الاستراتيجي، برنامج الخمس عشرة ليلة وجدول التسعير المبكر." },
-            'sponsor-guide-fr': { title: "دليل الرعاة (Français)", desc: "الدليل الرسمي لباقات الرعاية، باللغة الفرنسية." },
-            'sponsor-guide-en': { title: "دليل الرعاة (English)", desc: "الدليل الرسمي لباقات الرعاية، باللغة الإنجليزية." },
-            'sponsor-guide-ar': { title: "دليل الرعاة (العربية)", desc: "الدليل الرسمي لباقات الرعاية، باللغة العربية." },
+            'sponsor-guide': { title: "دليل الرعاة", desc: "الدليل الرسمي لباقات الرعاية، متوفر بالفرنسية والإنجليزية والعربية." },
             'sponsor-fiche': { title: "استمارة حجز الرعاية", desc: "استمارة الطلب الواجب تعبئتها لحجز باقة الشراكة." },
             'exposant-modulaire': { title: "ملف حجز العارضين — باقات متنقلة وقابلة للتركيب", desc: "خيام، أكشاك وعربات متنقلة." },
             'exposant-business': { title: "ملف حجز العارضين — باقات أعمال ومميزة", desc: "حاويات وهياكل مميزة." },
-            'ambassade-guide-fr': { title: "دليل السفارات (Français)", desc: "المناطق الجهوية والأجنحة الوطنية وبروتوكول الاستقبال الدبلوماسي، باللغة الفرنسية." },
-            'ambassade-guide-en': { title: "دليل السفارات (English)", desc: "المناطق الجهوية والأجنحة الوطنية وبروتوكول الاستقبال الدبلوماسي، باللغة الإنجليزية." },
-            'ambassade-guide-ar': { title: "دليل السفارات (العربية)", desc: "المناطق الجهوية والأجنحة الوطنية وبروتوكول الاستقبال الدبلوماسي، باللغة العربية." },
+            'ambassade-guide': { title: "دليل السفارات", desc: "المناطق الجهوية والأجنحة الوطنية وبروتوكول الاستقبال الدبلوماسي، متوفر بالفرنسية والإنجليزية والعربية." },
             'ambassade-fiche': { title: "استمارة حجز السفارة", desc: "احجز جناحك الوطني ومنطقتك الجهوية وفعالياتك البروتوكولية." },
             'presse-guide': { title: "دليل الصحافة والمؤثرين", desc: "الاعتمادات، صالة الصحافة، استوديو البث والميثاق الرقمي." },
             'presse-fiche': { title: "طلب اعتماد صحفي", desc: "استمارة اعتماد للصحفيين وصنّاع المحتوى والمصورين." },
@@ -3163,7 +3321,11 @@
       check: '<path d="M20 6 9 17l-5-5"/>',
       file: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/>',
       download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
-      edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>'
+      edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+      globe: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+      search: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+      x: '<path d="M18 6 6 18M6 6l12 12"/>',
+      'clipboard-list': '<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h6M9 8h1"/>'
     };
     function icon(name, cls, size) { size = size || 22; return `<svg class="${cls || ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`; }
 
@@ -3417,103 +3579,174 @@
     }
 
     let activeDocCategory = 'all';
+    let docSearchQuery = '';
+    const docCardLangChoice = {}; // { [docId]: 'fr'|'en'|'ar' } — remembers each card's picked language variant across re-renders
 
-    /* Builds { key, icon, name, items: [{id, file, formId, title, desc}] } per
-       category by joining the language-independent DOCUMENTS_REGISTRY with the
-       current language's category names + item text. Categories with no
-       documents in the registry are skipped automatically. */
-    function getDocCategories(t) {
-      return DOCUMENT_CATEGORIES.map(cat => {
-        const items = DOCUMENTS_REGISTRY
-          .filter(doc => doc.category === cat.key)
-          .map(doc => Object.assign({}, doc, t.documents.items[doc.id]));
-        return { key: cat.key, icon: cat.icon, name: t.documents.categoryNames[cat.key], items };
-      }).filter(cat => cat.items.length > 0);
+    const DOC_LANG_LABELS = { fr: 'FR', en: 'EN', ar: 'AR' };
+
+    /* Lowercases and strips accents/diacritics so "reservation" matches
+       "Réservation" — French users very often type without accents. */
+    function normalizeSearchText(str) {
+      return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    /* Builds one flat list of documents (language variants already merged into
+       a single card with a `variants` array) joined with the current
+       language's text. */
+    function getDocList(t) {
+      return DOCUMENTS_REGISTRY.map(doc => {
+        const text = t.documents.items[doc.id] || { title: doc.id, desc: '' };
+        const cat = DOCUMENT_CATEGORIES.find(c => c.key === doc.category);
+        return Object.assign({}, doc, text, { categoryIcon: cat ? cat.icon : 'file', categoryName: t.documents.categoryNames[doc.category] });
+      });
+    }
+
+    function resolveDocFile(doc) {
+      if (!doc.variants) return doc.file;
+      const chosen = docCardLangChoice[doc.id] || doc.variants[0].lang;
+      const variant = doc.variants.find(v => v.lang === chosen) || doc.variants[0];
+      return variant.file;
     }
 
     function renderDocuments(t) {
       const grid = document.getElementById('documentsGrid');
       const tabsEl = document.getElementById('documentsTabs');
-      const indexEl = document.getElementById('documentsIndex');
+      const emptyEl = document.getElementById('docEmptyState');
+      const metaEl = document.getElementById('docResultsMeta');
+      const searchIconEl = document.getElementById('docSearchIcon');
+      const searchInput = document.getElementById('docSearchInput');
       if (!grid || !t.documents) return;
       document.getElementById('documentsEyebrow').textContent = t.documents.eyebrow;
       document.getElementById('documentsTitle').textContent = t.documents.title;
       document.getElementById('documentsIntro').textContent = t.documents.intro;
+      const profileLabelEl = document.getElementById('docProfileLabel');
+      if (profileLabelEl) profileLabelEl.textContent = t.documents.profileLabel;
+      if (searchIconEl && !searchIconEl.innerHTML) searchIconEl.innerHTML = icon('search', '', 16);
+      if (searchInput) {
+        searchInput.placeholder = t.documents.searchPlaceholder;
+        if (searchInput.value !== docSearchQuery) searchInput.value = docSearchQuery;
+      }
 
-      const allCategories = getDocCategories(t);
-      if (activeDocCategory !== 'all' && !allCategories.some(c => c.key === activeDocCategory)) activeDocCategory = 'all';
-      const totalDocs = allCategories.reduce((sum, c) => sum + c.items.length, 0);
+      const allDocs = getDocList(t);
+      const categoriesPresent = DOCUMENT_CATEGORIES.filter(cat => allDocs.some(d => d.category === cat.key));
+      if (activeDocCategory !== 'all' && !categoriesPresent.some(c => c.key === activeDocCategory)) activeDocCategory = 'all';
 
+      /* Profile pills double as the category filter ("Je suis : Sponsor" ==
+         filter to the sponsors category) — one mechanism instead of two. */
       const selectCategory = (key) => {
         activeDocCategory = key;
         renderDocuments(translations[currentLang]);
       };
-
       if (tabsEl) {
         tabsEl.innerHTML = [
-          `<button type="button" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-neutral-800 transition-colors ${activeDocCategory === 'all' ? 'active' : ''}" data-cat="all">${t.documents.allLabel}</button>`,
-          ...allCategories.map(cat => `<button type="button" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-neutral-800 transition-colors ${activeDocCategory === cat.key ? 'active' : ''}" data-cat="${cat.key}">${cat.name}</button>`)
+          `<button type="button" class="doc-profile-pill ${activeDocCategory === 'all' ? 'active' : ''}" data-cat="all">${icon('file', '', 15)}${t.documents.allLabel}<span class="doc-profile-count">${allDocs.length}</span></button>`,
+          ...categoriesPresent.map(cat => {
+            const count = allDocs.filter(d => d.category === cat.key).length;
+            return `<button type="button" class="doc-profile-pill ${activeDocCategory === cat.key ? 'active' : ''}" data-cat="${cat.key}">${icon(cat.icon || 'file', '', 15)}${t.documents.categoryNames[cat.key]}<span class="doc-profile-count">${count}</span></button>`;
+          })
         ].join('');
-        tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
+        tabsEl.querySelectorAll('.doc-profile-pill').forEach(btn => {
           btn.addEventListener('click', () => selectCategory(btn.dataset.cat));
         });
       }
 
-      /* Sidebar "table of contents" — visible on large screens only, fills the
-         wide gutter next to the document cards instead of leaving it empty. */
-      if (indexEl) {
-        indexEl.innerHTML = `
-          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4 px-1">${t.documents.indexLabel || t.documents.allLabel}</p>
-          <div class="flex flex-col gap-1">
-            <button type="button" class="doc-index-row ${activeDocCategory === 'all' ? 'active' : ''}" data-cat="all">
-              <span class="doc-index-icon">${icon('file', '', 15)}</span>
-              <span class="doc-index-name">${t.documents.allLabel}</span>
-              <span class="doc-index-count">${totalDocs}</span>
-            </button>
-            ${allCategories.map(cat => `
-            <button type="button" class="doc-index-row ${activeDocCategory === cat.key ? 'active' : ''}" data-cat="${cat.key}">
-              <span class="doc-index-icon">${icon(cat.icon || 'file', '', 15)}</span>
-              <span class="doc-index-name">${cat.name}</span>
-              <span class="doc-index-count">${cat.items.length}</span>
-            </button>`).join('')}
-          </div>`;
-        indexEl.querySelectorAll('.doc-index-row').forEach(btn => {
-          btn.addEventListener('click', () => selectCategory(btn.dataset.cat));
-        });
+      const q = normalizeSearchText(docSearchQuery);
+      const filtered = allDocs
+        .filter(d => activeDocCategory === 'all' || d.category === activeDocCategory)
+        .filter(d => !q || normalizeSearchText(d.title).includes(q) || normalizeSearchText(d.desc).includes(q) || normalizeSearchText(d.categoryName).includes(q));
+
+      if (metaEl) {
+        metaEl.textContent = q ? `${filtered.length} / ${allDocs.filter(d => activeDocCategory === 'all' || d.category === activeDocCategory).length}` : '';
       }
 
-      const categoriesToRender = activeDocCategory === 'all'
-        ? allCategories
-        : allCategories.filter(c => c.key === activeDocCategory);
+      if (!filtered.length) {
+        grid.innerHTML = '';
+        grid.classList.add('hidden');
+        if (emptyEl) { emptyEl.textContent = t.documents.noResults; emptyEl.classList.remove('hidden'); }
+        return;
+      }
+      grid.classList.remove('hidden');
+      if (emptyEl) emptyEl.classList.add('hidden');
 
-      grid.innerHTML = categoriesToRender.map(cat => `
-    <div>
-      <h3 class="font-display font-bold text-lg md:text-xl text-white mb-5 flex items-center gap-2.5">
-        <span class="w-8 h-8 rounded-lg flex items-center justify-center text-gold shrink-0"
-          style="background:rgba(212,175,55,0.12);border:1px solid var(--border);">${icon(cat.icon || 'file', '', 15)}</span>
-        ${cat.name}
-      </h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        ${cat.items.map(doc => `
-        <div class="panel rounded-2xl p-5 flex flex-col gap-3">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-gold shrink-0"
-            style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
-            ${icon('file')}
+      grid.innerHTML = filtered.map(doc => {
+        const isEssential = activeDocCategory !== 'all' && !!doc.formId;
+        const activeLang = doc.variants ? (docCardLangChoice[doc.id] || doc.variants[0].lang) : null;
+        const file = resolveDocFile(doc);
+        return `
+        <div class="doc-card panel rounded-2xl p-5 flex flex-col gap-3 relative ${isEssential ? 'doc-card-essential' : ''}" data-doc-id="${doc.id}">
+          <div class="flex items-start justify-between gap-2">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-gold shrink-0"
+              style="background:rgba(212,175,55,0.1);border:1px solid var(--border);">
+              ${icon(doc.formId ? 'clipboard-list' : 'file')}
+            </div>
+            ${isEssential ? `<span class="doc-card-essential-badge">${icon('check', '', 11)}${t.documents.essential}</span>` : ''}
           </div>
           <div class="flex-1">
+            <div class="flex items-center gap-1.5 flex-wrap mb-1.5">
+              <span class="doc-type-badge ${doc.formId ? 'doc-type-form' : ''}">${doc.formId ? t.documents.typeForm : t.documents.typePdf}</span>
+            </div>
             <p class="font-bold text-white text-sm leading-snug mb-1">${doc.title}</p>
             <p class="text-xs text-neutral-400 leading-relaxed">${doc.desc}</p>
           </div>
-          <div class="flex flex-wrap gap-2 mt-1">
-            <a href="${doc.file}" target="_blank" rel="noopener"
-              class="btn-outline px-3 py-1.5 rounded-full text-[11px] font-semibold inline-flex items-center gap-1.5">${icon('eye', '', 14)}${t.documents.view}</a>
-            <a href="${doc.file}" download
+          ${doc.variants ? `
+          <div class="doc-lang-pills" data-lang-switch="${doc.id}">
+            ${doc.variants.map(v => `<button type="button" class="doc-lang-pill ${v.lang === activeLang ? 'active' : ''}" data-lang="${v.lang}">${DOC_LANG_LABELS[v.lang] || v.lang.toUpperCase()}</button>`).join('')}
+          </div>` : ''}
+          <div class="doc-card-actions flex flex-wrap gap-2 mt-1">
+            <button type="button" data-preview-file="${file}" data-preview-title="${doc.title.replace(/"/g, '&quot;')}"
+              class="btn-outline px-3 py-1.5 rounded-full text-[11px] font-semibold inline-flex items-center gap-1.5">${icon('eye', '', 14)}${t.documents.view}</button>
+            <a href="${file}" download
               class="btn-outline px-3 py-1.5 rounded-full text-[11px] font-semibold inline-flex items-center gap-1.5">${icon('download', '', 14)}${t.documents.download}</a>
-            ${doc.formId ? `<button type="button" class="btn-primary px-3 py-1.5 rounded-full text-[11px] font-bold inline-flex items-center gap-1.5" onclick="openDocFillModal('${doc.formId}')">${icon('edit', '', 14)}${t.documents.fill}</button>` : ''}
+            ${doc.formId ? `<button type="button" class="btn-doc-action px-3 py-1.5 rounded-full text-[11px] inline-flex items-center gap-1.5" onclick="openDocFillModal('${doc.formId}')">${icon('edit', '', 14)}${t.documents.fill}</button>` : ''}
           </div>
-        </div>`).join('')}
-      </div>
-    </div>`).join('');
+        </div>`;
+      }).join('');
+
+      // Language pill switching — swap the resolved file without a full re-render
+      grid.querySelectorAll('[data-lang-switch]').forEach(wrap => {
+        const docId = wrap.dataset.langSwitch;
+        wrap.querySelectorAll('.doc-lang-pill').forEach(pill => {
+          pill.addEventListener('click', (e) => {
+            e.stopPropagation();
+            docCardLangChoice[docId] = pill.dataset.lang;
+            renderDocuments(translations[currentLang]);
+          });
+        });
+      });
+
+      // Card click / "Voir" button -> quick-preview modal instead of a raw PDF tab
+      grid.querySelectorAll('[data-preview-file]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openDocPreviewModal(btn.dataset.previewFile, btn.dataset.previewTitle);
+        });
+      });
+      grid.querySelectorAll('.doc-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a, button')) return; // let inner controls handle their own click
+          const doc = filtered.find(d => d.id === card.dataset.docId);
+          if (doc) openDocPreviewModal(resolveDocFile(doc), doc.title);
+        });
+      });
+    }
+
+    function openDocPreviewModal(file, title) {
+      const modal = document.getElementById('docPreviewModal');
+      if (!modal) return;
+      const t = translations[currentLang];
+      document.getElementById('docPreviewTitle').textContent = title;
+      document.getElementById('docPreviewFrame').src = file;
+      const dlBtn = document.getElementById('docPreviewDownload');
+      dlBtn.href = file;
+      dlBtn.innerHTML = icon('download', '', 14) + (t.documents.download || 'Télécharger');
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDocPreviewModal() {
+      const modal = document.getElementById('docPreviewModal');
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+      document.getElementById('docPreviewFrame').src = '';
+      document.body.style.overflow = '';
     }
 
     let activeProTab = 0;
@@ -3903,6 +4136,19 @@
     }
     document.getElementById('docFillModalClose').addEventListener('click', closeDocFillModal);
     document.getElementById('docFillModalBackdrop').addEventListener('click', closeDocFillModal);
+
+    document.getElementById('docPreviewModalClose').addEventListener('click', closeDocPreviewModal);
+    document.getElementById('docPreviewModalBackdrop').addEventListener('click', closeDocPreviewModal);
+
+    let docSearchDebounce;
+    document.getElementById('docSearchInput').addEventListener('input', (e) => {
+      clearTimeout(docSearchDebounce);
+      const value = e.target.value;
+      docSearchDebounce = setTimeout(() => {
+        docSearchQuery = value;
+        renderDocuments(translations[currentLang]);
+      }, 150);
+    });
 
     async function generateFilledPdf() {
       const cfg = DOC_FORMS[currentDocFormId];
