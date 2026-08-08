@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="ws6paleAOHvIrQaPI3oMx1X4BemYS6WIsfprCb2WuF4" />
   <title>SFFF 2026 — Street & Fast Food Fest | Tunis Lac II</title>
   <meta name="description"
     content="SFFF 2026 - Street & Fast Food Fest à Tunis Lac II. 29 août au 12 septembre 2026. Voyagez à travers 5 continents sur 1,8 km de corniche immersive.">
@@ -1853,13 +1854,58 @@
 
         <!-- Action buttons & Language -->
         <div class="hidden lg:flex items-center gap-2.5 shrink-0 whitespace-nowrap">
-          <a href="#espace-pro" class="btn-outline px-3.5 py-1.5 rounded-full text-xs font-semibold"
-            data-i18n="nav.espacePro">Espace Pro</a>
-          <a href="#espace-pro" id="headerAmbassadorBtn"
-            class="btn-outline px-3.5 py-1.5 rounded-full text-xs font-semibold"
-            data-i18n="nav.espaceAmbassade">Ambassades</a>
           <a href="#tarifs" class="btn-primary px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap"
             data-i18n="nav.reserver">Réserver mon Passeport</a>
+
+          <div class="relative">
+            <button id="socialsBtn"
+              class="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold border border-neutral-800 hover:border-gold text-neutral-300 hover:text-white transition-colors"
+              aria-label="Réseaux sociaux">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.6" y1="10.5" x2="15.4" y2="6.5" />
+                <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
+              </svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div id="socialsMenu"
+              class="hidden absolute end-0 mt-2 w-52 rounded-xl overflow-hidden border border-neutral-800 shadow-2xl z-50"
+              style="background:#141416;">
+              <a href="https://www.instagram.com/tunisiaglobalvillage/" target="_blank" rel="noopener"
+                class="w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2.5 text-neutral-300">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61590895631274" target="_blank" rel="noopener"
+                class="w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2.5 text-neutral-300">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a href="https://www.youtube.com/@SFFF-GlobalVillageTunisia" target="_blank" rel="noopener"
+                class="w-full text-start px-4 py-2.5 text-xs hover:bg-[#262626] hover:text-gold transition-colors flex items-center gap-2.5 text-neutral-300">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="text-gold flex-shrink-0">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" />
+                  <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+                </svg>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
 
           <div class="relative">
             <button id="langBtn"
@@ -1945,9 +1991,33 @@
       </div>
 
       <div class="mt-auto flex flex-col gap-3">
-        <a href="#espace-pro"
-          class="mobile-nav-link btn-outline px-5 py-3 rounded-full text-center font-semibold text-sm"
-          data-i18n="nav.espacePro">Espace Pro</a>
+        <div class="flex items-center justify-center gap-4 mb-1">
+          <a href="https://www.instagram.com/tunisiaglobalvillage/" target="_blank" rel="noopener" aria-label="Instagram"
+            class="text-neutral-400 hover:text-gold transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61590895631274" target="_blank" rel="noopener" aria-label="Facebook"
+            class="text-neutral-400 hover:text-gold transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@SFFF-GlobalVillageTunisia" target="_blank" rel="noopener" aria-label="YouTube"
+            class="text-neutral-400 hover:text-gold transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" />
+              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
+            </svg>
+          </a>
+        </div>
         <a href="#tarifs" class="mobile-nav-link btn-primary px-5 py-3 rounded-full text-center font-bold text-sm"
           data-i18n="nav.reserver">Réserver mon Passeport</a>
       </div>
@@ -3293,7 +3363,7 @@
         },
         hero: {
           eyebrow: "القرية العالمية تونس 2026",
-          badge: "29 أوت ← 12 سبتمبر 2026 • تونس ضفاف البحيرة • 17:00 ← 01:00", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
+          badge: "29 أوت ← 12 سبتمبر 2026 • تونس ضفاف البحيرة 2 • 17:00 ← 01:00", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
           metrics: [{ v: "مجاني", l: "دخول الموقع" }, { v: "+100,000", l: "زائر متوقع" }, { v: "42", l: "دولة وجناح" }, { v: "1.8 كم", l: "من الكورنيش المهيأ" }, { v: "15", l: "ليلة إيقاع" }]
         },
         concept: { eyebrow: "المفهوم", title: "إيقاظ الحواس الخمس عبر القارات الخمس", intro: "على امتداد 1.8 كم من الكورنيش المحوّل إلى قرية عالمية، يعيد SFFF 2026 ابتكار كورنيش تونس كمسار غامر وخالٍ من النقود بفضل منظومة الشرائح الذكية RFID." },
@@ -4367,13 +4437,6 @@
       e.target.reset();
     });
 
-    /* Ambassades Header Button Link */
-    document.getElementById('headerAmbassadorBtn').addEventListener('click', (e) => {
-      activeProTab = 3; // Ambassade tab
-      renderProTabs(translations[currentLang]);
-      updateProFormProfile();
-    });
-
     /* ======================= STAMP COLLECTOR SIMULATOR ======================= */
     const countryFlags = ["🇹🇳", "🇫🇷", "🇮🇹", "🇪🇸", "🇯🇵", "🇱🇧", "🇲🇦", "🇲🇽", "🇺🇸", "🇬🇧", "🇹🇷", "🇪🇬", "🇬🇷", "🇧🇷", "🇨🇳", "🇮🇳", "🇩🇪", "🇰🇷", "🇨🇦", "🇸🇦", "🇦🇪", "🇩🇿", "🇸🇳", "🇨🇮", "🇿🇦", "🇹🇭", "🇻🇳", "🇮🇩", "🇵🇹", "🇦🇷", "🇨🇱", "🇵🇪", "🇨🇭", "🇧🇪", "🇳🇱", "🇸🇪", "🇳🇴", "🇩🇰", "🇫🇮", "🇵🇱", "🇦🇺", "🇳🇿"];
     let collectedStamps = parseInt(localStorage.getItem('sfff_stamps') || '0');
@@ -4491,6 +4554,14 @@
     document.querySelectorAll('.lang-opt-mobile').forEach(btn => {
       btn.addEventListener('click', () => { applyTranslations(btn.dataset.lang); closeMobileMenu(); });
     });
+
+    /* ======================= SOCIALS DROPDOWN ======================= */
+    const socialsBtn = document.getElementById('socialsBtn');
+    const socialsMenu = document.getElementById('socialsMenu');
+    if (socialsBtn && socialsMenu) {
+      socialsBtn.addEventListener('click', () => socialsMenu.classList.toggle('hidden'));
+      document.addEventListener('click', (e) => { if (!socialsBtn.contains(e.target) && !socialsMenu.contains(e.target)) socialsMenu.classList.add('hidden'); });
+    }
 
     /* ======================= MOBILE MENU ======================= */
     const mobileDrawer = document.getElementById('mobileDrawer');
