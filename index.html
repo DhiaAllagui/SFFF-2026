@@ -1121,6 +1121,82 @@
       transform: translateY(0);
     }
 
+    /* Hero entrance — staggered reveal on page load, not scroll-triggered
+       (the hero is already in view on load, so an IntersectionObserver-based
+       reveal would have nothing to trigger on). */
+    @keyframes heroStaggerIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-stagger {
+      opacity: 0;
+      animation: heroStaggerIn .8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-stagger-0 {
+      animation-delay: .05s;
+    }
+
+    .hero-stagger-1 {
+      animation-delay: .15s;
+    }
+
+    .hero-stagger-2 {
+      animation-delay: .25s;
+    }
+
+    .hero-stagger-3 {
+      animation-delay: .38s;
+    }
+
+    .hero-stagger-4 {
+      animation-delay: .52s;
+    }
+
+    .hero-stagger-5 {
+      animation-delay: .66s;
+    }
+
+    .hero-cta {
+      transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .3s ease, border-color .3s ease;
+    }
+
+    /* Free-entry metric — the one stat that should read instantly, so it gets
+       a solid fill instead of the ghost-panel treatment the other 4 share. */
+    .metric-free {
+      background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold) 100%);
+      border: 1px solid var(--gold-hi);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.35);
+    }
+
+    .metric-free p {
+      color: #0A0A0A !important;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero-stagger {
+        animation: none !important;
+        opacity: 1;
+      }
+
+      .hero-cta:hover {
+        transform: none;
+      }
+    }
+
     .nav-link {
       position: relative;
       color: var(--muted);
@@ -1895,44 +1971,51 @@
     </div>
 
     <div class="max-w-6xl mx-auto relative text-center" style="z-index:3;">
+      <!-- Premium eyebrow label -->
+      <p id="heroEyebrow"
+        class="hero-stagger hero-stagger-0 text-[11px] md:text-xs font-bold uppercase tracking-[0.4em] text-gold/90 mb-4">
+        Global Village Tunisia 2026</p>
+
       <!-- Hashtags -->
       <div
-        class="flex flex-wrap justify-center items-center gap-3 md:gap-6 mb-5 text-xs md:text-sm font-bold tracking-widest text-gold opacity-90 drop-shadow-md">
+        class="hero-stagger hero-stagger-1 flex flex-wrap justify-center items-center gap-3 md:gap-6 mb-5 text-xs md:text-sm font-bold tracking-widest text-gold opacity-90 drop-shadow-md">
         <span class="hover:text-white transition-colors cursor-default">#SFFF2K26</span>
         <span class="w-1.5 h-1.5 rounded-full bg-gold opacity-60"></span>
         <span class="hover:text-white transition-colors cursor-default">#GLOBAL_VILLAGE_TUNISIA</span>
       </div>
 
-      <div
-        class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-gold/40 text-xs md:text-sm font-semibold tracking-wide mb-8 glow-pulse"
-        style="background:rgba(212,175,55,0.08); max-width:100%;">
-        <span class="w-2 h-2 rounded-full bg-gold animate-ping flex-shrink-0"></span>
-        <span id="heroBadge" style="word-break:break-word; text-align:center;">29 AOÛT – 12 SEPTEMBRE 2026 • TUNIS LAKE
-          PEARLS</span>
+      <div class="hero-stagger hero-stagger-2" style="display:inline-flex; max-width:100%;">
+        <div class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-gold/40 text-xs md:text-sm font-semibold tracking-wide mb-8 glow-pulse"
+          style="background:rgba(212,175,55,0.08); max-width:100%;">
+          <span class="w-2 h-2 rounded-full bg-gold animate-ping flex-shrink-0"></span>
+          <span id="heroBadge" style="word-break:break-word; text-align:center;">29 AOÛT → 12 SEPTEMBRE 2026 • TUNIS LAKE
+            PEARLS • 17:00 → 01:00</span>
+        </div>
       </div>
 
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-6">
+      <h1
+        class="hero-stagger hero-stagger-3 font-display font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight mb-6">
         <span id="heroTitleLine1" class="block text-white">Street & Fast Food Fest</span>
         <span id="heroTitleLine2" class="block gold-grad-text">2026</span>
       </h1>
 
       <p id="heroSubhead"
-        class="max-w-2xl mx-auto text-neutral-300 text-base md:text-xl font-light leading-relaxed mb-10">
+        class="hero-stagger hero-stagger-4 max-w-2xl mx-auto text-neutral-200 text-lg md:text-2xl font-light leading-relaxed mb-10">
         Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de
         corniche immersive.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+      <div class="hero-stagger hero-stagger-5 flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
         <a href="#tarifs" id="heroPassportBtn"
-          class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm tracking-wide"
+          class="btn-primary hero-cta w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm tracking-wide"
           data-i18n="hero.ctaPrimary">Obtenir un Passeport</a>
         <a href="#concept"
-          class="btn-outline w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm tracking-wide"
+          class="btn-outline hero-cta w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm tracking-wide"
           data-i18n="hero.ctaSecondary">Découvrir le Concept</a>
       </div>
 
       <!-- Countdown Timer -->
-      <div class="mb-16 w-full max-w-xl mx-auto px-2">
+      <div class="hero-stagger hero-stagger-5 mb-16 w-full max-w-xl mx-auto px-2">
         <p id="countdownLabel"
           class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] font-bold text-white/50 mb-6 sm:mb-8 text-center"
           data-i18n="hero.countdownLabel">Le festival ouvre dans</p>
@@ -1992,7 +2075,7 @@
       </div>
 
       <!-- Metrics Grid -->
-      <div id="metricsGrid" class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6"></div>
+      <div id="metricsGrid" class="hero-stagger hero-stagger-5 grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6"></div>
     </div>
 
     <!-- Hero Top Sponsors -->
@@ -2605,7 +2688,7 @@
   <!-- ================= DOCUMENTS UTILES ================= -->
   <section id="documents" class="py-24 px-5 md:px-8 border-t border-neutral-800/50" style="background:#0b0b0d;">
     <div class="max-w-[1400px] mx-auto">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 fade-up">
+      <div class="flex flex-col items-center text-center gap-6 mb-8 fade-up">
         <div class="max-w-2xl">
           <p class="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3" id="documentsEyebrow">Ressources</p>
           <h2 id="documentsTitle" class="font-display font-extrabold text-3xl md:text-5xl mb-4">Documents Utiles</h2>
@@ -2975,7 +3058,8 @@
           }
         },
         hero: {
-          badge: "29 AOÛT – 12 SEPTEMBRE 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de corniche immersive.", ctaPrimary: "Obtenir un Passeport", ctaSecondary: "Découvrir le Concept", countdownLabel: "Le festival ouvre dans", days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec",
+          eyebrow: "Global Village Tunisia 2026",
+          badge: "29 AOÛT → 12 SEPTEMBRE 2026 • TUNIS Lac II • 17:00 → 01:00", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "Un voyage des 5 sens à travers 5 continents, sans visa. L'événement phare de l'été tunisien sur 1,8 km de corniche immersive.", ctaPrimary: "Obtenir un Passeport", ctaSecondary: "Découvrir le Concept", countdownLabel: "Le festival ouvre dans", days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec",
           metrics: [{ v: "GRATUITE", l: "Entrée Site" }, { v: "+100 000", l: "Visiteurs Attendus" }, { v: "42", l: "Nations & Pavillons" }, { v: "1.8 km", l: "de Corniche Aménagée" }, { v: "15", l: "Nuits de Rythme" }]
         },
         concept: { eyebrow: "Le Concept", title: "L'Éveil des 5 Sens aux 5 Continents", intro: "Sur 1,8 km de corniche transformée en village-monde, SFFF 2026 réinvente la promenade tunisoise en un parcours immersif et 100% cashless grâce à l'écosystème RFID. Chaque sens est sollicité, chaque pas raconte un continent." },
@@ -3094,7 +3178,8 @@
           }
         },
         hero: {
-          badge: "AUGUST 29–SEPTEMBER 12, 2026 • TUNIS Lac II", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "A journey for the 5 senses across 5 continents, visa-free. The flagship event of the Tunisian summer along 1.8 km of immersive waterfront.", ctaPrimary: "Get a Passport", ctaSecondary: "Discover the Concept", countdownLabel: "The festival opens in", days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec",
+          eyebrow: "Global Village Tunisia 2026",
+          badge: "AUGUST 29 → SEPTEMBER 12, 2026 • TUNIS Lac II • 5:00 PM → 1:00 AM", titleLine1: "Street & Fast Food Fest", titleLine2: "2026", subhead: "A journey for the 5 senses across 5 continents, visa-free. The flagship event of the Tunisian summer along 1.8 km of immersive waterfront.", ctaPrimary: "Get a Passport", ctaSecondary: "Discover the Concept", countdownLabel: "The festival opens in", days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec",
           metrics: [{ v: "FREE", l: "Site Entry" }, { v: "+100,000", l: "Visitors Expected" }, { v: "42", l: "Nations & Pavilions" }, { v: "1.8 km", l: "of Curated Waterfront" }, { v: "15", l: "Nights of Rhythm" }]
         },
         concept: { eyebrow: "The Concept", title: "The Awakening of the 5 Senses Across 5 Continents", intro: "Along 1.8 km of waterfront transformed into a world village, SFFF 2026 reinvents the Tunis promenade into an immersive, 100% cashless journey powered by an RFID ecosystem. Every sense is engaged, every step tells a continent's story." },
@@ -3207,7 +3292,8 @@
           }
         },
         hero: {
-          badge: "29 أوت – 12 سبتمبر 2026 • تونس ليك بيرلز", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
+          eyebrow: "القرية العالمية تونس 2026",
+          badge: "29 أوت ← 12 سبتمبر 2026 • تونس ضفاف البحيرة • 17:00 ← 01:00", titleLine1: "مهرجان الأكل السريع والشارعي", titleLine2: "2026", subhead: "رحلة الحواس الخمس عبر خمس قارات، دون تأشيرة. الحدث الأبرز لصيف تونس على امتداد 1.8 كم من الكورنيش الغامر.", ctaPrimary: "احصل على جواز سفر", ctaSecondary: "اكتشف المفهوم", countdownLabel: "ينطلق المهرجان بعد", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
           metrics: [{ v: "مجاني", l: "دخول الموقع" }, { v: "+100,000", l: "زائر متوقع" }, { v: "42", l: "دولة وجناح" }, { v: "1.8 كم", l: "من الكورنيش المهيأ" }, { v: "15", l: "ليلة إيقاع" }]
         },
         concept: { eyebrow: "المفهوم", title: "إيقاظ الحواس الخمس عبر القارات الخمس", intro: "على امتداد 1.8 كم من الكورنيش المحوّل إلى قرية عالمية، يعيد SFFF 2026 ابتكار كورنيش تونس كمسار غامر وخالٍ من النقود بفضل منظومة الشرائح الذكية RFID." },
@@ -3369,9 +3455,9 @@
     function renderMetrics(t) {
       const grid = document.getElementById('metricsGrid');
       grid.innerHTML = t.hero.metrics.map((m, i) => `
-    <div class="panel rounded-2xl py-6 px-3 text-center border border-amber-500/20">
-      <p class="font-display font-extrabold text-lg md:text-2xl text-gold mb-1" id="metric-val-${i}">${m.v}</p>
-      <p class="text-[11px] md:text-xs text-neutral-400 uppercase tracking-wide font-medium">${m.l}</p>
+    <div class="${i === 0 ? 'metric-free' : 'panel border border-amber-500/20'} rounded-2xl py-6 px-3 text-center">
+      <p class="font-display font-extrabold text-lg md:text-2xl ${i === 0 ? '' : 'text-gold'} mb-1" id="metric-val-${i}">${m.v}</p>
+      <p class="text-[11px] md:text-xs ${i === 0 ? '' : 'text-neutral-400'} uppercase tracking-wide font-medium">${m.l}</p>
     </div>`).join('');
 
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -4341,6 +4427,7 @@
         if (typeof val === 'string') el.textContent = val;
       });
 
+      document.getElementById('heroEyebrow').textContent = t.hero.eyebrow;
       document.getElementById('heroBadge').textContent = t.hero.badge;
       document.getElementById('heroTitleLine1').textContent = t.hero.titleLine1;
       document.getElementById('heroTitleLine2').textContent = t.hero.titleLine2;
